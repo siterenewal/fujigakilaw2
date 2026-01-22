@@ -1,54 +1,2006 @@
-<!-- 当事務所の特徴 -->
-<section class="features-section">
-    <div class="section-container">
-        <!-- ヘッダー（紺色帯） -->
-        <div class="features-header">
-            <h2>当事務所の特徴</h2>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藤垣法律事務所 | あなたの権利を守る、信頼のパートナー</title>
+    <meta name="description" content="埼玉の藤垣法律事務所。刑事事件、交通事故、離婚、相続など幅広い法律問題に対応。初回相談無料。">
+    
+    <meta name="keywords" content="法律事務所,弁護士,埼玉,大宮,刑事事件,交通事故,離婚,相続,無料相談">
+    <meta name="author" content="藤垣法律事務所">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* ヘッダー */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-area img {
+            height: 40px;
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        header.scrolled .logo {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        header.scrolled nav a {
+            color: #555555;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        header.scrolled nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #1e3a8a;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        header.scrolled .menu-icon {
+            background: var(--primary-color);
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: inherit;
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        /* ===== ヒーローセクション ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            padding: 2rem 0;
+        }
+
+        .hero-title {
+            margin-bottom: 2rem;
+        }
+
+        .hero-title-main {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 2;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-btn span {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .hero-btn:hover span {
+            transform: translateX(5px);
+        }
+
+        /* 右側：画像 */
+        .hero-image {
+            position: relative;
+            height: 600px;
+            overflow: visible;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            z-index: 0;
+        }
+
+        .hero-image img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        /* スクロール */
+        .hero-scroll {
+            position: absolute;
+            bottom: 100px;
+            left: 3rem;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-scroll-text {
+            font-family: 'Georgia', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--text-gray);
+            margin-bottom: 0.8rem;
+            writing-mode: vertical-rl;
+        }
+
+        .hero-scroll-bar {
+            width: 1px;
+            height: 60px;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-scroll-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* お知らせバナー */
+        .news-banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.98);
+            display: flex;
+            align-items: stretch;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-banner-label {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1.2rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .news-banner-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            list-style: none;
+            padding: 0.8rem 2rem;
+            flex: 1;
+        }
+
+        .news-banner-item {
+            padding: 0.3rem 0;
+        }
+
+        .news-banner-link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .news-banner-link:hover {
+            opacity: 0.7;
+        }
+
+        .news-banner-date {
+            font-family: 'Georgia', serif;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            min-width: 100px;
+        }
+
+        .news-banner-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* あなたの明日のために */
+        .reasons-message-d {
+            position: relative;
+            padding: 100px 3rem;
+            overflow: hidden;
+            min-height: 700px;
+        }
+
+        .reasons-message-bg-d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('css/images/reasons-bg.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .reasons-message-bg-d::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .reasons-message-container-d {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 550px;
+        }
+
+        .reasons-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .reasons-card-left {
+            align-self: flex-start;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .reasons-card-left .section-label {
+            font-family: 'Georgia', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .reasons-card-left .section-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .reasons-card-content {
+            line-height: 2;
+        }
+
+        .reasons-card-left .reasons-lead {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .reasons-card-left .reasons-text {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 2;
+        }
+
+        .reasons-card-right {
+            align-self: flex-end;
+            max-width: 480px;
+            text-align: left;
+            margin-top: 2rem;
+            background: rgba(30, 58, 138, 0.95);
+            color: #ffffff;
+        }
+
+        .reasons-card-right .reasons-highlight {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .reasons-card-right .reasons-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 2.2;
+            font-weight: 300;
+        }
+
+        /* ===== 当事務所の特徴セクション ===== */
+        .features-section {
+            padding: 100px 3rem;
+            background-color: var(--bg-light);
+        }
+
+        .features-section .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-header {
+            background: var(--primary-color);
+            padding: 1.5rem 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-header h2 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--white);
+            text-align: center;
+            letter-spacing: 0.15em;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 4rem;
+            letter-spacing: 0.05em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary-color);
+        }
+
+        .feature-card:hover .feature-icon svg {
+            fill: none;
+            stroke: var(--white);
+        }
+
+        .feature-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: none;
+            stroke: var(--primary-color);
+            stroke-width: 1.5;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        /* 取扱分野 */
+        .services-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 600px;
+        }
+
+        .services-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .services-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .services-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            padding: 1.5rem;
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .service-item:hover {
+            background: var(--primary-color);
+        }
+
+        .service-item:hover h4,
+        .service-item:hover p {
+            color: var(--white);
+        }
+
+        .service-item h4 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .service-item p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            margin-top: 2.5rem;
+            padding: 1rem 2.5rem;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .view-more-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* 代表メッセージ */
+        .message {
+            background-color: var(--bg-light);
+        }
+
+        .message-layout {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .message-image {
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .message-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .message-content h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            line-height: 1.6;
+        }
+
+        .message-content p {
+            color: var(--text-gray);
+            font-weight: 300;
+            line-height: 2.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .message-signature {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
+        /* ===== CTAセクション ===== */
+        .cta-section {
+            padding: 80px 3rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1e40af 70%, #2563eb 100%);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(135deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(-135deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
+        }
+
+        .cta-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-head {
+            margin-bottom: 1.5rem;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.1em;
+            line-height: 1.6;
+        }
+
+        .cta-head span {
+            display: block;
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .cta-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 2;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-cv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-cv-tel {
+            text-align: center;
+        }
+
+        .cta-cv-time {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.3rem;
+        }
+
+        .cta-cv-number a {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-cv-number a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-cv-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+            min-width: 220px;
+        }
+
+        .cta-cv-btn span {
+            position: relative;
+        }
+
+        .cta-cv-btn span::after {
+            content: '→';
+            margin-left: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-cv-btn:hover span::after {
+            transform: translateX(5px);
+        }
+
+        .cta-cv-btn--primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .cta-cv-btn--primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .cta-cv-btn--secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-cv-btn--secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            border-color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        /* メディア掲載 */
+        .media-section {
+            padding: 100px 3rem;
+            background-color: var(--bg-light);
+        }
+
+        .media-section .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .media-section .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .media-layout {
+            background: var(--white);
+            padding: 4rem 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .media-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .media-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .media-image {
+            margin: 0 auto 2.5rem;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .media-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .media-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .media-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+
+        .media-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 2;
+            font-weight: 300;
+            text-align: left;
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        .media-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .media-btn span {
+            margin-left: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .media-btn:hover span {
+            transform: translateX(5px);
+        }
+
+        .media-btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .media-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        /* アクセス */
+        .access-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .access-info h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .info-row {
+            display: flex;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 120px;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            color: var(--text-gray);
+            font-weight: 300;
+        }
+
+        .map-container {
+            height: 400px;
+            background: var(--bg-light);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            position: relative;
+        }
+
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer_button p {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.0rem 1.5rem;
+            height: 100%;
+            min-height: 70px;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover,
+        .footer_button_icon .tel:hover,
+        .footer_button_icon .email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        address.copy {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        address.copy p {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacypolicy a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .bengoshikai {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 固定ボタン */
+        .floating-contact {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* LINEバナー */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
+            }
+
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
+            }
+        }
+
+        /* セクションヘッダー共通 */
+        .access .section-header,
+        .media-section .section-header,
+        .services .section-header,
+        .message .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .access .section-title,
+        .media-section .section-title,
+        .services .section-title,
+        .message .section-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .access .section-label,
+        .media-section .section-label,
+        .services .section-label,
+        .message .section-label {
+            font-family: 'Georgia', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== レスポンシブ ===== */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                gap: 3rem;
+            }
+            
+            .hero-title-main {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                height: 500px;
+            }
+            
+            .hero-image::before {
+                top: 25px;
+                left: 25px;
+            }
+
+            .services-layout,
+            .message-layout,
+            .access-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .services-image {
+                height: 300px;
+            }
+
+            .message-image {
+                height: 350px;
+            }
+
+            .features-grid {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid #e8e8e8;
+                display: block;
+                color: var(--text-dark);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            /* ヒーロー */
+            .hero {
+                padding-top: 70px;
+            }
+            
+            .hero-inner {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+                gap: 2rem;
+            }
+            
+            .hero-content {
+                text-align: center;
+                order: 1;
+            }
+            
+            .hero-image {
+                order: 2;
+                height: 350px;
+                margin-right: 15px;
+            }
+            
+            .hero-image::before {
+                top: 15px;
+                left: 15px;
+            }
+            
+            .hero-title-main {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem;
+            }
+            
+            .hero-btn {
+                justify-content: center;
+            }
+            
+            .hero-scroll {
+                display: none;
+            }
+
+            /* お知らせバナー */
+            .news-banner {
+                flex-direction: column;
+                position: relative;
+                max-width: 100%;
+            }
+            
+            .news-banner-label {
+                padding: 0.8rem 1.5rem;
+                min-width: auto;
+            }
+            
+            .news-banner-list {
+                padding: 1rem 1.5rem;
+            }
+            
+            .news-banner-link {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            /* あなたの明日のために */
+            .reasons-message-d {
+                padding: 60px 1.5rem;
+                min-height: auto;
+            }
+            
+            .reasons-message-container-d {
+                min-height: auto;
+            }
+            
+            .reasons-card {
+                padding: 2rem;
+            }
+            
+            .reasons-card-left,
+            .reasons-card-right {
+                align-self: center;
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .reasons-card-right {
+                margin-top: 2rem;
+            }
+            
+            .reasons-card-left .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .reasons-card-right .reasons-highlight {
+                font-size: 1.4rem;
+            }
+
+            /* 特徴セクション */
+            .features-section {
+                padding: 60px 1.5rem;
+            }
+
+            .features-header {
+                padding: 1.2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .features-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .features-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1.5rem;
+            }
+
+            .feature-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+
+            /* 取扱分野 */
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+
+            .services-content {
+                padding: 2rem;
+            }
+
+            .services-image {
+                height: 250px;
+            }
+
+            /* 代表メッセージ */
+            .message-layout {
+                gap: 2rem;
+            }
+
+            .message-image {
+                height: 350px;
+            }
+
+            /* CTA */
+            .cta-section {
+                padding: 60px 1.5rem;
+            }
+
+            .cta-head {
+                font-size: 1.5rem;
+            }
+
+            .cta-desc {
+                font-size: 0.95rem;
+            }
+
+            .cta-text {
+                font-size: 0.85rem;
+            }
+
+            .cta-cv {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cta-cv-number a {
+                font-size: 1.8rem;
+            }
+
+            .cta-cv-btn {
+                width: 100%;
+                max-width: 320px;
+                min-width: auto;
+            }
+
+            /* メディア */
+            .media-layout {
+                padding: 3rem 1.5rem;
+            }
+            
+            .media-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .media-image {
+                margin-bottom: 2rem;
+            }
+            
+            .media-desc {
+                font-size: 0.9rem;
+            }
+            
+            .media-desc br {
+                display: none;
+            }
+            
+            .media-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .media-bottom {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .media-desc {
+                text-align: center;
+            }
+
+            /* フッター */
+            .footer_button .wrap {
+                padding: 0 1rem;
+            }
+
+            .footer_button p {
+                font-size: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .tel,
+            .footer_button_icon .email a,
+            .footer_button_icon .email,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1rem 1.5rem;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
+            }
+
+            .floating-contact {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .floating-contact a {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+
+            .sp { display: block; }
+            .pc { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none; }
+            .pc { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="css/images/S__18145305.jpg" alt="ロゴ">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="service.html">取扱分野</a></li>
+                    <li><a href="case.html">解決事例</a></li>
+                    <li><a href="pricing.html">料金案内</a></li>
+                    <li><a href="profile.html" class="active">代表弁護士の想い</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="company.html">事務所概要</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span class="menu-icon"></span>
+            </button>
         </div>
-        
-        <!-- サブタイトル -->
-        <p class="features-subtitle">藤垣法律事務所は、こんな強みを持った事務所です</p>
-        
-        <!-- 特徴カード -->
-        <div class="features-grid">
-            <!-- 特徴1：柔軟な相談対応 -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                        <line x1="12" y1="18" x2="12" y2="18.01"/>
-                    </svg>
-                </div>
-                <h3>柔軟な相談対応</h3>
-                <p>お問い合わせをいただければ、内容の緊急性や現在のご状況に応じた柔軟なご相談の実施が可能です。まずは一度、お気軽にご連絡ください。</p>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-main">法律の力で</span>
+                    <span class="hero-title-main">あなたの明日を守る</span>
+                </h1>
+                <p class="hero-description">
+                    刑事事件500件超、交通事故1000件超の実績<br>
+                    スピードある弁護活動で、あなたの安心を守ります
+                </p>
+                <a href="contact.html" class="hero-btn">無料相談のご予約<span>→</span></a>
             </div>
             
-            <!-- 特徴2：大宮駅から徒歩3分 -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <rect x="7" y="7" width="3" height="3"/>
-                        <rect x="14" y="7" width="3" height="3"/>
-                        <rect x="7" y="14" width="3" height="3"/>
-                        <rect x="14" y="14" width="3" height="3"/>
-                    </svg>
-                </div>
-                <h3>大宮駅から徒歩3分</h3>
-                <p>大宮駅西口から徒歩3分。交通の便に優れ、各地からアクセスしやすい立地でご相談をお待ちしております。</p>
-            </div>
-            
-            <!-- 特徴3：経験と実績 -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="8" r="5"/>
-                        <path d="M20 21a8 8 0 1 0-16 0"/>
-                    </svg>
-                </div>
-                <h3>経験と実績</h3>
-                <p>代表弁護士は、刑事事件500件以上、交通事故1,000件以上の解決に携わった経験があり、実績を活かした最良な解決のご案内が可能です。</p>
+            <div class="hero-image">
+                <img src="css/images/0722-25-scaled.jpg" alt="代表弁護士 藤垣圭介">
             </div>
         </div>
+        
+        <div class="hero-scroll">
+            <p class="hero-scroll-text">Scroll</p>
+            <div class="hero-scroll-bar"></div>
+        </div>
+
+        <div class="news-banner">
+            <div class="news-banner-label">お知らせ</div>
+            <ul class="news-banner-list">
+                <li class="news-banner-item">
+                    <a href="#" class="news-banner-link">
+                        <span class="news-banner-date">2025.01.15</span>
+                        <span class="news-banner-text">年末年始の営業時間変更のお知らせ</span>
+                    </a>
+                </li>
+                <li class="news-banner-item">
+                    <a href="#" class="news-banner-link">
+                        <span class="news-banner-date">2025.01.10</span>
+                        <span class="news-banner-text">代表弁護士がテレビ埼玉に出演しました</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- あなたの明日のために -->
+    <section class="reasons-message-d">
+        <div class="reasons-message-bg-d"></div>
+        <div class="reasons-message-container-d">
+            <div class="reasons-card reasons-card-left">
+                <p class="section-label">OUR PROMISE</p>
+                <h2 class="section-title">あなたの明日のために</h2>
+                <div class="reasons-card-content">
+                    <p class="reasons-lead">
+                        藤垣法律事務所は、スピーディーな相談対応に努めています。
+                    </p>
+                    <p class="reasons-text">
+                        あなたを守りぬき、安心できる明日を創る。<br>
+                        それが、私たちの使命です。
+                    </p>
+                    <p class="reasons-text">
+                        いかなる事例においても早期対応に越したことはありません。<br>
+                        だからこそ、私たちはスピードにこだわり続けます。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="reasons-card reasons-card-right">
+                <p class="reasons-highlight">「諦めないでほしい」</p>
+                <p class="reasons-text">
+                    トラブルに巻き込まれて困っている方に、<br>
+                    まずお伝えしたい言葉です。<br>
+                    トラブルでお困りの方は、まず一度、お気軽にご相談ください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 当事務所の特徴 -->
+    <section class="features-section">
+        <div class="section-container">
+            <div class="features-header">
+                <h2>当事務所の特徴</h2>
+            </div>
+            
+            <p class="features-subtitle">藤垣法律事務所は、こんな強みを持った事務所です</p>
+            
+            <div class="features-grid">
+                <!-- 特徴1：柔軟な相談対応 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12" y2="18.01"/>
+                        </svg>
+                    </div>
+                    <h3>柔軟な相談対応</h3>
+                    <p>お問い合わせをいただければ、内容の緊急性や現在のご状況に応じた柔軟なご相談の実施が可能です。まずは一度、お気軽にご連絡ください。</p>
+                </div>
+                
+                <!-- 特徴2：大宮駅から徒歩3分 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <rect x="7" y="7" width="3" height="3"/>
+                            <rect x="14" y="7" width="3" height="3"/>
+                            <rect x="7" y="14" width="3" height="3"/>
+                            <rect x="14" y="14" width="3" height="3"/>
+                        </svg>
+                    </div>
+                    <h3>大宮駅から徒歩3分</h3>
+                    <p>大宮駅西口から徒歩3分。交通の便に優れ、各地からアクセスしやすい立地でご相談をお待ちしております。</p>
+                </div>
+                
+                <!-- 特徴3：経験と実績 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="8" r="5"/>
+                            <path d="M20 21a8 8 0 1 0-16 0"/>
+                        </svg>
+                    </div>
+                    <h3>経験と実績</h3>
+                    <p>代表弁護士は、刑事事件500件以上、交通事故1,000件以上の解決に携わった経験があり、実績を活かした最良な解決のご案内が可能です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 取扱分野 -->
+    <section class="services" style="padding: 100px 3rem;">
+        <div class="services-layout">
+            <div class="services-image">
+                <img src="css/images/services-bg.png" alt="法律の天秤">
+            </div>
+            <div class="services-content">
+                <div class="section-header">
+                    <p class="section-label">PRACTICE AREAS</p>
+                    <h2 class="section-title">取扱分野</h2>
+                </div>
+                <div class="services-list">
+                    <a href="service.html#criminal" class="service-item">
+                        <h4>刑事事件</h4>
+                        <p>逮捕・勾留対応、示談交渉</p>
+                    </a>
+                    <a href="service.html#traffic" class="service-item">
+                        <h4>交通事故</h4>
+                        <p>賠償金請求、後遺障害認定</p>
+                    </a>
+                    <a href="service.html#divorce" class="service-item">
+                        <h4>離婚・男女問題</h4>
+                        <p>離婚協議、慰謝料請求</p>
+                    </a>
+                    <a href="service.html#inheritance" class="service-item">
+                        <h4>相続問題</h4>
+                        <p>遺産分割、遺言書作成</p>
+                    </a>
+                </div>
+                <a href="service.html" class="view-more-btn">VIEW MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代表メッセージ -->
+    <section class="message" style="padding: 100px 3rem;">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">MESSAGE</p>
+                <h2 class="section-title">代表弁護士の想い</h2>
+            </div>
+            <div class="message-layout">
+                <div class="message-image">
+                    <img src="css/images/message.jpg" alt="代表弁護士 藤垣圭介">
+                </div>
+                <div class="message-content">
+                    <h3>スピードある弁護活動で、あなたの安心を守ります</h3>
+                    <p>刑事事件500件超、交通事故1000件超の経験を積んだ私が最も大切にしているのは、弁護活動の「スピード」です。刑事事件では時間制限が厳格であり、交通事故では早期対応が賠償金額を大きく左右します。</p>
+                    <p>トラブルに巻き込まれて困っている方にとって、弁護士がすぐに解決のため動いてくれると信頼できるかどうかは非常に重大な問題です。お困りの方は、まず一度、お気軽にご相談ください。</p>
+                    <p class="message-signature">藤垣法律事務所　代表弁護士　藤垣圭介</p>
+                    <a href="profile.html" class="view-more-btn">VIEW MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA セクション -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2 class="cta-head">
+                <span>CONTACT</span>
+                まずはお気軽にご相談ください
+            </h2>
+            <p class="cta-desc">
+                刑事事件・交通事故をはじめ、様々な法律問題に対応いたします。<br>
+                ご相談者様の状況を丁寧にお伺いし、最適な解決策をご提案します。
+            </p>
+            <p class="cta-text">
+                経験豊富な弁護士がひとつひとつ丁寧にお話を伺い、<br class="pc">
+                適切な解決策をご提案いたします。<br class="pc">
+                初回相談は無料ですので、安心してお問い合わせください。
+            </p>
+            <div class="cta-cv">
+                <div class="cta-cv-tel">
+                    <p class="cta-cv-time">受付時間 平日 9:00〜18:00</p>
+                    <p class="cta-cv-number">
+                        <a href="tel:050-8889-5335">050-8889-5335</a>
+                    </p>
+                </div>
+                <a href="contact.html" class="cta-cv-btn cta-cv-btn--primary">
+                    <span>無料相談のご予約</span>
+                </a>
+                <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" class="cta-cv-btn cta-cv-btn--secondary" target="_blank" rel="noopener">
+                    <span>LINEで相談する</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- メディア掲載 -->
+    <section class="media-section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">MEDIA</p>
+                <h2 class="section-title">メディア掲載</h2>
+            </div>
+            
+            <div class="media-layout">
+                <div class="media-content">
+                    <h3 class="media-title">COMPANY TANK  経営者インタビュー</h3>
+                    
+                    <div class="media-image">
+                        <img src="css/images/company-tank.jpg" alt="COMPANY TANK 経営者インタビュー">
+                    </div>
+                    
+                    <div class="media-bottom">
+                        <p class="media-desc">
+                            依頼人に寄り添い法律問題を丁寧に解決。<br>
+                            スピーディな対応が光る弁護士事務所として<br>
+                            代表弁護士 藤垣圭介が紹介されました。
+                        </p>
+                        <a href="https://www.fujigakilaw.com/wp-content/uploads/2025/09/a1ebc34492af2fccd2d2a938d21cd5fa.pdf" class="media-btn media-btn-primary" target="_blank" rel="noopener">
+                            インタビューを読む<span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="access" style="padding:100px 3rem;">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">ACCESS</p>
+                <h2 class="section-title">アクセス</h2>
+            </div>
+            <div class="access-layout">
+                <div class="access-info">
+                    <h3>事務所情報</h3>
+                    <div class="info-row">
+                        <span class="info-label">事務所名</span>
+                        <span class="info-value">藤垣法律事務所</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">代表弁護士</span>
+                        <span class="info-value">藤垣圭介（埼玉弁護士会）</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">所在地</span>
+                        <span class="info-value">埼玉県さいたま市大宮区桜木町1-195-1<br>大宮ソラミチKOZ 4階</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">営業時間</span>
+                        <span class="info-value">平日 9:00〜18:00</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">TEL</span>
+                        <span class="info-value">050-8889-5335</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.8!2d139.63!3d35.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDU0JzAwLjAiTiAxMznCsDM3JzQ4LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="email sp">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="contact.html">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
+    </footer>
+
+    <!-- 固定お問い合わせボタン -->
+    <div class="floating-contact">
+        <a href="contact.html">無料相談予約</a>
     </div>
-</section>
+
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
+        </a>
+    </div>
+
+    <script>
+        // モバイルメニュー
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // ヘッダースクロール
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
