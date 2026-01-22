@@ -233,15 +233,30 @@
 .hero-image {
     position: relative;
     height: 600px;
-    overflow: hidden;
+    overflow: visible; /* hidden から visible に変更 */
+}
+
+/* 画像の後ろにずらして重ねるボックス */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 30px;      /* 下にずらす */
+    left: 30px;     /* 右にずらす */
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color); /* 紺色のボックス */
+    z-index: -1;
 }
 
 .hero-image img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    z-index: 1;
 }
+
 
 /* スクロール */
 .hero-scroll {
@@ -1969,6 +1984,7 @@
     </script>
 </body>
 </html>
+
 
 
 
