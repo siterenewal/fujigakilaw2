@@ -704,170 +704,201 @@
             font-weight: 500;
             margin-top: 2rem;
             font-size: 1rem;
-        }
+        }/* ===== CTAセクション（背景画像付き） ===== */
+.cta-section {
+    position: relative;
+    overflow: hidden;
+}
 
-        /* ===== CTAセクション ===== */
-        .cta-section {
-            padding: 80px 3rem;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1e40af 70%, #2563eb 100%);
-        }
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(135deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(-135deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: 0;
-        }
+.cta-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 30% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
-                linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.1) 100%);
-            z-index: 1;
-        }
+.cta-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+}
 
-        .cta-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+.cta-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.98);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
 
-        .cta-head {
-            margin-bottom: 1.5rem;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--white);
-            letter-spacing: 0.1em;
-            line-height: 1.6;
-        }
+.cta-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+}
 
-        .cta-head span {
-            display: block;
-            font-family: 'Georgia', serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.3em;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-            font-weight: 400;
-        }
+.cta-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 3rem;
+}
 
-        .cta-desc {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.05rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+.cta-card-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
 
-        .cta-text {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.9rem;
-            font-weight: 300;
-            line-height: 2;
-            margin-bottom: 2.5rem;
-        }
+/* 電話ボタン */
+.cta-card-tel {
+    text-align: center;
+    padding: 1.5rem;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
 
-        .cta-cv {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+.cta-card-tel:hover {
+    background: rgba(30, 58, 138, 0.03);
+}
 
-        .cta-cv-tel {
-            text-align: center;
-        }
+.cta-card-tel-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
-        .cta-cv-time {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0.3rem;
-        }
+.cta-card-tel-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 2;
+}
 
-        .cta-cv-number a {
-            font-family: 'Times New Roman', serif;
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            transition: opacity 0.3s ease;
-        }
+.cta-card-tel-number {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: block;
+    transition: opacity 0.3s ease;
+}
 
-        .cta-cv-number a:hover {
-            opacity: 0.8;
-        }
+.cta-card-tel-number:hover {
+    opacity: 0.7;
+}
 
-        .cta-cv-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem 2.5rem;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            letter-spacing: 0.08em;
-            transition: all 0.3s ease;
-            min-width: 220px;
-        }
+.cta-card-tel-time {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 0.8rem;
+    line-height: 1.6;
+}
 
-        .cta-cv-btn span {
-            position: relative;
-        }
+/* お問い合わせフォームボタン */
+.cta-card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
-        .cta-cv-btn span::after {
-            content: '→';
-            margin-left: 0.8rem;
-            transition: transform 0.3s ease;
-        }
+.cta-card-form:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+}
 
-        .cta-cv-btn:hover span::after {
-            transform: translateX(5px);
-        }
+.cta-card-form-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
 
-        .cta-cv-btn--primary {
-            background: var(--white);
-            color: var(--primary-color);
-        }
+.cta-card-form-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 2;
+}
 
-        .cta-cv-btn--primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-        }
+.cta-card-form-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
 
-        .cta-cv-btn--secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-        }
+.cta-card-form-note {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0.8rem;
+    text-align: center;
+    line-height: 1.6;
+}
 
-        .cta-cv-btn--secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            border-color: var(--white);
-            transform: translateY(-4px);
-        }
+/* CTAセクション レスポンシブ */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 0;
+    }
+
+    .cta-card {
+        padding: 2.5rem 1.5rem;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .cta-card-title {
+        font-size: 1.4rem;
+    }
+
+    .cta-card-desc {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-card-buttons {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-card-tel-number {
+        font-size: 1.5rem;
+    }
+}
 
         /* メディア掲載 */
         .media-section {
@@ -1820,40 +1851,46 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA セクション -->
-    <section class="cta-section">
-        <div class="cta-inner">
-            <h2 class="cta-head">
-                <span>CONTACT</span>
-                まずはお気軽にご相談ください
-            </h2>
-            <p class="cta-desc">
-                刑事事件・交通事故をはじめ、様々な法律問題に対応いたします。<br>
-                ご相談者様の状況を丁寧にお伺いし、最適な解決策をご提案します。
-            </p>
-            <p class="cta-text">
-                経験豊富な弁護士がひとつひとつ丁寧にお話を伺い、<br class="pc">
-                適切な解決策をご提案いたします。<br class="pc">
-                初回相談は無料ですので、安心してお問い合わせください。
-            </p>
-            <div class="cta-cv">
-                <div class="cta-cv-tel">
-                    <p class="cta-cv-time">受付時間 平日 9:00〜18:00</p>
-                    <p class="cta-cv-number">
-                        <a href="tel:050-8889-5335">050-8889-5335</a>
-                    </p>
+    </section><!-- CTA セクション -->
+<section class="cta-section">
+    <!-- 背景画像 -->
+    <div class="cta-background">
+        <img src="css/images/cta-bg.jpg" alt="相談風景">
+    </div>
+    
+    <!-- 白いカード -->
+    <div class="cta-card">
+        <h2 class="cta-card-title">無料相談のご案内</h2>
+        <p class="cta-card-desc">
+            必要な情報は惜しみなくお伝えし、解決策をどこよりも丁寧に示します。
+        </p>
+        
+        <div class="cta-card-buttons">
+            <!-- 電話 -->
+            <div class="cta-card-tel">
+                <div class="cta-card-tel-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
                 </div>
-                <a href="contact.html" class="cta-cv-btn cta-cv-btn--primary">
-                    <span>無料相談のご予約</span>
-                </a>
-                <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" class="cta-cv-btn cta-cv-btn--secondary" target="_blank" rel="noopener">
-                    <span>LINEで相談する</span>
-                </a>
+                <a href="tel:050-8889-5335" class="cta-card-tel-number">050-8889-5335</a>
+                <p class="cta-card-tel-time">受付時間：平日 9:00～18:00</p>
             </div>
+            
+            <!-- お問い合わせフォーム -->
+            <a href="contact.html" class="cta-card-form">
+                <div class="cta-card-form-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 6l-10 7L2 6"/>
+                    </svg>
+                    <span class="cta-card-form-text">ご相談受付フォーム</span>
+                </div>
+                <p class="cta-card-form-note">通常1〜2営業日以内に担当者から<br>ご連絡させていただきます</p>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- メディア掲載 -->
     <section class="media-section">
@@ -2007,5 +2044,6 @@
     </script>
 </body>
 </html>
+
 
 
