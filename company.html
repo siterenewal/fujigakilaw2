@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事務所概要 | 藤垣法律事務所</title>
+    <meta name="description" content="藤垣法律事務所の事務所概要・アクセス情報。埼玉県さいたま市大宮区の法律事務所。大宮駅西口徒歩3分。">
+    
+    <meta name="keywords" content="藤垣法律事務所,事務所概要,アクセス,大宮,弁護士">
+    <meta name="author" content="藤垣法律事務所">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* ヘッダー */
+        header {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        /* ページヘッダー */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            color: white;
+            padding: 80px 3rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.12em;
+        }
+
+        .page-hero-en {
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+
+        /* KVビジュアル */
+        .kv-visual {
+            margin-top: 80px;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kv-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/service-bg.jpg') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .kv-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .kv-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .kv-content p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* パンくずリスト */
+        .breadcrumb {
+            background-color: var(--bg-light);
+            padding: 1rem 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .breadcrumb-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        /* セクション共通 */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .section-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+
+        /* 事務所情報テーブル */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+
+        .info-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 1.5rem 1.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .info-table th {
+            width: 30%;
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: var(--bg-light);
+            letter-spacing: 0.05em;
+        }
+
+        .info-table td {
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        .info-table td a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        .info-table td a:hover {
+            text-decoration: underline;
+        }
+
+        .info-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 0.5rem;
+        }
+
+        /* 代表弁護士プロフィール */
+        .profile-card {
+            background: var(--bg-light);
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-image-area {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 220px;
+            height: 280px;
+            object-fit: cover;
+            object-position: top;
+            margin-bottom: 1rem;
+        }
+
+        .profile-image-placeholder {
+            width: 100%;
+            max-width: 220px;
+            height: 280px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .profile-name {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-title {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .profile-content h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-content p {
+            color: var(--text-gray);
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .profile-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* 経歴 */
+        .career-list {
+            list-style: none;
+        }
+
+        .career-item {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .career-item:last-child {
+            border-bottom: none;
+        }
+
+        .career-year {
+            font-family: 'Georgia', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 120px;
+        }
+
+        .career-content {
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        /* アクセス */
+        .access-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .access-info {
+            background: var(--bg-light);
+            padding: 2rem;
+        }
+
+        .access-info h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .access-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .access-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .access-value {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .access-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 0.3rem;
+        }
+
+        .map-container {
+            background: var(--bg-light);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .map-placeholder {
+            color: var(--text-gray);
+            text-align: center;
+        }
+
+       
+        /* フッター */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            position: relative;
+        }
+
+        /* フッターボタンエリア */
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer_button p {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.0rem 1.5rem;
+            height: 100%;
+            min-height: 70px;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover,
+        .footer_button_icon .tel:hover,
+        .footer_button_icon .email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer_button_icon .email a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.5rem;
+        }
+
+        .footer_button_icon .email a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* コピーライト */
+        address.copy {
+            text-align: center !important;
+            padding: 3rem 2rem !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            font-size: 0.9rem !important;
+            font-style: normal !important;
+            display: block !important;
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        address.copy p {
+            text-align: center !important;
+            margin: 0 auto 0.5rem auto !important;
+        }
+
+        address.copy .privacypolicy {
+            margin-bottom: 1rem !important;
+        }
+
+        address.copy .privacypolicy a {
+            color: var(--accent-color) !important;
+            text-decoration: none !important;
+        }
+
+        address.copy .bengoshikai {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .privacypolicy {
+            margin-bottom: 1rem !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+
+        .privacypolicy a {
+            color: var(--accent-color) !important;
+            text-decoration: none !important;
+            transition: opacity 0.3s ease !important;
+        }
+
+        .privacypolicy a:hover {
+            opacity: 0.7 !important;
+        }
+
+        .bengoshikai {
+            margin-bottom: 0.5rem !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+
+        .copyright {
+            margin: 0 !important;
+            text-align: center !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+            width: 100% !important;
+        }
+
+        /* LINEバナー */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
+            }
+
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+        }
+
+
+        /* 固定ボタン */
+        .floating-contact {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 60px 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .breadcrumb {
+                padding: 1rem 1.5rem;
+            }
+
+            .main-content {
+                padding: 50px 1.5rem;
+            }
+
+            .section {
+                margin-bottom: 60px;
+            }
+
+            .info-table th,
+            .info-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .info-table th {
+                padding: 1rem 1.5rem 0.5rem;
+                border-bottom: none;
+            }
+
+            .info-table td {
+                padding: 0.5rem 1.5rem 1.5rem;
+            }
+
+            .profile-card {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .profile-content {
+                text-align: left;
+            }
+
+            .career-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .career-year {
+                min-width: auto;
+            }
+
+            .access-content {
+                grid-template-columns: 1fr;
+            }
+
+            
+            /* フッターレスポンシブ */
+            .footer_button .wrap {
+                padding: 0 1rem;
+            }
+
+            .footer_button p {
+                font-size: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .tel,
+            .footer_button_icon .email a,
+            .footer_button_icon .email,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1.2rem 1.5rem;
+                min-height: 70px;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
+            }
+
+            .floating-contact {
+                display: none;
+            }
+
+            .sp { display: block; }
+            .pc { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none; }
+            .pc { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
+            </div>
+            <nav id="mainNav">
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="service.html">取扱分野</a></li>
+        <li><a href="case.html">解決事例</a></li>
+        <li><a href="pricing.html">料金案内</a></li>
+        <li><a href="profile.html">代表弁護士の想い</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="company.html">事務所概要</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+</nav>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- KVビジュアル -->
+    <section class="kv-visual">
+        <div class="kv-content">
+            <h1>ABOUT US</h1>
+            <p>事務所概要</p>
+        </div>
+    </section>
+
+
+    <!-- パンくずリスト -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">ホーム</a></li>
+                <li>›</li>
+                <li>事務所概要</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- 事務所情報 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2>事務所情報</h2>
+            </div>
+            <table class="info-table">
+                <tr>
+                    <th>事務所名</th>
+                    <td>藤垣法律事務所</td>
+                </tr>
+                <tr>
+                    <th>代表弁護士</th>
+                    <td>藤垣圭介（埼玉弁護士会所属）</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>
+                        〒330-0854<br>
+                        埼玉県さいたま市大宮区桜木町1-195-1<br>
+                        大宮ソラミチKOZ 4階<br>
+                        エキスパートオフィス大宮
+                    </td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>
+                        <a href="tel:050-8889-5335">050-8889-5335</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>FAX</th>
+                    <td>050-3094-8657</td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td>
+                        <a href="mailto:info@fujigakilaw.com">info@fujigakilaw.com</a>
+                        <p class="info-note">※ご営業関係は電話でなくメール又はお問い合わせフォームにてお願いします</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>営業時間</th>
+                    <td>
+                        平日 9:00〜18:00<br>
+                        <span class="info-note">※土日祝日は事前予約にて対応可能</span>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 代表弁護士 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2>代表弁護士</h2>
+            </div>
+            <div class="profile-card">
+                <div class="profile-image-area">
+                    <img src="css/images/message.jpg" alt="代表弁護士 藤垣圭介"class="profile-image">
+                    <p class="profile-name">藤垣 圭介</p>
+                    <p class="profile-title">Keisuke Fujigaki</p>
+                </div>
+                <div class="profile-content">
+                    <h3>経歴</h3>
+                    <ul class="career-list">
+                        <li class="career-item">
+                            <span class="career-year">2006年 3月</span>
+                            <span class="career-content">私立高山西高等学校 卒業</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2010年 3月</span>
+                            <span class="career-content">東京大学法学部 卒業</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2012年 3月</span>
+                            <span class="career-content">東京大学法科大学院 修了</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2013年 9月</span>
+                            <span class="career-content">司法試験合格</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2014年 12月</span>
+                            <span class="career-content">大阪弁護士会にて弁護士登録<br>全国に支店を持つ弁護士法人の大阪事務所にて勤務</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2016年 5月</span>
+                            <span class="career-content">埼玉弁護士会に登録変更<br>上記弁護士法人の埼玉支部長として多様な事件を担当</span>
+                        </li>
+                        <li class="career-item">
+                            <span class="career-year">2024年 7月</span>
+                            <span class="career-content">藤垣法律事務所 開業</span>
+                        </li>
+                    </ul>
+                    <p style="margin-top: 2rem;">
+                        刑事事件500件超、交通事故1000件超の経験を活かし、「スピード」を最も大切にした弁護活動を行っています。
+                    </p>
+                    <a href="profile.html" class="profile-link">代表弁護士の想いを読む →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- アクセス -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2>アクセス</h2>
+            </div>
+            <div class="access-content">
+                <div class="access-info">
+                    <h3>交通アクセス</h3>
+                    <div class="access-detail">
+                        <p class="access-label">最寄り駅</p>
+                        <p class="access-value">JR大宮駅 西口より徒歩3分</p>
+                    </div>
+                    <div class="access-detail">
+                        <p class="access-label">住所</p>
+                        <p class="access-value">
+                            〒330-0854<br>
+                            埼玉県さいたま市大宮区桜木町1-195-1<br>
+                            大宮ソラミチKOZ 4階<br>
+                            エキスパートオフィス大宮
+                        </p>
+                    </div>
+                    <div class="access-detail">
+                        <p class="access-label">お車でお越しの方</p>
+                        <p class="access-value">近隣のコインパーキングをご利用ください</p>
+                        <p class="access-note">※駐車場の割引サービスはございません</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <!-- Google Map埋め込み -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.234567890123!2d139.62345678901234!3d35.90123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDU0JzA0LjQiTiAxMznCsDM3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="藤垣法律事務所の地図">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+            </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="email sp">
+                        <a href="contact.html">メールで相談する<b>24時間受付中</b></a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="tel:050-8889-5335">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
+    </footer>
+
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
+        </a>
+    </div>
+
+    <!-- 固定お問い合わせボタン -->
+    <div class="floating-contact">
+        <a href="contact.html">無料相談予約</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            btn.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
+</body>
+</html>

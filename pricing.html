@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>料金案内 | 藤垣法律事務所</title>
+    <meta name="description" content="藤垣法律事務所の料金案内。刑事事件、交通事故、離婚問題など各分野の弁護士費用を掲載しています。初回相談無料。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        /* KVビジュアル */
+        .kv-visual {
+            margin-top: 80px;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kv-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/pricing-bg.jpg') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .kv-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .kv-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .kv-content p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* パンくずリスト */
+        .breadcrumb {
+            background-color: var(--bg-light);
+            padding: 1rem 3rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .breadcrumb-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* セクション共通 */
+        section[id] {
+            scroll-margin-top: 120px;
+        }
+
+        /* 料金セクション */
+        .pricing-section {
+            padding: 80px 3rem;
+        }
+
+        .pricing-section:nth-child(odd) {
+            background-color: var(--bg-light);
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            margin-bottom: 2rem;
+        }
+
+        .section-label .en {
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .section-label .jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-left: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .pricing-intro {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 2;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+
+        .pricing-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .pricing-table .price {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .pricing-note {
+            background: #eff6ff;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            margin-top: 1.5rem;
+        }
+
+        .pricing-note p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .pricing-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .sub-section {
+            margin-top: 2.5rem;
+        }
+
+        .sub-section-title {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        
+        /* フッター */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            position: relative;
+        }
+
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer_button p {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.0rem 1.5rem;
+            height: 100%;
+            min-height: 70px;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover,
+        .footer_button_icon .tel:hover,
+        .footer_button_icon .email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer_button_icon .email a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.5rem;
+        }
+
+        .footer_button_icon .email a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        address.copy {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        address.copy p {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacypolicy a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .bengoshikai {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 固定ボタン */
+        .floating-contact {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* LINEバナー */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
+            }
+
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 1024px) {
+            .services-layout,
+            .message-layout,
+            .access-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .services-image {
+                height: 300px;
+            }
+
+            .message-image {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid #e8e8e8;
+                display: block;
+                color: var(--text-dark);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 100vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .news-banner {
+                position: relative;
+                max-width: 100%;
+            }
+
+            section {
+                padding: 60px 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+
+            .services-content {
+                padding: 2rem;
+            }
+
+            .message-layout {
+                gap: 2rem;
+            }
+
+            .footer_button .wrap {
+                padding: 0 1rem;
+            }
+
+            .footer_button p {
+                font-size: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .tel,
+            .footer_button_icon .email a,
+            .footer_button_icon .email,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1rem 1.5rem;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
+            }
+
+            .floating-contact {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .floating-contact a {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .sp { display: block; }
+            .pc { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none; }
+            .pc { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="service.html">取扱分野</a></li>
+                    <li><a href="case.html">解決事例</a></li>
+                    <li><a href="pricing.html">料金案内</a></li>
+                    <li><a href="profile.html">代表弁護士の想い</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="company.html">事務所概要</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- KVビジュアル -->
+    <section class="kv-visual">
+        <div class="kv-content">
+            <h1>PRICING</h1>
+            <p>料金案内</p>
+        </div>
+    </section>
+
+    <!-- パンくずリスト -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">ホーム</a></li>
+                <li>›</li>
+                <li>料金案内</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- 法律相談料 -->
+    <section class="pricing-section" id="consultation">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">CONSULTATION</span>
+                <span class="jp">/ 法律相談</span>
+            </div>
+            <h2 class="section-title">法律相談料</h2>
+            <p class="pricing-intro">
+                当事務所では、初回相談を無料で承っております。まずはお気軽にご相談ください。
+            </p>
+            <table class="pricing-table">
+                <tr>
+                    <th>内容</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>初回ご相談</td>
+                    <td class="price">30分無料<br>（30分経過後は、30分毎に5,500円のご相談料が発生します。）</td>
+                </tr>
+                <tr>
+                    <td>2回目以降</td>
+                    <td class="price">30分　5,500円～</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※ご相談方法は、ご来所又はお電話が可能です。お問い合わせの際にご希望の方法をお教えください。</p>
+                <p>※お支払いは、お電話相談の場合は事前の現金振込み、ご来所相談の場合は現金精算となります。</p>
+                <p>※内容によっては初回相談よりご料金の発生する場合もあります。お問い合わせ時にご案内申し上げます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 刑事弁護 -->
+    <section class="pricing-section" id="criminal">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">CRIMINAL DEFENSE</span>
+                <span class="jp">/ 刑事弁護</span>
+            </div>
+            <h2 class="section-title">刑事弁護の弁護士費用</h2>
+            <p class="pricing-intro">
+                刑事事件は迅速な対応が重要です。24時間対応可能ですので、逮捕された場合はすぐにご連絡ください。
+            </p>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金</td>
+                    <td class="price">33万円～</td>
+                </tr>
+                <tr>
+                    <td>成功報酬</td>
+                    <td class="price">33万円～</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※個別の費用や詳細は、ご契約に先立ってご不明点のないよう説明いたします。</p>
+                <p>※個別の内容によっては、より安価なご案内が可能な場合もあります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 初回接見サービス -->
+    <section class="pricing-section" id="first-visit">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">FIRST VISIT SERVICE</span>
+                <span class="jp">/ 初回接見サービス</span>
+            </div>
+            <h2 class="section-title">初回接見サービス（逮捕勾留先への単発の接見）</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>出張日当（片道1時間未満）</td>
+                    <td class="price">11,000円＋大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>出張日当（片道1時間～2時間未満）</td>
+                    <td class="price">22,000円＋大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>出張日当（片道2時間以上）</td>
+                    <td class="price">応相談</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※移動時間は「Yahoo!路線情報」を用いて在来線利用時の往復所要時間を算出いたします。</p>
+                <p>※お支払いは出発前の現金振込となり、入金確認後の出発となります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 刑事事件顧問サービス -->
+    <section class="pricing-section" id="criminal-advisory">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">CRIMINAL ADVISORY SERVICE</span>
+                <span class="jp">/ 刑事事件顧問サービス</span>
+            </div>
+            <h2 class="section-title">刑事事件顧問サービス（事件発覚前のサポート）</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>顧問料（3カ月間）</td>
+                    <td class="price">110,000円～</td>
+                </tr>
+                <tr>
+                    <td>延長顧問料（3カ月ごと）</td>
+                    <td class="price">110,000円～</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※サービス内容には、顧問期間中の継続的なご相談及び初回接見対応が含まれます。</p>
+                <p>※個別事件の顧問料は、当該事件の管轄地等によって変動いたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 交通事故 -->
+    <section class="pricing-section" id="traffic">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">TRAFFIC ACCIDENT</span>
+                <span class="jp">/ 交通事故</span>
+            </div>
+            <h2 class="section-title">交通事故の弁護士費用</h2>
+            <p class="pricing-intro">
+                交通事故被害者の方をサポートいたします。弁護士費用特約をお使いの場合は、自己負担なしで弁護士に依頼できます。
+            </p>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金</td>
+                    <td class="price">11万円～</td>
+                </tr>
+                <tr>
+                    <td>成功報酬</td>
+                    <td class="price">11万円～</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※弁護士費用特約をご利用の場合、原則としてご負担が発生しない内容でのご案内が可能です。</p>
+                <p>※個別の内容によっては、より安価なご案内が可能な場合もあります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 離婚・男女問題 -->
+    <section class="pricing-section" id="divorce">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">DIVORCE / FAMILY LAW</span>
+                <span class="jp">/ 離婚・男女問題</span>
+            </div>
+            <h2 class="section-title">離婚・男女問題の弁護士費用</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金　交渉</td>
+                    <td class="price">165,000円～</td>
+                </tr>
+                <tr>
+                    <td>着手金　調停・審判・訴訟</td>
+                    <td class="price">33万円～</td>
+                </tr>
+                <tr>
+                    <td>成功報酬</td>
+                    <td class="price">経済的利益の11％+22万円　※</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※養育費は最長5年分、婚姻費用は最長2年分の金額を経済的利益とします。</p>
+                <p>※経済的利益が伴わない内容については、個別にご案内申し上げます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 犯罪被害 -->
+    <section class="pricing-section" id="crime-victim">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">CRIME VICTIM SUPPORT</span>
+                <span class="jp">/ 犯罪被害</span>
+            </div>
+            <h2 class="section-title">犯罪被害の弁護士費用</h2>
+            <p class="pricing-intro">
+                犯罪被害に遭われた方の権利回復をサポートいたします。
+            </p>
+            
+            <div class="sub-section">
+                <h3 class="sub-section-title">刑事手続</h3>
+                <table class="pricing-table">
+                    <tr>
+                        <th>項目</th>
+                        <th>料金</th>
+                    </tr>
+                    <tr>
+                        <td>着手金　刑事</td>
+                        <td class="price">22万円～</td>
+                    </tr>
+                    <tr>
+                        <td>追加着手金（被害者参加）</td>
+                        <td class="price">22万円～</td>
+                    </tr>
+                    <tr>
+                        <td>成功報酬　刑事</td>
+                        <td class="price">22万円～　※</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="sub-section">
+                <h3 class="sub-section-title">民事手続</h3>
+                <table class="pricing-table">
+                    <tr>
+                        <th>項目</th>
+                        <th>料金</th>
+                    </tr>
+                    <tr>
+                        <td>着手金　民事・提示あり</td>
+                        <td class="price">0円～</td>
+                    </tr>
+                    <tr>
+                        <td>着手金　民事・提示なし</td>
+                        <td class="price">22万円～</td>
+                    </tr>
+                    <tr>
+                        <td>追加着手金（民事調停・訴訟）</td>
+                        <td class="price">22万円～</td>
+                    </tr>
+                    <tr>
+                        <td>成功報酬　民事</td>
+                        <td class="price">経済的利益の11％+22万円</td>
+                    </tr>
+                </table>
+            </div>
+
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※被害届又は告訴が受理されるなど、捜査の着手に至った場合に発生します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相続問題 -->
+    <section class="pricing-section" id="inheritance">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">INHERITANCE</span>
+                <span class="jp">/ 相続問題</span>
+            </div>
+            <h2 class="section-title">相続問題の弁護士費用</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金　協議</td>
+                    <td class="price">22万円～　※</td>
+                </tr>
+                <tr>
+                    <td>着手金　調停・審判</td>
+                    <td class="price">33万円～　※</td>
+                </tr>
+                <tr>
+                    <td>成功報酬</td>
+                    <td class="price">経済的利益の11％+22万円</td>
+                </tr>
+                <tr>
+                    <td>遺言書作成</td>
+                    <td class="price">11万円～</td>
+                </tr>
+                <tr>
+                    <td>相続放棄（相続人1人につき）</td>
+                    <td class="price">55,000円～</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※対象となる財産の価額等によって変動します。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 借金問題 -->
+    <section class="pricing-section" id="debt">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">DEBT PROBLEMS</span>
+                <span class="jp">/ 借金問題</span>
+            </div>
+            <h2 class="section-title">借金問題の弁護士費用</h2>
+            <p class="pricing-intro">
+                借金問題のご相談は何度でも無料です。お気軽にご相談ください。
+            </p>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金　任意整理</td>
+                    <td class="price">1社あたり33,000円～（ただし最低額55,000円）</td>
+                </tr>
+                <tr>
+                    <td>成功報酬　任意整理</td>
+                    <td class="price">経済的利益の11％</td>
+                </tr>
+                <tr>
+                    <td>自己破産</td>
+                    <td class="price">22万円～</td>
+                </tr>
+                <tr>
+                    <td>個人再生</td>
+                    <td class="price">33万円～</td>
+                </tr>
+                <tr>
+                    <td>過払金返還請求</td>
+                    <td class="price">回収額の22％～</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- その他民事・家事事件 -->
+    <section class="pricing-section" id="other">
+        <div class="pricing-container">
+            <div class="section-label">
+                <span class="en">OTHER CIVIL / FAMILY CASES</span>
+                <span class="jp">/ その他民事・家事事件</span>
+            </div>
+            <h2 class="section-title">その他民事・家事事件の弁護士費用</h2>
+            <table class="pricing-table">
+                <tr>
+                    <th>項目</th>
+                    <th>料金</th>
+                </tr>
+                <tr>
+                    <td>着手金</td>
+                    <td class="price">22万円～</td>
+                </tr>
+                <tr>
+                    <td>成功報酬</td>
+                    <td class="price">22万円～</td>
+                </tr>
+                <tr>
+                    <td>出張日当</td>
+                    <td class="price">大宮駅からの移動時間30分ごとに5,500円～（30分未満切り上げ）</td>
+                </tr>
+                <tr>
+                    <td>実費</td>
+                    <td class="price">実費の金額</td>
+                </tr>
+            </table>
+            <div class="pricing-note">
+                <p>※個別の費用や詳細は、ご契約に先立ってご不明点のないよう説明いたします。</p>
+                <p>※個別の内容によっては、より安価なご案内が可能な場合もあります。</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="email sp">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="contact.html">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
+    </footer>
+
+   
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
+        </a>
+    </div>
+
+    <!-- 固定お問い合わせボタン -->
+    <div class="floating-contact">
+        <a href="contact.html">無料相談予約</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            btn.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解決事例 | 藤垣法律事務所</title>
+    <meta name="description" content="藤垣法律事務所の解決事例。刑事事件、交通事故、離婚、相続問題など、実際に解決した事例をご紹介します。">
+    
+    <meta name="keywords" content="解決事例,弁護士,埼玉,刑事事件,交通事故,離婚,相続">
+    <meta name="author" content="藤垣法律事務所">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* ヘッダー */
+        
+    header {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        /* KVビジュアル */
+        .kv-visual {
+            margin-top: 80px;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kv-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/service-bg.jpg') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .kv-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .kv-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .kv-content p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* KVビジュアル */
+        .kv-visual {
+            margin-top: 80px;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kv-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/service-bg.jpg') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .kv-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .kv-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .kv-content p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* パンくずリスト */
+        .breadcrumb {
+            background-color: var(--bg-light);
+            padding: 1rem 3rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .breadcrumb-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        /* イントロ */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        /* カテゴリーフィルター */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 50px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: var(--bg-light);
+            border: 1px solid #e8e8e8;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 解決事例一覧 */
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .case-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .case-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .case-category.criminal { background: #1e3a8a; }
+        .case-category.traffic { background: #1e3a8a; }
+        .case-category.divorce { background: #1e3a8a; }
+        .case-category.inheritance { background: #1e3a8a; }
+        .case-category.debt { background: #1e3a8a; }
+        .case-category.labor { background: #1e3a8a; }
+
+        .case-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .case-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .case-section {
+            padding: 1.5rem;
+            background: var(--bg-light);
+        }
+
+        .case-section h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .case-section p {
+            color: var(--text-gray);
+            font-weight: 300;
+            line-height: 1.9;
+        }
+
+        .case-result {
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem 2rem;
+        }
+
+        .case-result h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-result p {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .case-point {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+        }
+
+        .case-point h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .case-point p {
+            color: var(--text-gray);
+            font-weight: 300;
+            line-height: 1.9;
+        }
+
+        /* ページネーション */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 60px;
+        }
+
+        .pagination a,
+        .pagination span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid #e8e8e8;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover,
+        .pagination span.current {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+       
+        /* フッター */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            position: relative;
+        }
+
+        /* フッターボタンエリア */
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer_button p {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.0rem 1.5rem;
+            height: 100%;
+            min-height: 70px;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover,
+        .footer_button_icon .tel:hover,
+        .footer_button_icon .email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* フッターボタンアイコン - メール用のスタイル */
+        .footer_button_icon .email a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.5rem;
+        }
+
+        .footer_button_icon .email a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* コピーライト */
+        address.copy {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        address.copy p {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacypolicy a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .bengoshikai {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* LINEバナー */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
+            }
+
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+        }
+
+
+        /* 固定ボタン */
+        .floating-contact {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid #e8e8e8;
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 60px 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .breadcrumb {
+                padding: 1rem 1.5rem;
+            }
+
+            .main-content {
+                padding: 50px 1.5rem;
+            }
+
+            .category-filter {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .case-card {
+                padding: 1.5rem;
+            }
+
+            .case-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .case-title {
+                font-size: 1.3rem;
+            }
+
+            .case-overview {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+           
+            /* フッターレスポンシブ */
+            .footer_button .wrap {
+                padding: 0 1rem;
+            }
+
+            .footer_button p {
+                font-size: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .tel,
+            .footer_button_icon .email a,
+            .footer_button_icon .email,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1rem 1.5rem;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
+            }
+
+            .floating-contact {
+                bottom: 80px;
+                right: 20px;
+            }
+
+            .floating-contact a {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .sp { display: block; }
+            .pc { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none; }
+            .pc { display: block; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
+            </div>
+            <nav id="mainNav">
+    <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="service.html">取扱分野</a></li>
+        <li><a href="case.html">解決事例</a></li>
+        <li><a href="pricing.html">料金案内</a></li>
+        <li><a href="profile.html">代表弁護士の想い</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="company.html">事務所概要</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+</nav>
+
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- KVビジュアル -->
+    <section class="kv-visual">
+        <div class="kv-content">
+            <h1>CASE</h1>
+            <p>解決事例</p>
+        </div>
+    </section>
+
+    <!-- パンくずリスト -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">ホーム</a></li>
+                <li>›</li>
+                <li>解決事例</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- イントロ -->
+        <section class="intro-section">
+            <p class="intro-text">
+                藤垣法律事務所がこれまでに解決してきた事例の一部をご紹介します。<br>
+                ※プライバシー保護のため、事例は一部修正しています。
+            </p>
+        </section>
+
+        <!-- カテゴリーフィルター -->
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">すべて</button>
+            <button class="filter-btn" data-category="criminal">刑事事件</button>
+            <button class="filter-btn" data-category="traffic">交通事故</button>
+            <button class="filter-btn" data-category="divorce">離婚・男女問題</button>
+            <button class="filter-btn" data-category="inheritance">相続問題</button>
+            <button class="filter-btn" data-category="debt">借金問題</button>
+        </div>
+
+        <!-- 解決事例一覧 -->
+        <div class="case-list">
+            <!-- 事例1: 刑事事件 -->
+            <article class="case-card" data-category="criminal">
+                <div class="case-header">
+                    <span class="case-category criminal">刑事事件</span>
+                    <h2 class="case-title">痴漢事件で不起訴処分を獲得</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>電車内で痴漢の疑いをかけられ、逮捕されてしまった。身に覚えがなく、冤罪を主張したい。会社への影響も心配。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>逮捕直後に接見し、事実関係を詳細に確認。目撃者の証言や防犯カメラの映像を精査し、検察官に対して不起訴を求める意見書を提出。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>勾留請求却下により早期釈放。その後、嫌疑不十分により不起訴処分となり、前科もつかずに解決。</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>刑事事件では初動が非常に重要です。逮捕後すぐにご連絡いただいたことで、証拠保全と早期の身柄解放に向けた活動を迅速に行うことができました。</p>
+                </div>
+            </article>
+
+            <!-- 事例2: 交通事故 -->
+            <article class="case-card" data-category="traffic">
+                <div class="case-header">
+                    <span class="case-category traffic">交通事故</span>
+                    <h2 class="case-title">後遺障害14級認定、示談金を約3倍に増額</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>追突事故でむちうちになり、治療を続けていたが症状が改善しない。保険会社から提示された示談金が妥当か分からない。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>医療記録を精査し、後遺障害等級認定のサポートを実施。14級の認定を受けた後、弁護士基準で賠償金を再計算し、保険会社と交渉。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>当初提示額：約80万円 → 最終解決額：約250万円（約3.1倍に増額）</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>保険会社の提示額は、弁護士基準より大幅に低いことがほとんどです。弁護士費用特約があったため、依頼者様の自己負担はありませんでした。</p>
+                </div>
+            </article>
+
+            <!-- 事例3: 離婚 -->
+            <article class="case-card" data-category="divorce">
+                <div class="case-header">
+                    <span class="case-category divorce">離婚・男女問題</span>
+                    <h2 class="case-title">DV被害からの離婚、親権と財産分与を獲得</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>夫からのDVに苦しんでおり、離婚したいが、子どもの親権を取られるのが怖い。財産分与も適切に受け取りたい。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>まず安全確保のためシェルターへの避難をサポート。保護命令を申し立てた上で、離婚調停を申し立て。DVの証拠を整理し、親権と適正な財産分与を主張。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>調停により離婚成立。親権を獲得し、財産分与として約1,200万円を取得。養育費も適正額で合意。</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>DV被害の場合、まず安全確保が最優先です。その後、冷静に法的手続きを進めることで、依頼者様とお子様の新しい生活をサポートすることができました。</p>
+                </div>
+            </article>
+
+            <!-- 事例4: 相続 -->
+            <article class="case-card" data-category="inheritance">
+                <div class="case-header">
+                    <span class="case-category inheritance">相続問題</span>
+                    <h2 class="case-title">遺留分侵害額請求により約800万円を獲得</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>父が亡くなり、遺言で全財産を兄に相続させるとあった。遺留分として最低限の取り分を主張したい。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>遺産の調査を行い、不動産・預貯金・株式等の評価を実施。遺留分侵害額を算定し、相手方と交渉。交渉が難航したため、調停を申し立て。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>調停にて約800万円の遺留分侵害額の支払いで合意成立。</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>遺留分侵害額請求には時効があります（相続開始および遺留分侵害を知った時から1年）。お早めにご相談いただいたことで、適切に権利を行使することができました。</p>
+                </div>
+            </article>
+
+            <!-- 事例5: 借金問題 -->
+            <article class="case-card" data-category="debt">
+                <div class="case-header">
+                    <span class="case-category debt">借金問題</span>
+                    <h2 class="case-title">個人再生により借金を5分の1に圧縮、住宅を維持</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>複数のカードローンやクレジットの借金が膨らみ、返済が困難に。住宅ローンがあるマイホームは手放したくない。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>債務状況と収入を確認し、住宅資金特別条項付きの個人再生が最適と判断。裁判所への申立てを行い、再生計画案を作成。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>総債務額約500万円 → 再生計画により約100万円に圧縮（3年分割払い）。住宅は維持。</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>個人再生は、自己破産と異なり住宅を残せる可能性があります。安定した収入がある方には有効な選択肢です。一人で悩まず、早めにご相談ください。</p>
+                </div>
+            </article>
+
+            <!-- 事例6: 刑事事件 -->
+            <article class="case-card" data-category="criminal">
+                <div class="case-header">
+                    <span class="case-category criminal">刑事事件</span>
+                    <h2 class="case-title">傷害事件で示談成立、執行猶予判決を獲得</h2>
+                </div>
+                <div class="case-overview">
+                    <div class="case-section">
+                        <h3>ご相談内容</h3>
+                        <p>酔った勢いで見知らぬ人に暴力を振るってしまい、傷害罪で逮捕された。前科をつけたくない。</p>
+                    </div>
+                    <div class="case-section">
+                        <h3>当事務所の対応</h3>
+                        <p>被害者との示談交渉を迅速に行い、謝罪と賠償を実施。情状弁護に注力し、反省文の作成や更生計画の策定をサポート。</p>
+                    </div>
+                </div>
+                <div class="case-result">
+                    <h3>解決結果</h3>
+                    <p>示談成立により、懲役1年・執行猶予3年の判決。実刑を免れ、社会復帰が可能に。</p>
+                </div>
+                <div class="case-point">
+                    <h3>弁護士からのコメント</h3>
+                    <p>傷害事件では、被害者との示談が量刑に大きく影響します。真摯な謝罪と適切な賠償を行うことで、執行猶予を獲得することができました。</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- ページネーション -->
+        <nav class="pagination">
+            <span class="current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">›</a>
+        </nav>
+
+            </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="email sp">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="contact.html">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
+    </footer>
+
+    
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
+        </a>
+    </div>
+
+    <!-- 固定お問い合わせボタン -->
+    <div class="floating-contact">
+        <a href="contact.html">無料相談予約</a>
+    </div>
+
+    <script>
+    function toggleMenu() {
+        const nav = document.getElementById('mainNav');
+        const btn = document.querySelector('.mobile-menu-btn');
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        
+        nav.classList.toggle('active');
+        btn.setAttribute('aria-expanded', !isExpanded);
+    }
+
+    // カテゴリーフィルター
+    document.addEventListener('DOMContentLoaded', function() {
+        // ページヒーローのアニメーション
+        const pageHero = document.querySelector('.page-hero');
+        if (pageHero) {
+            setTimeout(function() {
+                pageHero.classList.add('visible');
+            }, 100);
+        }
+
+        // 既存のフィルター機能
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const caseCards = document.querySelectorAll('.case-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+
+                caseCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
