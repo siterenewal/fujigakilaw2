@@ -5,266 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>代表弁護士 藤垣圭介の想い | 藤垣法律事務所</title>
     <meta name="description" content="藤垣法律事務所 代表弁護士 藤垣圭介の想い。弁護士を目指した背景から独立までの経緯、そして大切にしている「スピード」という信条についてお伝えします。">
+    
     <meta name="keywords" content="弁護士,埼玉,大宮,藤垣圭介,法律事務所">
     <meta name="author" content="藤垣法律事務所">
     <meta name="robots" content="index, follow">
     
-    <!-- OGP -->
-    <meta property="og:title" content="代表弁護士 藤垣圭介の想い | 藤垣法律事務所">
-    <meta property="og:description" content="代表弁護士 藤垣圭介の想いをお伝えします。弁護士を目指した背景から独立までの経緯、そして大切にしている「スピード」という信条について。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.fujigakilaw.com/message.html">
-    <meta property="og:image" content="https://www.fujigakilaw.com/images/og-image.jpg">
-    <meta property="og:site_name" content="藤垣法律事務所">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Variables */
-        :root {
-            --primary-color: #1e3a8a;
-            --primary-dark: #172554;
-            --primary-light: #3b82f6;
-            --accent-color: #d4af37;
-            --text-dark: #1a1a2e;
-            --text-light: #6b7280;
-            --bg-light: #f8f9fa;
-            --bg-cream: #fdfbf7;
-            --white: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 16px;
-            line-height: 1.8;
+            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
             color: var(--text-dark);
+            line-height: 1.8;
             background-color: var(--white);
-            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.05em;
         }
 
-        /* Header */
-        .header {
+        /* ヘッダー */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
         }
 
-        .header-inner {
+        .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            padding: 1.2rem 1.5rem;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            letter-spacing: 0.05em;
-        }
-
-        .logo-sub {
-            font-size: 0.65rem;
-            color: var(--text-light);
-            letter-spacing: 0.1em;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.7rem;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 60%;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-link-en {
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.6rem;
-            color: var(--text-light);
-            letter-spacing: 0.05em;
-            margin-bottom: 0.15rem;
-        }
-
-        .header-contact {
+        .logo-area {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
 
-        .header-tel {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-decoration: none;
+        .logo-image {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
         }
 
-        .header-tel-number {
+        .logo {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.4rem;
             font-weight: 600;
             color: var(--primary-color);
-            letter-spacing: 0.02em;
-        }
-
-        .header-tel-time {
-            font-size: 0.65rem;
-            color: var(--text-light);
-        }
-
-        .header-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--primary-color);
-            color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .header-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 44px;
-            height: 44px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            gap: 6px;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-dark);
-            transition: var(--transition);
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: 160px 2rem 80px;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
-            text-align: center;
-        }
-
-        .page-hero-title {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .page-hero-subtitle {
-            font-size: 1rem;
-            color: var(--text-light);
             letter-spacing: 0.1em;
         }
 
-        /* Profile Section */
-        .profile-section {
-            padding: 100px 2rem;
-            background: var(--white);
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
         }
 
-        .profile-container {
+        nav a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        /* KVビジュアル */
+        .kv-visual {
+            margin-top: 80px;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kv-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/message-bg.jpg') center/cover no-repeat;
+            opacity: 0.2;
+        }
+
+        .kv-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .kv-content h1 {
+            font-family: 'Georgia', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .kv-content p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* パンくずリスト */
+        .breadcrumb {
+            background-color: var(--bg-light);
+            padding: 1rem 3rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .breadcrumb-list a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
             max-width: 1100px;
             margin: 0 auto;
+            padding: 80px 2rem;
+        }
+
+        /* プロフィールセクション */
+        .profile-section {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 380px 1fr;
             gap: 4rem;
             align-items: start;
         }
@@ -275,9 +238,7 @@
 
         .profile-image-wrapper {
             position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: var(--shadow-lg);
+            overflow: visible;
         }
 
         .profile-image-wrapper::before {
@@ -288,24 +249,28 @@
             width: 100%;
             height: 100%;
             background: var(--primary-color);
-            border-radius: 8px;
-            z-index: -1;
+            z-index: 0;
         }
 
         .profile-image {
+            position: relative;
             width: 100%;
             height: auto;
             display: block;
+            z-index: 1;
         }
 
         .profile-name-card {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border: 1px solid #e8e8e8;
         }
 
         .profile-position {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: var(--text-gray);
             margin-bottom: 0.5rem;
             letter-spacing: 0.1em;
         }
@@ -315,19 +280,20 @@
             font-size: 1.8rem;
             font-weight: 600;
             color: var(--text-dark);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
         .profile-name-en {
+            font-family: 'Georgia', serif;
             font-size: 0.85rem;
-            color: var(--text-light);
+            color: var(--text-gray);
             letter-spacing: 0.15em;
-            margin-top: 0.3rem;
+            margin-top: 0.5rem;
         }
 
-        /* Message Content */
+        /* メッセージコンテンツ */
         .message-content {
-            padding-top: 1rem;
+            padding-top: 0.5rem;
         }
 
         .message-block {
@@ -347,12 +313,14 @@
             padding-bottom: 0.75rem;
             border-bottom: 2px solid var(--primary-color);
             display: inline-block;
+            letter-spacing: 0.05em;
         }
 
         .message-text {
             font-size: 1rem;
             line-height: 2;
             color: var(--text-dark);
+            font-weight: 300;
         }
 
         .message-text p {
@@ -364,13 +332,15 @@
         }
 
         .message-highlight {
-            background: linear-gradient(transparent 60%, rgba(30, 58, 138, 0.1) 60%);
+            background: linear-gradient(transparent 60%, rgba(30, 58, 138, 0.15) 60%);
             padding: 0 0.2rem;
+            font-weight: 500;
         }
 
-        /* Career Section */
+        /* 経歴セクション */
         .career-section {
-            padding: 100px 2rem;
+            margin-top: 80px;
+            padding: 80px 2rem;
             background: var(--bg-light);
         }
 
@@ -386,7 +356,7 @@
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 3rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
         .career-timeline {
@@ -427,20 +397,22 @@
         }
 
         .career-year {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'Georgia', serif;
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 0.3rem;
+            letter-spacing: 0.05em;
         }
 
         .career-detail {
             font-size: 1rem;
             color: var(--text-dark);
             line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* CTA Section */
+        /* CTAセクション */
         .cta-section {
             position: relative;
             padding: 100px 2rem;
@@ -470,7 +442,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(23, 37, 84, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.92) 0%, rgba(30, 64, 175, 0.95) 100%);
         }
 
         .cta-card {
@@ -479,7 +451,6 @@
             max-width: 800px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.98);
-            border-radius: 16px;
             padding: 3rem;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -491,7 +462,7 @@
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
 
         .cta-card-desc {
@@ -499,6 +470,7 @@
             color: var(--text-dark);
             margin-bottom: 2rem;
             line-height: 1.8;
+            font-weight: 300;
         }
 
         .cta-card-buttons {
@@ -513,12 +485,12 @@
             align-items: center;
             padding: 1.5rem;
             background: var(--bg-light);
-            border-radius: 12px;
-            transition: var(--transition);
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
         }
 
         .cta-card-tel:hover {
-            background: var(--bg-cream);
+            background: #f3f4f6;
         }
 
         .cta-card-tel-icon {
@@ -543,12 +515,12 @@
         }
 
         .cta-card-tel-number {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'Georgia', serif;
             font-size: 1.6rem;
             font-weight: 600;
             color: var(--primary-color);
             text-decoration: none;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
         }
 
         .cta-card-tel-number:hover {
@@ -557,7 +529,7 @@
 
         .cta-card-tel-time {
             font-size: 0.85rem;
-            color: var(--text-light);
+            color: var(--text-gray);
             margin-top: 0.5rem;
         }
 
@@ -567,9 +539,8 @@
             align-items: center;
             padding: 1.5rem;
             background: var(--primary-color);
-            border-radius: 12px;
             text-decoration: none;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .cta-card-form:hover {
@@ -607,225 +578,270 @@
             line-height: 1.6;
         }
 
-        /* Footer */
-        .footer {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 2rem 30px;
+        /* フッター */
+        footer {
+            background-color: #0f172a;
+            color: white;
         }
 
-        .footer-inner {
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-info h3 {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.3rem;
+        .footer_button p {
+            text-align: center;
             font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
         }
 
-        .footer-info p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .footer-tel {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.5rem;
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .footer-nav {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
             gap: 2rem;
-        }
-
-        .footer-nav-group h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-
-        .footer-nav-group ul {
             list-style: none;
         }
 
-        .footer-nav-group li {
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .email a,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 1.5rem;
+            height: 100%;
+            min-height: 80px;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.4rem;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .email a {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b,
+        .footer_button_icon .email b {
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        address.copy {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        address.copy p {
             margin-bottom: 0.5rem;
         }
 
-        .footer-nav-group a {
-            color: rgba(255, 255, 255, 0.7);
+        .privacypolicy a {
+            color: var(--accent-color);
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: var(--transition);
         }
 
-        .footer-nav-group a:hover {
-            color: var(--white);
+        .bengoshikai {
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .footer-bottom {
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Floating Contact Button */
+        /* 固定ボタン */
         .floating-contact {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 40px;
+            right: 40px;
             z-index: 999;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
         }
 
-        .floating-btn {
+        .floating-contact a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-
-        .floating-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .floating-btn-tel {
-            background: var(--primary-color);
-        }
-
-        .floating-btn-mail {
-            background: var(--accent-color);
-        }
-
-        .floating-btn svg {
-            width: 28px;
-            height: 28px;
-            fill: none;
-            stroke: var(--white);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* LINE Banner */
-        .line-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 998;
-            background: #06c755;
-            padding: 0.75rem 2rem;
-            display: none;
-        }
-
-        .line-banner-inner {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .line-banner-text {
-            color: var(--white);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .line-banner-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.5rem;
-            background: var(--white);
-            color: #06c755;
-            text-decoration: none;
-            font-size: 0.85rem;
             font-weight: 600;
-            border-radius: 50px;
-            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
         }
 
-        .line-banner-btn:hover {
-            background: #f0f0f0;
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .header-inner {
-                padding: 0 1.5rem;
+        /* LINEバナー */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
             }
 
-            .nav {
-                display: none;
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
             }
 
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .profile-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .profile-image-area {
-                max-width: 400px;
-                margin: 0 auto;
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
             }
         }
 
         @media (max-width: 768px) {
-            .header-inner {
-                height: 70px;
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none; }
+            .pc { display: block; }
+        }
+
+        @media (max-width: 768px) {
+            .sp { display: block; }
+            .pc { display: none; }
+
+            .header-container {
+                padding: 1rem 1.5rem;
             }
 
-            .header-contact {
+            nav {
                 display: none;
             }
 
-            .page-hero {
-                padding: 130px 1.5rem 60px;
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
 
-            .page-hero-title {
-                font-size: 1.8rem;
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid #e8e8e8;
+                display: block;
+                color: var(--text-dark);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .kv-visual {
+                height: 40vh;
+                min-height: 300px;
+            }
+
+            .kv-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.2em;
+            }
+
+            .kv-content p {
+                font-size: 1rem;
+            }
+
+            .breadcrumb {
+                padding: 1rem 1.5rem;
+            }
+
+            .main-content {
+                padding: 50px 1.5rem;
             }
 
             .profile-section {
-                padding: 60px 1.5rem;
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .profile-image-area {
+                max-width: 320px;
+                margin: 0 auto;
             }
 
             .profile-image-wrapper::before {
@@ -833,16 +849,26 @@
                 left: 15px;
             }
 
+            .profile-name-card {
+                padding: 1.5rem;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
             .message-title {
                 font-size: 1.2rem;
             }
 
             .career-section {
-                padding: 60px 1.5rem;
+                margin-top: 50px;
+                padding: 50px 1.5rem;
             }
 
             .career-title {
                 font-size: 1.5rem;
+                margin-bottom: 2rem;
             }
 
             .cta-section {
@@ -853,108 +879,105 @@
                 padding: 2rem 1.5rem;
             }
 
+            .cta-card-title {
+                font-size: 1.5rem;
+            }
+
             .cta-card-buttons {
                 grid-template-columns: 1fr;
             }
 
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .footer_button .wrap {
+                padding: 0 1rem;
             }
 
-            .footer-nav {
-                grid-template-columns: repeat(2, 1fr);
+            .footer_button p {
+                font-size: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .email a,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1.2rem 1.5rem;
+                min-height: 70px;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
             }
 
             .floating-contact {
-                bottom: 5rem;
-                right: 1rem;
+                bottom: 80px;
+                right: 20px;
             }
 
-            .floating-btn {
-                width: 50px;
-                height: 50px;
-            }
-
-            .floating-btn svg {
-                width: 24px;
-                height: 24px;
-            }
-
-            .line-banner {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-nav {
-                grid-template-columns: 1fr;
+            .floating-contact a {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">
-                <img src="css/images/S__18145305.jpg" alt="藤垣法律事務所" class="logo-icon">
-                <div class="logo-text">
-                    <span class="logo-main">藤垣法律事務所</span>
-                    <span class="logo-sub">FUJIGAKI LAW OFFICE</span>
-                </div>
-            </a>
-            
-            <nav class="nav">
-                <a href="index.html" class="nav-link">
-                    <span class="nav-link-en">HOME</span>
-                    <span>ホーム</span>
-                </a>
-                <a href="service.html" class="nav-link">
-                    <span class="nav-link-en">SERVICE</span>
-                    <span>取扱分野</span>
-                </a>
-                <a href="message.html" class="nav-link">
-                    <span class="nav-link-en">MESSAGE</span>
-                    <span>代表挨拶</span>
-                </a>
-                <a href="access.html" class="nav-link">
-                    <span class="nav-link-en">ACCESS</span>
-                    <span>アクセス</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="nav-link-en">CONTACT</span>
-                    <span>お問い合わせ</span>
-                </a>
-            </nav>
-
-            <div class="header-contact">
-                <a href="tel:050-8889-5335" class="header-tel">
-                    <span class="header-tel-number">050-8889-5335</span>
-                    <span class="header-tel-time">受付時間：平日 9:00～18:00</span>
-                </a>
-                <a href="contact.html" class="header-btn">
-                    <span>無料相談予約</span>
-                </a>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
             </div>
-
-            <button class="mobile-menu-btn" aria-label="メニュー">
-                <span></span>
-                <span></span>
-                <span></span>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="service.html">取扱業務</a></li>
+                    <li><a href="case.html">解決事例</a></li>
+                    <li><a href="pricing.html">料金案内</a></li>
+                    <li><a href="profile.html" class="active">代表弁護士の想い</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="company.html">事務所概要</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+                <span class="menu-icon"></span>
             </button>
         </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <h1 class="page-hero-title">代表弁護士の想い</h1>
-        <p class="page-hero-subtitle">MESSAGE</p>
+    <!-- KVビジュアル -->
+    <section class="kv-visual">
+        <div class="kv-content">
+            <h1>MESSAGE</h1>
+            <p>代表弁護士の想い</p>
+        </div>
     </section>
 
-    <!-- Profile Section -->
-    <section class="profile-section">
-        <div class="profile-container">
+    <!-- パンくずリスト -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">ホーム</a></li>
+                <li>›</li>
+                <li>代表弁護士の想い</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="profile-section">
             <div class="profile-image-area">
                 <div class="profile-image-wrapper">
                     <img src="images/message.jpg" alt="代表弁護士 藤垣圭介" class="profile-image">
@@ -993,38 +1016,38 @@
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Career Section -->
+    <!-- 経歴セクション -->
     <section class="career-section">
         <div class="career-container">
             <h2 class="career-title">経歴</h2>
             <div class="career-timeline">
                 <div class="career-item">
-                    <p class="career-year">2010年</p>
+                    <p class="career-year">2010</p>
                     <p class="career-detail">早稲田大学法学部卒業</p>
                 </div>
                 <div class="career-item">
-                    <p class="career-year">2012年</p>
+                    <p class="career-year">2012</p>
                     <p class="career-detail">早稲田大学法科大学院修了</p>
                 </div>
                 <div class="career-item">
-                    <p class="career-year">2013年</p>
+                    <p class="career-year">2013</p>
                     <p class="career-detail">司法試験合格・司法修習修了（66期）</p>
                 </div>
                 <div class="career-item">
-                    <p class="career-year">2014年</p>
+                    <p class="career-year">2014</p>
                     <p class="career-detail">都内大手法律事務所入所</p>
                 </div>
                 <div class="career-item">
-                    <p class="career-year">2020年</p>
+                    <p class="career-year">2020</p>
                     <p class="career-detail">藤垣法律事務所開設（埼玉県さいたま市）</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTAセクション -->
     <section class="cta-section">
         <div class="cta-background">
             <img src="css/images/after-effect.png" alt="相談風景">
@@ -1061,78 +1084,62 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-main">
-                <div class="footer-info">
-                    <h3>藤垣法律事務所</h3>
-                    <p>
-                        〒330-0854<br>
-                        埼玉県さいたま市大宮区桜木町1-195-1<br>
-                        大宮ソラミチKOZ 4階
-                    </p>
-                    <a href="tel:050-8889-5335" class="footer-tel">050-8889-5335</a>
-                </div>
-                
-                <nav class="footer-nav">
-                    <div class="footer-nav-group">
-                        <h4>MENU</h4>
-                        <ul>
-                            <li><a href="index.html">ホーム</a></li>
-                            <li><a href="service.html">取扱分野</a></li>
-                            <li><a href="message.html">代表挨拶</a></li>
-                            <li><a href="access.html">アクセス</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav-group">
-                        <h4>SERVICE</h4>
-                        <ul>
-                            <li><a href="service.html#criminal">刑事事件</a></li>
-                            <li><a href="service.html#traffic">交通事故</a></li>
-                            <li><a href="service.html#divorce">離婚・男女問題</a></li>
-                            <li><a href="service.html#inheritance">相続問題</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-nav-group">
-                        <h4>CONTACT</h4>
-                        <ul>
-                            <li><a href="contact.html">お問い合わせ</a></li>
-                            <li><a href="https://page.line.me/209ivkpx" target="_blank" rel="noopener">LINE相談</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2025 藤垣法律事務所 All Rights Reserved.</p>
+    <!-- フッター -->
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="email sp">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="contact.html">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
     </footer>
 
-    <!-- Floating Contact -->
+    <!-- 固定お問い合わせボタン -->
     <div class="floating-contact">
-        <a href="tel:050-8889-5335" class="floating-btn floating-btn-tel" aria-label="電話する">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-        </a>
-        <a href="contact.html" class="floating-btn floating-btn-mail" aria-label="メールする">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="M22 6l-10 7L2 6"/>
-            </svg>
+        <a href="contact.html">無料相談予約</a>
+    </div>
+
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
         </a>
     </div>
 
-    <!-- LINE Banner (Mobile) -->
-    <div class="line-banner">
-        <div class="line-banner-inner">
-            <span class="line-banner-text">LINEでも相談受付中</span>
-            <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" class="line-banner-btn" target="_blank" rel="noopener">
-                友だち追加
-            </a>
-        </div>
-    </div>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            btn.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
 </body>
 </html>
