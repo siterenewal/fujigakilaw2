@@ -39,6 +39,40 @@
             letter-spacing: 0.05em;
         }
 
+        /* ===== h2スライドインアニメーション ===== */
+        .slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         /* ヘッダー */
         header {
             position: fixed;
@@ -1083,23 +1117,19 @@
             box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
         }
 
-        .access-detail-icon {
-            width: 50px;
-            height: 50px;
+        .access-detail-number {
+            width: 40px;
+            height: 40px;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-light);
+            background: var(--primary-color);
+            color: var(--white);
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
             border-radius: 50%;
-        }
-
-        .access-detail-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: none;
-            stroke: var(--primary-color);
-            stroke-width: 2;
         }
 
         .access-detail-title {
@@ -1929,15 +1959,11 @@
                 padding: 1.5rem;
             }
 
-            .access-detail-icon {
-                width: 45px;
-                height: 45px;
+            .access-detail-number {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
                 margin-bottom: 1rem;
-            }
-
-            .access-detail-icon svg {
-                width: 22px;
-                height: 22px;
             }
 
             .access-detail-title {
@@ -2142,7 +2168,7 @@
     <section class="reasons-message-d">
         <div class="reasons-message-bg-d"></div>
         <div class="reasons-message-container-d">
-            <div class="reasons-card reasons-card-left">
+            <div class="reasons-card reasons-card-left slide-in">
                 <p class="section-label">OUR PROMISE</p>
                 <h2 class="section-title">あなたの明日のために</h2>
                 <div class="reasons-card-content">
@@ -2160,7 +2186,7 @@
                 </div>
             </div>
             
-            <div class="reasons-card reasons-card-right">
+            <div class="reasons-card reasons-card-right slide-in">
                 <p class="reasons-highlight">「諦めないでほしい」</p>
                 <p class="reasons-text">
                     トラブルに巻き込まれて困っている方に、<br>
@@ -2174,7 +2200,7 @@
     <!-- 当事務所の特徴 -->
     <section class="features-section">
         <div class="section-container">
-            <div class="features-header">
+            <div class="features-header slide-in">
                 <h2>藤垣法律事務所の特徴</h2>
             </div>
             
@@ -2227,7 +2253,7 @@
                 <img src="css/images/services-bg.png" alt="法律の天秤">
             </div>
             <div class="services-content">
-                <div class="section-header">
+                <div class="section-header slide-in">
                     <p class="section-label">PRACTICE AREAS</p>
                     <h2 class="section-title">取扱分野</h2>
                 </div>
@@ -2257,7 +2283,7 @@
     <!-- 代表メッセージ -->
     <section class="message" style="padding: 100px 3rem;">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header slide-in">
                 <p class="section-label">MESSAGE</p>
                 <h2 class="section-title">藤垣法律事務所 代表弁護士の想い</h2>
             </div>
@@ -2283,7 +2309,7 @@
         </div>
         
         <div class="cta-card">
-            <h2 class="cta-card-title">無料相談のご案内</h2>
+            <h2 class="cta-card-title slide-in">無料相談のご案内</h2>
             <p class="cta-card-desc">
                 必要な情報は惜しみなくお伝えし、解決策をどこよりも丁寧に示します。
             </p>
@@ -2316,7 +2342,7 @@
     <!-- メディア掲載 -->
     <section class="media-section">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header slide-in">
                 <p class="section-label">MEDIA</p>
                 <h2 class="section-title">メディア掲載</h2>
             </div>
@@ -2369,7 +2395,7 @@
     <!-- アクセス -->
     <section class="access" style="padding:100px 3rem;">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header slide-in">
                 <p class="section-label">ACCESS</p>
                 <h2 class="section-title">アクセス</h2>
             </div>
@@ -2407,52 +2433,26 @@
                 <div class="access-details-grid">
                     <!-- 電車でお越しの場合 -->
                     <div class="access-detail-card">
-                        <div class="access-detail-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4" y="3" width="16" height="16" rx="2"/>
-                                <path d="M4 11h16"/>
-                                <path d="M12 3v8"/>
-                                <circle cx="8" cy="15" r="1"/>
-                                <circle cx="16" cy="15" r="1"/>
-                                <path d="M6 19l-2 3"/>
-                                <path d="M18 19l2 3"/>
-                            </svg>
-                        </div>
+                        <div class="access-detail-number">1</div>
                         <h4 class="access-detail-title">電車でお越しの場合</h4>
                         <p class="access-detail-text">
                             <span class="access-detail-highlight">大宮駅西口から徒歩3分</span><br>
-                            JR各線・東武野田線・ニューシャトルをご利用いただけます。
+                            各路線の大宮駅をご利用いただけます。西口を出て徒歩3分の好立地です。
                         </p>
                     </div>
 
                     <!-- お車でお越しの場合 -->
                     <div class="access-detail-card">
-                        <div class="access-detail-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                                <path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-                                <path d="M5 17H3v-6l2-5h12l2 5v6h-2m-6 0H9"/>
-                                <path d="M3 11h18"/>
-                            </svg>
-                        </div>
+                        <div class="access-detail-number">2</div>
                         <h4 class="access-detail-title">お車でお越しの場合</h4>
                         <p class="access-detail-text">
-                            付近に複数のコインパーキングがございます。<br>
-                            駐車場の割引サービス等はございませんので、予めご了承ください。
+                            付近に複数のコインパーキングがございます。お車でのご来所も便利です。
                         </p>
                     </div>
 
                     <!-- ご来所時の流れ -->
                     <div class="access-detail-card">
-                        <div class="access-detail-icon">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <path d="M9 3v18"/>
-                                <path d="M13 8h5"/>
-                                <path d="M13 12h5"/>
-                                <path d="M13 16h5"/>
-                            </svg>
-                        </div>
+                        <div class="access-detail-number">3</div>
                         <h4 class="access-detail-title">ご相談来所の際の流れ</h4>
                         <p class="access-detail-text">
                             エキスパートオフィス大宮受付にて、弊所宛ての旨お申し付けください。<br>
@@ -2553,6 +2553,25 @@
                     });
                 }
             });
+        });
+
+        // スクロールアニメーション（Intersection Observer）
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
