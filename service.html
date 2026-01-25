@@ -10,124 +10,16 @@
     <meta name="author" content="藤垣法律事務所">
     <meta name="robots" content="index, follow">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    
+    <!-- このページ専用のCSS -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #1e3a8a;
-            --primary-dark: #1e40af;
-            --primary-light: #3b82f6;
-            --accent-color: #60a5fa;
-            --text-dark: #1f2937;
-            --text-gray: #6b7280;
-            --bg-light: #f9fafb;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.8;
-            background-color: var(--white);
-            letter-spacing: 0.05em;
-        }
-
-        /* ヘッダー */
-        header {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 1.5rem;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-image {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .logo {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #555555;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-            letter-spacing: 0.08em;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: var(--primary-color);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .menu-icon {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: var(--primary-color);
-            position: relative;
-        }
-
-        .menu-icon::before,
-        .menu-icon::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 2px;
-            background: var(--primary-color);
-        }
-
-        .menu-icon::before { top: -8px; }
-        .menu-icon::after { bottom: -8px; }
-
         /* KVビジュアル */
         .kv-visual {
             margin-top: 80px;
@@ -439,225 +331,6 @@
             font-size: 0.95rem;
         }
 
-        /* フッター */
-        footer {
-            background-color: #0f172a;
-            color: white;
-            position: relative;
-        }
-
-        .footer_button {
-            background: var(--white);
-            padding: 2rem 0;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer_button .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer_button p {
-            text-align: center;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.15rem;
-            line-height: 1.6;
-        }
-
-        .footer_button_icon {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .footer_button_icon li {
-            flex: 1;
-            max-width: 300px;
-            min-width: 250px;
-        }
-
-        .footer_button_icon .tel a,
-        .footer_button_icon .tel,
-        .footer_button_icon .email a,
-        .footer_button_icon .email,
-        .footer_button_icon .line a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.0rem 1.5rem;
-            height: 100%;
-            min-height: 70px;
-            width: 100%;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-            gap: 0.3rem;
-            box-sizing: border-box;
-        }
-
-        .footer_button_icon .tel a,
-        .footer_button_icon .tel,
-        .footer_button_icon .email a,
-        .footer_button_icon .email {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .footer_button_icon .line a {
-            background: #00b900;
-            color: white;
-        }
-
-        .footer_button_icon .tel b {
-            font-size: 1.4rem;
-            letter-spacing: 0.1em;
-        }
-
-        .footer_button_icon .line a span {
-            display: block;
-            font-size: 0.85rem;
-            margin-top: 0.3rem;
-        }
-
-        .footer_button_icon li a:hover,
-        .footer_button_icon .tel:hover,
-        .footer_button_icon .email:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer_button_icon .email a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem 2.5rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-            gap: 0.5rem;
-        }
-
-        .footer_button_icon .email a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        address.copy {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            font-style: normal;
-        }
-
-        address.copy p {
-            margin-bottom: 0.5rem;
-        }
-
-        .privacypolicy a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .bengoshikai {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* 固定ボタン */
-        .floating-contact {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            z-index: 999;
-        }
-
-        .floating-contact a {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
-            transition: all 0.3s ease;
-            letter-spacing: 0.1em;
-        }
-
-        .floating-contact a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
-        }
-
-        /* LINEバナー */
-        #line-banner-container {
-            position: fixed;
-            z-index: 1000;
-        }
-
-        .line-banner-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #00b900;
-            color: #ffffff !important;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-            font-weight: bold;
-            text-decoration: none !important;
-            text-align: center;
-            transition: all 0.2s ease-in-out;
-        }
-
-        @media (min-width: 769px) {
-            #line-banner-container {
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
-                border-radius: 8px 0 0 8px;
-                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
-            }
-
-            .line-banner-link {
-                padding: 20px 15px;
-                font-size: 16px;
-                line-height: 1.5;
-                writing-mode: vertical-rl;
-            }
-
-            #line-banner-container:hover {
-                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
-                transform: translateY(-50%) translateX(-2px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            #line-banner-container {
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .line-banner-link {
-                padding: 15px 10px;
-                font-size: 16px;
-            }
-        }
-
         /* レスポンシブ */
         @media (max-width: 1024px) {
             .service-area-content {
@@ -677,41 +350,8 @@
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                padding: 1rem 1.5rem;
-            }
-
-            nav {
-                display: none;
-            }
-
-            nav.active {
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            nav.active ul {
-                flex-direction: column;
-                padding: 1rem;
-                gap: 0;
-            }
-
-            nav.active a {
-                padding: 1rem;
-                border-bottom: 1px solid #e8e8e8;
-                display: block;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .kv-visual {
+                margin-top: 70px;
                 height: 40vh;
                 min-height: 300px;
             }
@@ -757,84 +397,12 @@
                 width: 100%;
                 justify-content: center;
             }
-
-            .footer_button .wrap {
-                padding: 0 1rem;
-            }
-
-            .footer_button p {
-                font-size: 1rem;
-            }
-
-            .footer_button_icon {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .footer_button_icon li {
-                width: 100%;
-                max-width: 100%;
-                min-width: auto;
-            }
-
-            .footer_button_icon .tel a,
-            .footer_button_icon .email a,
-            .footer_button_icon .line a {
-                width: 100%;
-                padding: 1.2rem 1.5rem;
-                min-height: 70px;
-            }
-
-            .footer_button_icon .line a span {
-                display: none;
-            }
-
-            .floating-contact {
-                bottom: 80px;
-                right: 20px;
-            }
-
-            .floating-contact a {
-                padding: 1rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .sp { display: block; }
-            .pc { display: none; }
-        }
-
-        @media (min-width: 769px) {
-            .sp { display: none; }
-            .pc { display: block; }
         }
     </style>
 </head>
 <body>
     <!-- ヘッダー -->
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="css/images/S__18145305.jpg" alt="ロゴ" class="logo-image">
-                <a href="index.html" class="logo">藤垣法律事務所</a>
-            </div>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="index.html">ホーム</a></li>
-                    <li><a href="news.html">お知らせ</a></li>
-                    <li><a href="service.html" class="active">取扱分野</a></li>
-                    <li><a href="case.html">解決事例</a></li>
-                    <li><a href="pricing.html">料金案内</a></li>
-                    <li><a href="profile.html">代表弁護士の想い</a></li>
-                    <li><a href="column.html">コラム</a></li>
-                    <li><a href="company.html">事務所概要</a></li>
-                    <li><a href="contact.html">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
-                <span class="menu-icon"></span>
-            </button>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- KVビジュアル -->
     <section class="kv-visual">
@@ -855,380 +423,333 @@
         </div>
     </nav>
 
-    <!-- 刑事事件 -->
-    <section class="service-area" id="criminal">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">CRIMINAL DEFENSE</span>
-                <span class="jp">/ 刑事事件</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/arrest.png" alt="刑事事件">
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- 刑事事件 -->
+        <section class="service-area" id="criminal">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">CRIMINAL DEFENSE</span>
+                    <span class="jp">/ 刑事事件</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">刑事事件</h2>
-                    <p class="service-area-desc">
-                        刑事事件では，スピードが最も重要です。逮捕・勾留されてからの時間制限は厳格であり，早期の弁護活動開始が，不起訴や減刑など，より良い結果につながります。<br><br>
-                        当事務所では，刑事事件500件超の実績を持つ弁護士が，迅速に対応いたします。逮捕直後から示談交渉，公判対応まで，一貫してサポートします。
-                    </p>
-                    <div class="service-highlight-box">
-                        <p>24時間対応可能。逮捕されたらすぐにご連絡ください。</p>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/arrest.png" alt="刑事事件">
                     </div>
-                    <ul class="service-area-list">
-                        <li>痴漢・盗撮・わいせつ事件</li>
-                        <li>窃盗・万引き</li>
-                        <li>傷害・暴行事件</li>
-                        <li>詐欺・横領</li>
-                        <li>薬物犯罪</li>
-                        <li>交通犯罪（危険運転・ひき逃げ）</li>
-                        <li>少年事件</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=criminal" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#criminal" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">刑事事件</h2>
+                        <p class="service-area-desc">
+                            刑事事件では，スピードが最も重要です。逮捕・勾留されてからの時間制限は厳格であり，早期の弁護活動開始が，不起訴や減刑など，より良い結果につながります。<br><br>
+                            当事務所では，刑事事件500件超の実績を持つ弁護士が，迅速に対応いたします。逮捕直後から示談交渉，公判対応まで，一貫してサポートします。
+                        </p>
+                        <div class="service-highlight-box">
+                            <p>24時間対応可能。逮捕されたらすぐにご連絡ください。</p>
+                        </div>
+                        <ul class="service-area-list">
+                            <li>痴漢・盗撮・わいせつ事件</li>
+                            <li>窃盗・万引き</li>
+                            <li>傷害・暴行事件</li>
+                            <li>詐欺・横領</li>
+                            <li>薬物犯罪</li>
+                            <li>交通犯罪（危険運転・ひき逃げ）</li>
+                            <li>少年事件</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=criminal" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#criminal" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 交通事故 -->
-    <section class="service-area" id="traffic">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">TRAFFIC ACCIDENT</span>
-                <span class="jp">/ 交通事故</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/trafficaccident.png" alt="交通事故">
+        <!-- 交通事故 -->
+        <section class="service-area" id="traffic">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">TRAFFIC ACCIDENT</span>
+                    <span class="jp">/ 交通事故</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">交通事故</h2>
-                    <p class="service-area-desc">
-                        交通事故の被害に遭われた方の適正な賠償金獲得をサポートいたします。保険会社の提示額は，弁護士基準と比べて低いことがほとんどです。<br><br>
-                        当事務所では，交通事故1000件超の実績があり，後遺障害等級認定から示談交渉，訴訟まで，被害者の権利を最大限に守ります。
-                    </p>
-                    <div class="service-highlight-box">
-                        <p>着手金無料。弁護士費用特約をお使いの場合，自己負担なしで依頼可能です。</p>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/trafficaccident.png" alt="交通事故">
                     </div>
-                    <ul class="service-area-list">
-                        <li>保険会社との示談交渉</li>
-                        <li>後遺障害等級認定サポート</li>
-                        <li>慰謝料・逸失利益の請求</li>
-                        <li>休業損害の請求</li>
-                        <li>死亡事故の損害賠償</li>
-                        <li>過失割合の交渉</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=traffic" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#traffic" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">交通事故</h2>
+                        <p class="service-area-desc">
+                            交通事故の被害に遭われた方の適正な賠償金獲得をサポートいたします。保険会社の提示額は，弁護士基準と比べて低いことがほとんどです。<br><br>
+                            当事務所では，交通事故1000件超の実績があり，後遺障害等級認定から示談交渉，訴訟まで，被害者の権利を最大限に守ります。
+                        </p>
+                        <div class="service-highlight-box">
+                            <p>着手金無料。弁護士費用特約をお使いの場合，自己負担なしで依頼可能です。</p>
+                        </div>
+                        <ul class="service-area-list">
+                            <li>保険会社との示談交渉</li>
+                            <li>後遺障害等級認定サポート</li>
+                            <li>慰謝料・逸失利益の請求</li>
+                            <li>休業損害の請求</li>
+                            <li>死亡事故の損害賠償</li>
+                            <li>過失割合の交渉</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=traffic" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#traffic" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 離婚・男女問題 -->
-    <section class="service-area" id="divorce">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">DIVORCE / FAMILY LAW</span>
-                <span class="jp">/ 離婚・男女問題</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/laborissue.png" alt="離婚・男女問題">
+        <!-- 離婚・男女問題 -->
+        <section class="service-area" id="divorce">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">DIVORCE / FAMILY LAW</span>
+                    <span class="jp">/ 離婚・男女問題</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">離婚・男女問題</h2>
-                    <p class="service-area-desc">
-                        離婚問題は，感情的な対立が激しくなりがちです。当事務所では，依頼者の気持ちに寄り添いながら，冷静に最善の解決策を追求いたします。<br><br>
-                        財産分与，養育費，親権，慰謝料など，複雑な問題も経験豊富な弁護士が丁寧に対応します。
-                    </p>
-                    <ul class="service-area-list">
-                        <li>離婚協議・調停・訴訟</li>
-                        <li>財産分与</li>
-                        <li>養育費の請求・変更</li>
-                        <li>親権・面会交流</li>
-                        <li>不貞慰謝料請求</li>
-                        <li>婚姻費用分担請求</li>
-                        <li>DV・モラハラ問題</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=divorce" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#divorce" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/laborissue.png" alt="離婚・男女問題">
+                    </div>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">離婚・男女問題</h2>
+                        <p class="service-area-desc">
+                            離婚問題は，感情的な対立が激しくなりがちです。当事務所では，依頼者の気持ちに寄り添いながら，冷静に最善の解決策を追求いたします。<br><br>
+                            財産分与，養育費，親権，慰謝料など，複雑な問題も経験豊富な弁護士が丁寧に対応します。
+                        </p>
+                        <ul class="service-area-list">
+                            <li>離婚協議・調停・訴訟</li>
+                            <li>財産分与</li>
+                            <li>養育費の請求・変更</li>
+                            <li>親権・面会交流</li>
+                            <li>不貞慰謝料請求</li>
+                            <li>婚姻費用分担請求</li>
+                            <li>DV・モラハラ問題</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=divorce" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#divorce" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 犯罪被害 -->
-    <section class="service-area" id="crime-victim">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">CRIME VICTIM SUPPORT</span>
-                <span class="jp">/ 犯罪被害</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/divorce.png" alt="犯罪被害">
+        <!-- 犯罪被害 -->
+        <section class="service-area" id="crime-victim">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">CRIME VICTIM SUPPORT</span>
+                    <span class="jp">/ 犯罪被害</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">犯罪被害</h2>
-                    <p class="service-area-desc">
-                        犯罪被害に遭われた方の権利回復をサポートいたします。被害届の提出から，刑事告訴，損害賠償請求まで，被害者の立場に立って対応します。<br><br>
-                        刑事事件の豊富な経験を活かし，加害者への適切な対応と被害回復を実現します。
-                    </p>
-                    <ul class="service-area-list">
-                        <li>被害届・告訴状の作成</li>
-                        <li>損害賠償請求</li>
-                        <li>示談交渉</li>
-                        <li>被害者参加制度のサポート</li>
-                        <li>ストーカー被害対応</li>
-                        <li>性犯罪被害対応</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=criminal" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#crime-victim" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/divorce.png" alt="犯罪被害">
+                    </div>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">犯罪被害</h2>
+                        <p class="service-area-desc">
+                            犯罪被害に遭われた方の権利回復をサポートいたします。被害届の提出から，刑事告訴，損害賠償請求まで，被害者の立場に立って対応します。<br><br>
+                            刑事事件の豊富な経験を活かし，加害者への適切な対応と被害回復を実現します。
+                        </p>
+                        <ul class="service-area-list">
+                            <li>被害届・告訴状の作成</li>
+                            <li>損害賠償請求</li>
+                            <li>示談交渉</li>
+                            <li>被害者参加制度のサポート</li>
+                            <li>ストーカー被害対応</li>
+                            <li>性犯罪被害対応</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=criminal" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#crime-victim" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 相続問題 -->
-    <section class="service-area" id="inheritance">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">INHERITANCE</span>
-                <span class="jp">/ 相続問題</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/lastmessage.png" alt="相続問題">
+        <!-- 相続問題 -->
+        <section class="service-area" id="inheritance">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">INHERITANCE</span>
+                    <span class="jp">/ 相続問題</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">相続問題</h2>
-                    <p class="service-area-desc">
-                        相続は，家族間の争いに発展しやすい問題です。当事務所では，遺産分割協議から調停・審判まで，円満な解決を目指してサポートいたします。<br><br>
-                        また，将来の争いを防ぐための遺言書作成や，相続対策のアドバイスも行っています。
-                    </p>
-                    <ul class="service-area-list">
-                        <li>遺産分割協議・調停・審判</li>
-                        <li>遺言書作成</li>
-                        <li>遺留分侵害額請求</li>
-                        <li>相続放棄</li>
-                        <li>遺言執行</li>
-                        <li>相続財産調査</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=inheritance" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#inheritance" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/lastmessage.png" alt="相続問題">
+                    </div>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">相続問題</h2>
+                        <p class="service-area-desc">
+                            相続は，家族間の争いに発展しやすい問題です。当事務所では，遺産分割協議から調停・審判まで，円満な解決を目指してサポートいたします。<br><br>
+                            また，将来の争いを防ぐための遺言書作成や，相続対策のアドバイスも行っています。
+                        </p>
+                        <ul class="service-area-list">
+                            <li>遺産分割協議・調停・審判</li>
+                            <li>遺言書作成</li>
+                            <li>遺留分侵害額請求</li>
+                            <li>相続放棄</li>
+                            <li>遺言執行</li>
+                            <li>相続財産調査</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=inheritance" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#inheritance" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 借金問題 -->
-    <section class="service-area" id="debt">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">DEBT PROBLEMS</span>
-                <span class="jp">/ 借金問題</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/debt.png" alt="借金問題">
+        <!-- 借金問題 -->
+        <section class="service-area" id="debt">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">DEBT PROBLEMS</span>
+                    <span class="jp">/ 借金問題</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">借金問題</h2>
-                    <p class="service-area-desc">
-                        借金問題は，一人で抱え込まずに，早めにご相談ください。任意整理，個人再生，自己破産など，状況に応じた最適な解決方法をご提案いたします。<br><br>
-                        弁護士に依頼することで，取立てを止め，生活の再建を図ることができます。
-                    </p>
-                    <div class="service-highlight-box">
-                        <p>借金問題のご相談は何度でも無料です。</p>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/debt.png" alt="借金問題">
                     </div>
-                    <ul class="service-area-list">
-                        <li>任意整理</li>
-                        <li>個人再生</li>
-                        <li>自己破産</li>
-                        <li>過払い金請求</li>
-                        <li>時効援用</li>
-                        <li>住宅ローン問題</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html?category=debt" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#debt" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">借金問題</h2>
+                        <p class="service-area-desc">
+                            借金問題は，一人で抱え込まずに，早めにご相談ください。任意整理，個人再生，自己破産など，状況に応じた最適な解決方法をご提案いたします。<br><br>
+                            弁護士に依頼することで，取立てを止め，生活の再建を図ることができます。
+                        </p>
+                        <div class="service-highlight-box">
+                            <p>借金問題のご相談は何度でも無料です。</p>
+                        </div>
+                        <ul class="service-area-list">
+                            <li>任意整理</li>
+                            <li>個人再生</li>
+                            <li>自己破産</li>
+                            <li>過払い金請求</li>
+                            <li>時効援用</li>
+                            <li>住宅ローン問題</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html?category=debt" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#debt" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- その他金銭トラブル -->
-    <section class="service-area" id="money-trouble">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">MONEY TROUBLES</span>
-                <span class="jp">/ その他金銭トラブル</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/negotiation.png" alt="その他金銭トラブル">
+        <!-- その他金銭トラブル -->
+        <section class="service-area" id="money-trouble">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">MONEY TROUBLES</span>
+                    <span class="jp">/ その他金銭トラブル</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">その他金銭トラブル</h2>
-                    <p class="service-area-desc">
-                        上記以外にも，日常生活の中で生じ得る金銭トラブルは数多くありますが，いずれも弁護士が介入して仲裁を行うことで円滑な解決につながる場合は少なくありません。<br><br>
-                        当事務所では，金銭請求をされたい方，金銭請求を受けた方どちらのご相談もお受けすることが可能です。<br><br>
-                        金銭トラブルで確実な解決を図るためには，早期の対応が非常に重要となりますので，お困りの際はまず一度ご相談ください。
-                    </p>
-                    <ul class="service-area-list">
-                        <li>貸金返還請求</li>
-                        <li>売掛金・未払い金回収</li>
-                        <li>損害賠償請求</li>
-                        <li>敷金返還請求</li>
-                        <li>詐欺被害の回復</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#other" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/negotiation.png" alt="その他金銭トラブル">
+                    </div>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">その他金銭トラブル</h2>
+                        <p class="service-area-desc">
+                            上記以外にも，日常生活の中で生じ得る金銭トラブルは数多くありますが，いずれも弁護士が介入して仲裁を行うことで円滑な解決につながる場合は少なくありません。<br><br>
+                            当事務所では，金銭請求をされたい方，金銭請求を受けた方どちらのご相談もお受けすることが可能です。<br><br>
+                            金銭トラブルで確実な解決を図るためには，早期の対応が非常に重要となりますので，お困りの際はまず一度ご相談ください。
+                        </p>
+                        <ul class="service-area-list">
+                            <li>貸金返還請求</li>
+                            <li>売掛金・未払い金回収</li>
+                            <li>損害賠償請求</li>
+                            <li>敷金返還請求</li>
+                            <li>詐欺被害の回復</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#other" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 企業・個人顧問 -->
-    <section class="service-area" id="advisory">
-        <div class="service-area-inner">
-            <div class="service-area-label">
-                <span class="en">CORPORATE / PERSONAL COUNSEL</span>
-                <span class="jp">/ 企業・個人顧問</span>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-image">
-                    <img src="css/images/after-effect.png" alt="企業・個人顧問">
+        <!-- 企業・個人顧問 -->
+        <section class="service-area" id="advisory">
+            <div class="service-area-inner">
+                <div class="service-area-label">
+                    <span class="en">CORPORATE / PERSONAL COUNSEL</span>
+                    <span class="jp">/ 企業・個人顧問</span>
                 </div>
-                <div class="service-area-text">
-                    <h2 class="service-area-title">企業・個人顧問</h2>
-                    <p class="service-area-desc">
-                        日常業務におけるふとした疑問や課題を解消したり，トラブルを未然に予防したりするため，弁護士と継続的な関係を持つことは非常に有益です。<br><br>
-                        また，関係者内外で現実に紛争やトラブル，事件等が発生した場合，内情を把握した弁護士が速やかに解決を図ることで，損害を最小限にとどめ，将来にわたる悪影響を回避することも可能になりやすいところです。<br><br>
-                        当事務所では，企業又は個人の方から顧問のご依頼も承っており，日々発生するリーガルニーズに対して迅速かつ柔軟なご対応を行っております。
-                    </p>
-                    <ul class="service-area-list">
-                        <li>契約書の作成・チェック</li>
-                        <li>労務問題対応</li>
-                        <li>債権回収</li>
-                        <li>クレーム対応</li>
-                        <li>コンプライアンス</li>
-                        <li>日常的な法律相談</li>
-                    </ul>
-                    <div class="service-area-buttons">
-                        <a href="column.html" class="btn-service btn-primary">
-                            コラムを読む <span>→</span>
-                        </a>
-                        <a href="pricing.html#advisory" class="btn-service btn-outline">
-                            料金表を見る <span>→</span>
-                        </a>
+                <div class="service-area-content">
+                    <div class="service-area-image">
+                        <img src="css/images/after-effect.png" alt="企業・個人顧問">
+                    </div>
+                    <div class="service-area-text">
+                        <h2 class="service-area-title">企業・個人顧問</h2>
+                        <p class="service-area-desc">
+                            日常業務におけるふとした疑問や課題を解消したり，トラブルを未然に予防したりするため，弁護士と継続的な関係を持つことは非常に有益です。<br><br>
+                            また，関係者内外で現実に紛争やトラブル，事件等が発生した場合，内情を把握した弁護士が速やかに解決を図ることで，損害を最小限にとどめ，将来にわたる悪影響を回避することも可能になりやすいところです。<br><br>
+                            当事務所では，企業又は個人の方から顧問のご依頼も承っており，日々発生するリーガルニーズに対して迅速かつ柔軟なご対応を行っております。
+                        </p>
+                        <ul class="service-area-list">
+                            <li>契約書の作成・チェック</li>
+                            <li>労務問題対応</li>
+                            <li>債権回収</li>
+                            <li>クレーム対応</li>
+                            <li>コンプライアンス</li>
+                            <li>日常的な法律相談</li>
+                        </ul>
+                        <div class="service-area-buttons">
+                            <a href="column.html" class="btn-service btn-primary">
+                                コラムを読む <span>→</span>
+                            </a>
+                            <a href="pricing.html#advisory" class="btn-service btn-outline">
+                                料金表を見る <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- フッター -->
-    <footer>
-        <div class="footer_button">
-            <div class="wrap">
-                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
-                <p class="sp">平日 9:00～18:00（初回無料）</p>
-                <ul class="footer_button_icon">
-                    <li class="email sp">
-                        <a href="contact.html">
-                            メールで相談する
-                            <b>24時間受付中</b>
-                        </a>
-                    </li>
-                    <li class="line">
-                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
-                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
-                        </a>
-                    </li>
-                    <li class="tel pc">
-                        <a href="contact.html">
-                            電話で相談する
-                            <b>050-8889-5335</b>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <address class="copy">
-            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
-            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
-            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
-        </address>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <!-- 固定お問い合わせボタン -->
-    <div class="floating-contact">
-        <a href="contact.html">無料相談予約</a>
-    </div>
-
-    <!-- LINEバナー -->
-    <div id="line-banner-container">
-        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
-            <span>LINE 無料相談</span>
-        </a>
-    </div>
-
+    <!-- 共通JavaScript -->
+    <script src="js/components.js"></script>
+    
+    <!-- このページ専用のJavaScript -->
     <script>
-        // モバイルメニュー
-        function toggleMenu() {
-            const nav = document.getElementById('mainNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-            
-            nav.classList.toggle('active');
-            btn.setAttribute('aria-expanded', !isExpanded);
-        }
-
         // スクロールアニメーション
         document.addEventListener('DOMContentLoaded', function() {
             const observerOptions = {
