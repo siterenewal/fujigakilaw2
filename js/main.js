@@ -44,8 +44,6 @@ function loadHeader() {
             link.classList.add('active');
         }
     });
-    
-    console.log('ヘッダーを読み込みました');
 }
 
 // フッターを挿入
@@ -101,8 +99,6 @@ function loadFooter() {
     </div>
     `;
     footerPlaceholder.innerHTML = footerHTML;
-    
-    console.log('フッターを読み込みました');
 }
 
 // モバイルメニュー
@@ -115,7 +111,6 @@ function toggleMenu() {
 
 // ページ読み込み時に実行
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded 発火');
     loadHeader();
     loadFooter();
 });
