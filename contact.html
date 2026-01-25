@@ -68,8 +68,9 @@
             gap: 1rem;
         }
 
-        .logo-image {
-            height: 45px;
+        .logo-area img {
+            height: 60px;
+            max-height: 100%;
             width: auto;
             object-fit: contain;
         }
@@ -132,37 +133,6 @@
         .menu-icon::before { top: -8px; }
         .menu-icon::after { bottom: -8px; }
 
-        /* ページヘッダー */
-        .page-hero {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
-            color: white;
-            padding: 80px 3rem;
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.12em;
-        }
-
-        .page-hero-en {
-            font-family: 'Georgia', serif;
-            font-size: 1rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .page-hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
         /* KVビジュアル */
         .kv-visual {
             margin-top: 80px;
@@ -220,7 +190,6 @@
                 transform: translateY(0);
             }
         }
-
 
         /* パンくずリスト */
         .breadcrumb {
@@ -289,15 +258,15 @@
         }
 
         .contact-cv__tel {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
-}
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
 
         .contact-cv__tel:hover {
             opacity: 0.9;
@@ -317,7 +286,7 @@
             background: var(--bg-light);
             padding: 1.5rem 2rem;
             margin-bottom: 2rem;
-  list-style: none;
+            list-style: none;
         }
 
         .contact-notes__list {
@@ -454,6 +423,39 @@
             padding-right: 2.5rem;
         }
 
+        /* ラジオボタングループ */
+        .form-radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .form-radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .form-radio-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+
+        .form-radio-item span {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .form-radio-note {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
         /* 住所フィールド */
         .address-fields {
             display: flex;
@@ -520,7 +522,7 @@
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
- list-style: none;
+            list-style: none;
         }
 
         .form-agree__notes-item {
@@ -532,7 +534,6 @@
             line-height: 1.7;
         }
 
-        
         /* 送信ボタン */
         .form-submit {
             margin-top: 2.5rem;
@@ -577,8 +578,6 @@
             line-height: 1.8;
         }
 
-        
-        
         /* フッター */
         footer {
             background-color: #0f172a;
@@ -586,7 +585,6 @@
             position: relative;
         }
 
-        /* フッターボタンエリア */
         .footer_button {
             background: var(--white);
             padding: 2rem 0;
@@ -675,91 +673,28 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .footer_button_icon .email a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem 2.5rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-            gap: 0.5rem;
-        }
-
-        .footer_button_icon .email a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-
-      
-
-       /* コピーライト */
         address.copy {
-            text-align: center !important;
-            padding: 3rem 2rem !important;
-            color: rgba(255, 255, 255, 0.6) !important;
-            font-size: 0.9rem !important;
-            font-style: normal !important;
-            display: block !important;
-            width: 100% !important;
-            margin: 0 !important;
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
         }
 
         address.copy p {
-            text-align: center !important;
-            margin: 0 auto 0.5rem auto !important;
-        }
-
-        address.copy .privacypolicy {
-            margin-bottom: 1rem !important;
-        }
-
-        address.copy .privacypolicy a {
-            color: var(--accent-color) !important;
-            text-decoration: none !important;
-        }
-
-        address.copy .bengoshikai {
-            color: rgba(255, 255, 255, 0.7) !important;
-        }
-
-        .privacypolicy {
-            margin-bottom: 1rem !important;
-            text-align: center !important;
-            width: 100% !important;
+            margin-bottom: 0.5rem;
         }
 
         .privacypolicy a {
-            color: var(--accent-color) !important;
-            text-decoration: none !important;
-            transition: opacity 0.3s ease !important;
-        }
-
-        .privacypolicy a:hover {
-            opacity: 0.7 !important;
+            color: var(--accent-color);
+            text-decoration: none;
         }
 
         .bengoshikai {
-            margin-bottom: 0.5rem !important;
-            color: rgba(255, 255, 255, 0.7) !important;
-            text-align: center !important;
-            width: 100% !important;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .copyright {
-            margin: 0 !important;
-            text-align: center !important;
-            color: rgba(255, 255, 255, 0.6) !important;
-            width: 100% !important;
-        }
-
-       /* LINEバナー */
+        /* LINEバナー */
         #line-banner-container {
             position: fixed;
             z-index: 1000;
@@ -800,22 +735,7 @@
             }
         }
 
-        @media (max-width: 768px) {
-            #line-banner-container {
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .line-banner-link {
-                padding: 15px 10px;
-                font-size: 16px;
-            }
-        }
-
-
- /* 固定ボタン */
+        /* 固定ボタン */
         .floating-contact {
             position: fixed;
             bottom: 40px;
@@ -848,6 +768,10 @@
                 padding: 1rem 1.5rem;
             }
 
+            .logo-area img {
+                height: 40px;
+            }
+
             nav {
                 display: none;
             }
@@ -878,12 +802,19 @@
                 display: block;
             }
 
-            .page-hero {
-                padding: 60px 1.5rem;
+            .kv-visual {
+                margin-top: 70px;
+                height: 35vh;
+                min-height: 280px;
             }
 
-            .page-hero h1 {
-                font-size: 2rem;
+            .kv-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.2em;
+            }
+
+            .kv-content p {
+                font-size: 1rem;
             }
 
             .breadcrumb {
@@ -932,6 +863,11 @@
                 padding: 0 1rem 1.5rem;
             }
 
+            .form-radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             .address-row {
                 flex-direction: column;
                 align-items: stretch;
@@ -946,15 +882,6 @@
                 min-width: auto;
             }
 
-            .contact-other__buttons {
-                flex-direction: column;
-            }
-
-            .contact-other__btn {
-                width: 100%;
-            }
-
-            /* フッターレスポンシブ */
             .footer_button .wrap {
                 padding: 0 1rem;
             }
@@ -992,6 +919,18 @@
                 display: none;
             }
 
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .line-banner-link {
+                padding: 15px 10px;
+                font-size: 16px;
+            }
+
             .sp { display: block; }
             .pc { display: none; }
         }
@@ -1007,38 +946,35 @@
     <header>
         <div class="header-container">
             <div class="logo-area">
-                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <img src="css/images/S__18145305.jpg" alt="ロゴ">
                 <a href="index.html" class="logo">藤垣法律事務所</a>
             </div>
             <nav id="mainNav">
-    <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="news.html">お知らせ</a></li>
-        <li><a href="service.html">取扱分野</a></li>
-        <li><a href="case.html">解決事例</a></li>
-        <li><a href="pricing.html">料金案内</a></li>
-        <li><a href="profile.html" class="active">代表弁護士の想い</a></li>
-        <li><a href="column.html">コラム</a></li>
-        <li><a href="company.html">事務所概要</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-    </ul>
-</nav>
-
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="service.html">取扱分野</a></li>
+                    <li><a href="case.html">解決事例</a></li>
+                    <li><a href="pricing.html">料金案内</a></li>
+                    <li><a href="profile.html">代表弁護士の想い</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="company.html">事務所概要</a></li>
+                    <li><a href="contact.html" class="active">お問い合わせ</a></li>
+                </ul>
+            </nav>
             <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
                 <span class="menu-icon"></span>
             </button>
         </div>
     </header>
 
-   
-<!-- KVビジュアル -->
+    <!-- KVビジュアル -->
     <section class="kv-visual">
         <div class="kv-content">
             <h1>CONTACT</h1>
             <p>お問い合わせ</p>
         </div>
     </section>
-
 
     <!-- パンくずリスト -->
     <nav class="breadcrumb">
@@ -1201,6 +1137,31 @@
                         <tr>
                             <th>
                                 <div class="form-label-wrap">
+                                    ご希望の相談方法
+                                    <span class="form-label required">必須</span>
+                                </div>
+                            </th>
+                            <td>
+                                <div class="form-radio-group">
+                                    <label class="form-radio-item">
+                                        <input type="radio" name="consultation_method" value="ご来所" required>
+                                        <span>ご来所</span>
+                                    </label>
+                                    <label class="form-radio-item">
+                                        <input type="radio" name="consultation_method" value="お電話">
+                                        <span>お電話</span>
+                                    </label>
+                                    <label class="form-radio-item">
+                                        <input type="radio" name="consultation_method" value="オンライン（Zoom等）">
+                                        <span>オンライン（Zoom等）</span>
+                                    </label>
+                                </div>
+                                <p class="form-radio-note">※オンライン相談はZoom等のビデオ通話を使用いたします。詳細は担当者よりご案内いたします。</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="form-label-wrap">
                                     ご相談内容
                                     <span class="form-label required">必須</span>
                                 </div>
@@ -1261,8 +1222,8 @@
                 </ul>
             </form>
         </div>
- </section>
-       
+    </section>
+
     <!-- フッター -->
     <footer>
         <div class="footer_button">
@@ -1270,8 +1231,17 @@
                 <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
                 <p class="sp">平日 9:00～18:00（初回無料）</p>
                 <ul class="footer_button_icon">
-                    <li class="email sp">
-                        <a href="contact.html">メールで相談する<b>24時間受付中</b></a>
+                    <li class="tel sp">
+                        <a href="tel:05088895335">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                    <li class="email">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
                     </li>
                     <li class="line">
                         <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
@@ -1295,18 +1265,18 @@
         </address>
     </footer>
 
-<!-- LINEバナー -->
+    <!-- LINEバナー -->
     <div id="line-banner-container">
         <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
             <span>LINE 無料相談</span>
         </a>
     </div>
 
-
-     <!-- 固定お問い合わせボタン -->
+    <!-- 固定お問い合わせボタン -->
     <div class="floating-contact">
         <a href="contact.html">無料相談予約</a>
     </div>
+
     <script>
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
