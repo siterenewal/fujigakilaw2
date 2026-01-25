@@ -40,407 +40,316 @@
         }
 
         /* ヘッダー */
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color:#ffffff;
-    transition: all 0.3s ease;
-}
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color:#ffffff;
+            transition: all 0.3s ease;
+        }
 
-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
 
-.header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-}
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-.logo-area img {
-    height: 60px;
-    max-height: 100%;
-    width: auto;
-    object-fit: contain;
-}
+        .logo-area img {
+            height: 60px;
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
 
-.logo {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1e3b91;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-}
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3b91;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
 
-/* ナビゲーション */
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
+        /* ナビゲーション */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
 
-nav a {
-    text-decoration: none;
-    color: #1e3b91;
-    font-weight: 400;
-    font-size: 0.9rem;
-    transition: opacity 0.3s ease;
-    padding: 0.5rem 0;
-    letter-spacing: 0.08em;
-}
+        nav a {
+            text-decoration: none;
+            color: #1e3b91;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
 
-nav a:hover {
-    opacity: 0.7;
-}
+        nav a:hover {
+            opacity: 0.7;
+        }
 
-/* モバイルメニューボタン */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
+        /* モバイルメニューボタン */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
 
-.menu-icon {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: #ffffff;
-    position: relative;
-}
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
 
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 2px;
-    background: inherit;
-}
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: inherit;
+        }
 
-.menu-icon::before { top: -8px; }
-.menu-icon::after { bottom: -8px; }
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
 
-@media (max-width: 768px) {
-    .header-container {
-        padding: 1rem 1.5rem;
-    }
-
-    nav {
-        display: none;
-    }
-
-    nav.active {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    nav.active ul {
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0;
-    }
-
-    nav.active a {
-        padding: 1rem;
-        border-bottom: 1px solid #e8e8e8;
-        display: block;
-        color: var(--text-dark);
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-}
         /* ===== ヒーローセクション ===== */
-      .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
 
-/* 左側：濃紺背景エリア */
-.hero-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 55%;
-    height: 100%;
-    background: linear-gradient(135deg, #0f1a3d 0%, #1e3a8a 100%);
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
-    z-index: 2;
-}
+        /* 左側：濃紺背景エリア */
+        .hero-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f1a3d 0%, #1e3a8a 100%);
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+            z-index: 2;
+        }
 
-/* 右側：画像エリア */
-.hero-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    z-index: 1;
-}
+        /* 右側：画像エリア */
+        .hero-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+        }
 
-.hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+        .hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-/* アクセントライン（緑のライン） */
-.hero-accent-line {
-    position: absolute;
-    top: 0;
-    left: 52%;
-    width: 8px;
-    height: 100%;
-    background: var(--accent-green);
-    transform: skewX(-15deg);
-    z-index: 3;
-}
+        /* アクセントライン */
+        .hero-accent-line {
+            position: absolute;
+            top: 0;
+            left: 52%;
+            width: 8px;
+            height: 100%;
+            background: var(--accent-color);
+            transform: skewX(-15deg);
+            z-index: 3;
+        }
 
-/* コンテンツ */
-.hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4rem;
-    width: 100%;
-}
+        /* コンテンツ */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            width: 100%;
+        }
 
-.hero-inner-content {
-    max-width: 600px;
-    padding-top: 80px;
-}
+        .hero-inner-content {
+            max-width: 600px;
+            padding-top: 80px;
+        }
 
-.hero-title {
-    margin-bottom: 2rem;
-    font-size:2.8rem
-}
+        .hero-title {
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+        }
 
-.hero-title-en {
-    display: block;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-}
+        .hero-title-en {
+            display: block;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
 
-.hero-title-ja {
-    display: block;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.85);
-    letter-spacing: 0.15em;
-}
+        .hero-title-ja {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.15em;
+        }
 
-.hero-description {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 2;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
+        .hero-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            letter-spacing: 0.05em;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
 
-.hero-btn-wrap a {
-    background: #ffffff;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    max-width: 240px;
-    padding: 14px 30px;
-    color: #1e3a8a;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transform: skew(-10deg, 0deg);
-}
+        .hero-btn-wrap {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInFromLeft 0.3s ease-out 0.3s forwards;
+        }
 
-.hero-btn-wrap a span {
-    transform: skewX(10deg);
-}
+        @keyframes slideInFromLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-.hero-btn-wrap a:before {
-    content: "";
-    width: 35px;
-    height: 2px;
-    position: absolute;
-    right: -20px;
-    background: #1e3a8a;
-    top: 35%;
-    transition: 0.3s ease-in-out;
-}
+        .hero-btn-wrap a {
+            background: #ffffff;
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            max-width: 240px;
+            padding: 14px 30px;
+            color: #1e3a8a;
+            transition: 0.3s ease-in-out;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transform: skew(-10deg, 0deg);
+        }
 
-.hero-btn-wrap a:after {
-    content: "";
-    width: 20px;
-    height: 2px;
-    position: absolute;
-    right: -5px;
-    background: #1e3a8a;
-    top: 55%;
-    transition: 0.3s ease-in-out;
-}
+        .hero-btn-wrap a span {
+            transform: skewX(10deg);
+        }
 
-.hero-btn-wrap a:hover {
-    background: #0f1a3d;
-    color: #ffffff;
-    transform: skew(-10deg, 0deg) translateX(10px);
-}
+        .hero-btn-wrap a:before {
+            content: "";
+            width: 35px;
+            height: 2px;
+            position: absolute;
+            right: -20px;
+            background: #1e3a8a;
+            top: 35%;
+            transition: 0.3s ease-in-out;
+        }
 
-.hero-btn-wrap a:hover:before,
-.hero-btn-wrap a:hover:after {
-    transform: translateX(5px);
-    background: #ffffff;
-}
-.hero-btn-wrap {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideInFromLeft 0.3s ease-out 0.3s forwards;
-}
+        .hero-btn-wrap a:after {
+            content: "";
+            width: 20px;
+            height: 2px;
+            position: absolute;
+            right: -5px;
+            background: #1e3a8a;
+            top: 55%;
+            transition: 0.3s ease-in-out;
+        }
 
-@keyframes slideInFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+        .hero-btn-wrap a:hover {
+            background: #0f1a3d;
+            color: #ffffff;
+            transform: skew(-10deg, 0deg) translateX(10px);
+        }
 
-.hero-btn-wrap a {
-    background: #ffffff;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    max-width: 240px;
-    padding: 14px 30px;
-    color: #1e3a8a;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transform: skew(-10deg, 0deg);
-}
+        .hero-btn-wrap a:hover:before,
+        .hero-btn-wrap a:hover:after {
+            transform: translateX(5px);
+            background: #ffffff;
+        }
 
-.hero-btn-wrap a span {
-    transform: skewX(10deg);
-}
+        /* スクロールインジケーター */
+        .hero-scroll {
+            position: absolute;
+            bottom: 120px;
+            right: 4rem;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.hero-btn-wrap a:before {
-    content: "";
-    width: 35px;
-    height: 2px;
-    position: absolute;
-    right: -20px;
-    background: #1e3a8a;
-    top: 35%;
-    transition: 0.3s ease-in-out;
-}
+        .hero-scroll-text {
+            font-family: 'Georgia', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--text-gray);
+            margin-bottom: 0.8rem;
+            writing-mode: vertical-rl;
+        }
 
-.hero-btn-wrap a:after {
-    content: "";
-    width: 20px;
-    height: 2px;
-    position: absolute;
-    right: -5px;
-    background: #1e3a8a;
-    top: 55%;
-    transition: 0.3s ease-in-out;
-}
+        .hero-scroll-bar {
+            width: 1px;
+            height: 60px;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero-btn-wrap a:hover {
-    background: #0f1a3d;
-    color: #ffffff;
-    transform: skew(-10deg, 0deg) translateX(10px);
-}
+        .hero-scroll-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            animation: scrollDown 2s infinite;
+        }
 
-.hero-btn-wrap a:hover:before,
-.hero-btn-wrap a:hover:after {
-    transform: translateX(5px);
-    background: #ffffff;
-}
-
-/* スクロールインジケーター */
-.hero-scroll {
-    position: absolute;
-    bottom: 120px;
-    right: 4rem;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-scroll-text {
-    font-family: 'Georgia', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--text-gray);
-    margin-bottom: 0.8rem;
-    writing-mode: vertical-rl;
-}
-
-.hero-scroll-bar {
-    width: 1px;
-    height: 60px;
-    background: #ccc;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-scroll-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    animation: scrollDown 2s infinite;
-}
-
-@keyframes scrollDown {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-}
+        @keyframes scrollDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
 
         /* お知らせバナー */
         .news-banner {
@@ -675,18 +584,18 @@ nav a:hover {
             transition: all 0.3s ease;
         }
 
-.feature-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.06);
-    transition: all 0.3s ease;
-}
+        .feature-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.06);
+            transition: all 0.3s ease;
+        }
 
-.feature-card:hover {
-    box-shadow: 0 8px 30px rgba(30, 58, 138, 0.1);
-    transform: translateY(-5px);
-}
+        .feature-card:hover {
+            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.1);
+            transform: translateY(-5px);
+        }
 
         .feature-icon svg {
             width: 36px;
@@ -847,201 +756,172 @@ nav a:hover {
             font-weight: 500;
             margin-top: 2rem;
             font-size: 1rem;
-        }/* ===== CTAセクション（背景画像付き） ===== */
-.cta-section {
-    position: relative;
-    overflow: hidden;
-}
+        }
 
-.cta-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
+        /* ===== CTAセクション（背景画像付き） ===== */
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+        }
 
-.cta-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+        .cta-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
 
-.cta-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
-}
+        .cta-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-.cta-card {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.98);
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
+        .cta-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+        }
 
-.cta-card-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.1em;
-}
+        .cta-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.98);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
 
-.cta-card-desc {
-    font-size: 0.95rem;
-    color: var(--text-gray);
-    text-align: center;
-    line-height: 2;
-    margin-bottom: 3rem;
-}
+        .cta-card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
 
-.cta-card-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: stretch;
-}
+        .cta-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            text-align: center;
+            line-height: 2;
+            margin-bottom: 3rem;
+        }
 
-/* 電話ボタン */
-.cta-card-tel {
-    text-align: center;
-    padding: 1.5rem;
-    border: 2px solid var(--primary-color);
-    transition: all 0.3s ease;
-}
+        .cta-card-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
 
-.cta-card-tel:hover {
-    background: rgba(30, 58, 138, 0.03);
-}
+        /* 電話ボタン */
+        .cta-card-tel {
+            text-align: center;
+            padding: 1.5rem;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
 
-.cta-card-tel-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
+        .cta-card-tel:hover {
+            background: rgba(30, 58, 138, 0.03);
+        }
 
-.cta-card-tel-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: var(--primary-color);
-    stroke-width: 2;
-}
+        .cta-card-tel-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-.cta-card-tel-number {
-    font-family: 'Times New Roman', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--primary-color);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    display: block;
-    transition: opacity 0.3s ease;
-}
+        .cta-card-tel-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+        }
 
-.cta-card-tel-number:hover {
-    opacity: 0.7;
-}
+        .cta-card-tel-number {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
 
-.cta-card-tel-time {
-    font-size: 0.8rem;
-    color: var(--text-gray);
-    margin-top: 0.8rem;
-    line-height: 1.6;
-}
+        .cta-card-tel-number:hover {
+            opacity: 0.7;
+        }
 
-/* お問い合わせフォームボタン */
-.cta-card-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    background: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        .cta-card-tel-time {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 0.8rem;
+            line-height: 1.6;
+        }
 
-.cta-card-form:hover {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
-}
+        /* お問い合わせフォームボタン */
+        .cta-card-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.cta-card-form-icon {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 0.5rem;
-}
+        .cta-card-form:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+        }
 
-.cta-card-form-icon svg {
-    width: 22px;
-    height: 22px;
-    fill: none;
-    stroke: var(--white);
-    stroke-width: 2;
-}
+        .cta-card-form-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
 
-.cta-card-form-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-}
+        .cta-card-form-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--white);
+            stroke-width: 2;
+        }
 
-.cta-card-form-note {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 0.8rem;
-    text-align: center;
-    line-height: 1.6;
-}
+        .cta-card-form-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
 
-/* CTAセクション レスポンシブ */
-@media (max-width: 768px) {
-    .cta-section {
-        padding: 0;
-    }
-
-    .cta-card {
-        padding: 2.5rem 1.5rem;
-        margin: 0;
-        max-width: 100%;
-    }
-
-    .cta-card-title {
-        font-size: 1.4rem;
-    }
-
-    .cta-card-desc {
-        font-size: 0.9rem;
-        margin-bottom: 2rem;
-    }
-
-    .cta-card-buttons {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .cta-card-tel-number {
-        font-size: 1.5rem;
-    }
-}
+        .cta-card-form-note {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.8rem;
+            text-align: center;
+            line-height: 1.6;
+        }
 
         /* メディア掲載 */
         .media-section {
@@ -1064,6 +944,11 @@ nav a:hover {
             padding: 4rem 3rem;
             margin-bottom: 2rem;
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* メディアレイアウトの間隔調整 */
+        .media-layout + .media-layout {
+            margin-top: 3rem;
         }
 
         .media-content {
@@ -1096,6 +981,12 @@ nav a:hover {
 
         .media-image:hover img {
             transform: scale(1.02);
+        }
+
+        /* 弁護士ドットコム用 小さい画像 */
+        .media-image-small {
+            max-width: 50%;
+            margin: 0 auto 2.5rem;
         }
 
         .media-bottom {
@@ -1408,21 +1299,21 @@ nav a:hover {
 
         /* ===== レスポンシブ ===== */
         @media (max-width: 1024px) {
-            .hero-inner {
-                gap: 3rem;
+            .hero-left {
+                width: 60%;
+                clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
             }
-            
-            .hero-title-main {
-                font-size: 2.5rem;
+
+            .hero-right {
+                width: 55%;
             }
-            
-            .hero-image {
-                height: 500px;
+
+            .hero-accent-line {
+                left: 56%;
             }
-            
-            .hero-image::before {
-                top: 25px;
-                left: 25px;
+
+            .hero-title-en {
+                font-size: 3rem;
             }
 
             .services-layout,
@@ -1480,269 +1371,61 @@ nav a:hover {
                 display: block;
             }
 
-            /* ヒーロー */
+            /* ヒーロー（モバイル） */
             .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
+                min-height: 100vh;
+            }
 
-/* 左側：濃紺背景エリア */
-.hero-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 55%;
-    height: 100%;
-    background: linear-gradient(135deg, #0f1a3d 0%, #1e3a8a 100%);
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
-    z-index: 2;
-}
+            .hero-left {
+                width: 100%;
+                clip-path: polygon(0 0, 100% 0, 100% 65%, 0 75%);
+            }
 
-/* 右側：画像エリア */
-.hero-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    z-index: 1;
-}
+            .hero-right {
+                width: 100%;
+                height: 45%;
+                top: auto;
+                bottom: 80px;
+            }
 
-.hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+            .hero-accent-line {
+                display: none;
+            }
 
-/* アクセントライン（緑のライン） */
-.hero-accent-line {
-    position: absolute;
-    top: 0;
-    left: 52%;
-    width: 8px;
-    height: 100%;
-    background: var(--accent-green);
-    transform: skewX(-15deg);
-    z-index: 3;
-}
+            .hero-content {
+                padding: 0 1.5rem;
+                padding-top: 100px;
+            }
 
-/* コンテンツ */
-.hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4rem;
-    width: 100%;
-}
+            .hero-inner-content {
+                max-width: 100%;
+                text-align: center;
+            }
 
-.hero-inner-content {
-    max-width: 600px;
-    padding-top: 80px;
-}
+            .hero-title {
+                font-size: 2rem;
+            }
 
-.hero-title {
-    margin-bottom: 2rem;
-}
+            .hero-title-en {
+                font-size: 2.2rem;
+            }
 
-.hero-title-en {
-    display: block;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-}
+            .hero-title-ja {
+                font-size: 0.95rem;
+            }
 
-.hero-title-ja {
-    display: block;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.85);
-    letter-spacing: 0.15em;
-}
+            .hero-description {
+                font-size: 0.9rem;
+            }
 
-.hero-description {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 2;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-}
+            .hero-btn-wrap a {
+                justify-content: center;
+                margin: 0 auto;
+            }
 
-.hero-btn {
-    background: #ffffff;
-    position: relative;
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px 35px;
-    color: #1e3a8a;
-    transition: 0.3s ease-in-out;
-    font-weight: 600;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-}
-
-.hero-btn::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    border: 2px solid #60a5fa;
-    transition: 0.2s;
-}
-
-.hero-btn::after {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-top: 3px solid #1e3a8a;
-    border-right: 3px solid #1e3a8a;
-    transform: rotate(45deg);
-    margin-left: 10px;
-}
-
-.hero-btn:hover::before {
-    top: 0;
-    left: 0;
-}
-
-.hero-btn:hover {
-    background-color: #dbeafe;
-}
-
-/* スクロールインジケーター */
-.hero-scroll {
-    position: absolute;
-    bottom: 120px;
-    right: 4rem;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-scroll-text {
-    font-family: 'Georgia', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: var(--text-gray);
-    margin-bottom: 0.8rem;
-    writing-mode: vertical-rl;
-}
-
-.hero-scroll-bar {
-    width: 1px;
-    height: 60px;
-    background: #ccc;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-scroll-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    animation: scrollDown 2s infinite;
-}
-
-@keyframes scrollDown {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-}
-
-@media (max-width: 1024px) {
-    .hero-left {
-        width: 60%;
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
-    }
-
-    .hero-right {
-        width: 55%;
-    }
-
-    .hero-accent-line {
-        left: 56%;
-    }
-
-    .hero-title-en {
-        font-size: 3rem;
-    }
-
-    .hero-badge {
-        bottom: 150px;
-        left: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* ヒーロー（モバイル） */
-    .hero {
-        min-height: 100vh;
-    }
-
-    .hero-left {
-        width: 100%;
-        clip-path: polygon(0 0, 100% 0, 100% 65%, 0 75%);
-    }
-
-    .hero-right {
-        width: 100%;
-        height: 45%;
-        top: auto;
-        bottom: 80px;
-    }
-
-    .hero-accent-line {
-        display: none;
-    }
-
-    .hero-content {
-        padding: 0 1.5rem;
-        padding-top: 100px;
-    }
-
-    .hero-inner-content {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .hero-title-en {
-        font-size: 2.2rem;
-    }
-
-    .hero-title-ja {
-        font-size: 0.95rem;
-    }
-
-    .hero-description {
-        font-size: 0.9rem;
-    }
-
-    .hero-btn {
-        justify-content: center;
-    }
-
-    .hero-scroll {
-        display: none;
-    }
-}
+            .hero-scroll {
+                display: none;
+            }
 
             /* お知らせバナー */
             .news-banner {
@@ -1822,14 +1505,14 @@ nav a:hover {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
-            .feature-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background: #fefefe;
-    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.06);
-    transition: all 0.3s ease;
-}
 
+            .feature-card {
+                text-align: center;
+                padding: 2rem 1.5rem;
+                background: #fefefe;
+                box-shadow: 0 4px 20px rgba(30, 58, 138, 0.06);
+                transition: all 0.3s ease;
+            }
 
             .feature-icon {
                 width: 70px;
@@ -1874,34 +1557,31 @@ nav a:hover {
 
             /* CTA */
             .cta-section {
-                padding: 60px 1.5rem;
+                padding: 0;
             }
 
-            .cta-head {
-                font-size: 1.5rem;
+            .cta-card {
+                padding: 2.5rem 1.5rem;
+                margin: 0;
+                max-width: 100%;
             }
 
-            .cta-desc {
-                font-size: 0.95rem;
+            .cta-card-title {
+                font-size: 1.4rem;
             }
 
-            .cta-text {
-                font-size: 0.85rem;
+            .cta-card-desc {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
             }
 
-            .cta-cv {
-                flex-direction: column;
+            .cta-card-buttons {
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
-            .cta-cv-number a {
-                font-size: 1.8rem;
-            }
-
-            .cta-cv-btn {
-                width: 100%;
-                max-width: 320px;
-                min-width: auto;
+            .cta-card-tel-number {
+                font-size: 1.5rem;
             }
 
             /* メディア */
@@ -1916,6 +1596,11 @@ nav a:hover {
             
             .media-image {
                 margin-bottom: 2rem;
+            }
+
+            /* 弁護士ドットコム用 小さい画像（モバイル） */
+            .media-image-small {
+                max-width: 70%;
             }
             
             .media-desc {
@@ -2033,42 +1718,40 @@ nav a:hover {
     </header>
 
     <!-- ヒーローセクション -->
-    <!-- 新しいヒーローセクション（斜めカットデザイン） -->
-<section class="hero">
-    <!-- 左側：濃紺背景 -->
-    <div class="hero-left"></div>
-    
-    <!-- 右側：画像 -->
-    <div class="hero-right">
-        <img src="css/images/0722-25-scaled.jpg" alt="代表弁護士 藤垣圭介">
-    </div>
-    
-    <!-- アクセントライン -->
-    <div class="hero-accent-line"></div>
-    
-    <!-- コンテンツ -->
-    <div class="hero-content">
-        <div class="hero-inner-content">
-              <h1 class="hero-title">
-                    <span class="hero-title-main">大宮にある法律事務所<br>法律の力で<br>あなたの明日を守る</br>
-                </h1>
-            <p class="hero-description">
-                大宮の藤垣法律事務所は、刑事事件・交通事故を中心に<br>
-                スピードある弁護活動であなたの安心を守ります。
-            </p>
-    <div class="hero-btn-wrap">
-    <a href="contact.html"><span>無料相談のご予約 ></span></a>
-</div>
-</div>
-    </div>
+    <section class="hero">
+        <!-- 左側：濃紺背景 -->
+        <div class="hero-left"></div>
         
-    <!-- スクロールインジケーター -->
-    <div class="hero-scroll">
-        <p class="hero-scroll-text">Scroll</p>
-        <div class="hero-scroll-bar"></div>
-    </div>
+        <!-- 右側：画像 -->
+        <div class="hero-right">
+            <img src="css/images/0722-25-scaled.jpg" alt="代表弁護士 藤垣圭介">
+        </div>
+        
+        <!-- アクセントライン -->
+        <div class="hero-accent-line"></div>
+        
+        <!-- コンテンツ -->
+        <div class="hero-content">
+            <div class="hero-inner-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-main">大宮にある法律事務所<br>法律の力で<br>あなたの明日を守る</span>
+                </h1>
+                <p class="hero-description">
+                    大宮の藤垣法律事務所は、刑事事件・交通事故を中心に<br>
+                    スピードある弁護活動であなたの安心を守ります。
+                </p>
+                <div class="hero-btn-wrap">
+                    <a href="contact.html"><span>無料相談のご予約 ></span></a>
+                </div>
+            </div>
+        </div>
+            
+        <!-- スクロールインジケーター -->
+        <div class="hero-scroll">
+            <p class="hero-scroll-text">Scroll</p>
+            <div class="hero-scroll-bar"></div>
+        </div>
 
-   
         <div class="news-banner">
             <div class="news-banner-label">お知らせ</div>
             <ul class="news-banner-list">
@@ -2230,99 +1913,100 @@ nav a:hover {
     </section>
 
     <!-- CTA セクション -->
-<section class="cta-section">
-    <!-- 背景画像 -->
-    <div class="cta-background">
-        <img src="css/images/after-effect.png" alt="相談風景">
-    </div>
-    
-    <!-- 白いカード -->
-    <div class="cta-card">
-        <h2 class="cta-card-title">無料相談のご案内</h2>
-        <p class="cta-card-desc">
-            必要な情報は惜しみなくお伝えし、解決策をどこよりも丁寧に示します。
-        </p>
+    <section class="cta-section">
+        <!-- 背景画像 -->
+        <div class="cta-background">
+            <img src="css/images/after-effect.png" alt="相談風景">
+        </div>
         
-        <div class="cta-card-buttons">
-            <!-- 電話 -->
-            <div class="cta-card-tel">
-                <div class="cta-card-tel-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
+        <!-- 白いカード -->
+        <div class="cta-card">
+            <h2 class="cta-card-title">無料相談のご案内</h2>
+            <p class="cta-card-desc">
+                必要な情報は惜しみなくお伝えし、解決策をどこよりも丁寧に示します。
+            </p>
+            
+            <div class="cta-card-buttons">
+                <!-- 電話 -->
+                <div class="cta-card-tel">
+                    <div class="cta-card-tel-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <a href="tel:050-8889-5335" class="cta-card-tel-number">050-8889-5335</a>
+                    <p class="cta-card-tel-time">受付時間：平日 9:00～18:00</p>
                 </div>
-                <a href="tel:050-8889-5335" class="cta-card-tel-number">050-8889-5335</a>
-                <p class="cta-card-tel-time">受付時間：平日 9:00～18:00</p>
+                
+                <!-- お問い合わせフォーム -->
+                <a href="contact.html" class="cta-card-form">
+                    <div class="cta-card-form-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M22 6l-10 7L2 6"/>
+                        </svg>
+                        <span class="cta-card-form-text">ご相談受付フォーム</span>
+                    </div>
+                    <p class="cta-card-form-note">通常1〜2営業日以内に担当者から<br>ご連絡させていただきます</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- メディア掲載 -->
+    <section class="media-section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-label">MEDIA</p>
+                <h2 class="section-title">メディア掲載</h2>
             </div>
             
-            <!-- お問い合わせフォーム -->
-            <a href="contact.html" class="cta-card-form">
-                <div class="cta-card-form-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="M22 6l-10 7L2 6"/>
-                    </svg>
-                    <span class="cta-card-form-text">ご相談受付フォーム</span>
+            <!-- 経営者インタビュー -->
+            <div class="media-layout">
+                <div class="media-content">
+                    <h3 class="media-title">COMPANY TANK  経営者インタビュー</h3>
+                    
+                    <div class="media-image">
+                        <img src="css/images/company-tank.jpg" alt="COMPANY TANK 経営者インタビュー">
+                    </div>
+                    
+                    <div class="media-bottom">
+                        <p class="media-desc">
+                            依頼人に寄り添い法律問題を丁寧に解決。<br>
+                            スピーディな対応が光る弁護士事務所として<br>
+                            代表弁護士 藤垣圭介が紹介されました。
+                        </p>
+                        <a href="https://www.fujigakilaw.com/wp-content/uploads/2025/09/a1ebc34492af2fccd2d2a938d21cd5fa.pdf" class="media-btn media-btn-primary" target="_blank" rel="noopener">
+                            インタビューを読む<span>→</span>
+                        </a>
+                    </div>
                 </div>
-                <p class="cta-card-form-note">通常1〜2営業日以内に担当者から<br>ご連絡させていただきます</p>
-            </a>
-        </div>
-    </div>
-</section>
-    <!-- メディア掲載 -->
-<section class="media-section">
-    <div class="section-container">
-        <div class="section-header">
-            <p class="section-label">MEDIA</p>
-            <h2 class="section-title">メディア掲載</h2>
-        </div>
-        
-        <!-- 経営者インタビュー -->
-        <div class="media-layout">
-            <div class="media-content">
-                <h3 class="media-title">COMPANY TANK  経営者インタビュー</h3>
-                
-                <div class="media-image">
-                    <img src="css/images/company-tank.jpg" alt="COMPANY TANK 経営者インタビュー">
-                </div>
-                
-                <div class="media-bottom">
-                    <p class="media-desc">
-                        依頼人に寄り添い法律問題を丁寧に解決。<br>
-                        スピーディな対応が光る弁護士事務所として<br>
-                        代表弁護士 藤垣圭介が紹介されました。
-                    </p>
-                    <a href="https://www.fujigakilaw.com/wp-content/uploads/2025/09/a1ebc34492af2fccd2d2a938d21cd5fa.pdf" class="media-btn media-btn-primary" target="_blank" rel="noopener">
-                        インタビューを読む<span>→</span>
-                    </a>
+            </div>
+            
+            <!-- 弁護士ドットコム -->
+            <div class="media-layout">
+                <div class="media-content">
+                    <h3 class="media-title">弁護士ドットコム 掲載中</h3>
+                    
+                    <div class="media-image media-image-small">
+                        <a href="https://www.bengo4.com/saitama/a_11101/l_341848/" target="_blank" rel="noopener">
+                            <img src="css/images/banner200x40.avif" alt="弁護士ドットコム 藤垣法律事務所">
+                        </a>
+                    </div>
+                    
+                    <div class="media-bottom">
+                        <p class="media-desc">
+                            弁護士ドットコムに藤垣法律事務所が掲載されています。<br>
+                            事務所情報や解決事例をご覧いただけます。
+                        </p>
+                        <a href="https://www.bengo4.com/saitama/a_11101/l_341848/" class="media-btn media-btn-primary" target="_blank" rel="noopener">
+                            詳しく見る<span>→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <!-- 弁護士ドットコム -->
-        <div class="media-layout">
-            <div class="media-content">
-                <h3 class="media-title">弁護士ドットコム 掲載中</h3>
-                
-                <div class="media-image">
-                    <a href="https://www.bengo4.com/saitama/a_11101/l_341848/" target="_blank" rel="noopener">
-                        <img src="css/images/banner200x40.avif" alt="弁護士ドットコム 藤垣法律事務所">
-                    </a>
-                </div>
-                
-                <div class="media-bottom">
-                    <p class="media-desc">
-                        弁護士ドットコムに藤垣法律事務所が掲載されています。<br>
-                        事務所情報や解決事例をご覧いただけます。
-                    </p>
-                    <a href="https://www.bengo4.com/saitama/a_11101/l_341848/" class="media-btn media-btn-primary" target="_blank" rel="noopener">
-                        詳しく見る<span>→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- アクセス -->
     <section class="access" style="padding:100px 3rem;">
@@ -2416,7 +2100,6 @@ nav a:hover {
             nav.classList.toggle('active');
         }
 
-        
         // スムーススクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -2436,12 +2119,3 @@ nav a:hover {
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
