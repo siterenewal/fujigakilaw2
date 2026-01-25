@@ -277,17 +277,21 @@ address.copy p {
     z-index: 1000;
 }
 
+/* PC用のLINEバナーのみ縦書き */
+@media (min-width: 769px) {
+    #line-banner-container 
+
 .line-banner-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #00b900;
-    color: #ffffff !important;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-weight: bold;
-    text-decoration: none !important;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
+        padding: 20px 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        writing-mode: vertical-rl;
+    }
+}
+
+/* ナビゲーションは横書きを明示 */
+nav, nav ul, nav a {
+    writing-mode: horizontal-tb;
 }
 
 /* メインコンテンツ用（ヘッダー分の余白） */
