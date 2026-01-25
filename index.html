@@ -137,7 +137,6 @@
         .menu-icon::before { top: -8px; }
         .menu-icon::after { bottom: -8px; }
 
-        /* メニュー開閉時のアイコン変形 */
         .mobile-menu-btn.active .menu-icon {
             background: transparent;
         }
@@ -161,7 +160,6 @@
             overflow: hidden;
         }
 
-        /* 左側：濃紺背景エリア */
         .hero-left {
             position: absolute;
             top: 0;
@@ -173,7 +171,6 @@
             z-index: 2;
         }
 
-        /* 右側：画像エリア */
         .hero-right {
             position: absolute;
             top: 0;
@@ -190,7 +187,6 @@
             object-position: center;
         }
 
-        /* コンテンツ */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -208,6 +204,7 @@
         .hero-title {
             margin-bottom: 2rem;
             font-size: 2.8rem;
+            line-height: 1.5;
         }
 
         .hero-description {
@@ -1020,7 +1017,7 @@
             box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
         }
 
-        /* アクセス */
+        /* ===== アクセスセクション ===== */
         .access-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1062,6 +1059,73 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        /* アクセス詳細情報 */
+        .access-details {
+            margin-top: 4rem;
+        }
+
+        .access-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .access-detail-card {
+            background: var(--white);
+            padding: 2rem;
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+        }
+
+        .access-detail-card:hover {
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
+        }
+
+        .access-detail-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border-radius: 50%;
+        }
+
+        .access-detail-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+        }
+
+        .access-detail-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .access-detail-text {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .access-detail-highlight {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
 
         /* フッター */
@@ -1306,6 +1370,11 @@
             .features-grid {
                 gap: 2rem;
             }
+
+            .access-details-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1354,44 +1423,62 @@
                 display: block;
             }
 
-            /* ヒーロー（モバイル） */
+            /* ===== ヒーロー（モバイル） ===== */
             .hero {
                 min-height: 100vh;
-                min-height: 100dvh;
+                min-height: 100svh;
             }
 
             .hero-left {
                 width: 100%;
-                height: 60%;
-                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+                height: 55%;
+                clip-path: none;
+                background: linear-gradient(180deg, #0f1a3d 0%, #1e3a8a 100%);
             }
 
             .hero-right {
                 width: 100%;
-                height: 50%;
+                height: 55%;
                 top: auto;
-                bottom: 80px;
+                bottom: 0;
+            }
+
+            .hero-right::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 80px;
+                background: linear-gradient(to bottom, #1e3a8a 0%, transparent 100%);
+                z-index: 2;
             }
 
             .hero-content {
-                padding: 0 1.5rem;
-                padding-top: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                padding: 100px 1.5rem 0;
+                height: auto;
             }
 
             .hero-inner-content {
                 max-width: 100%;
+                padding-top: 0;
                 text-align: center;
             }
 
             .hero-title {
-                font-size: 1.8rem;
-                line-height: 1.6;
-                margin-bottom: 1.5rem;
+                font-size: 1.6rem;
+                line-height: 1.7;
+                margin-bottom: 1.2rem;
             }
 
             .hero-description {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 margin-bottom: 1.5rem;
+                line-height: 1.9;
             }
 
             .hero-description br {
@@ -1404,9 +1491,14 @@
             }
 
             .hero-btn-wrap a {
-                max-width: 220px;
-                padding: 12px 25px;
-                font-size: 0.9rem;
+                max-width: 200px;
+                padding: 12px 24px;
+                font-size: 0.85rem;
+                transform: none;
+            }
+
+            .hero-btn-wrap a span {
+                transform: none;
             }
 
             .hero-btn-wrap a:before,
@@ -1414,35 +1506,53 @@
                 display: none;
             }
 
+            .hero-btn-wrap a:hover {
+                transform: none;
+                background: #0f1a3d;
+                color: #ffffff;
+            }
+
             .hero-scroll {
                 display: none;
             }
 
-            /* お知らせバナー */
+            /* お知らせバナー（モバイル） */
             .news-banner {
                 flex-direction: column;
-                position: relative;
-                max-width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
             
             .news-banner-label {
-                padding: 0.8rem 1.5rem;
+                padding: 0.6rem 1rem;
                 min-width: auto;
+                font-size: 0.8rem;
             }
             
             .news-banner-list {
-                padding: 1rem 1.5rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .news-banner-item {
+                padding: 0.2rem 0;
             }
             
             .news-banner-link {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.3rem;
+                gap: 0.2rem;
+            }
+
+            .news-banner-date {
+                font-size: 0.75rem;
+                min-width: auto;
             }
 
             .news-banner-text {
-                font-size: 0.85rem;
-                line-height: 1.5;
+                font-size: 0.8rem;
+                line-height: 1.4;
             }
 
             /* あなたの明日のために */
@@ -1805,6 +1915,40 @@
                 height: 280px;
             }
 
+            /* アクセス詳細 */
+            .access-details {
+                margin-top: 2.5rem;
+            }
+
+            .access-details-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .access-detail-card {
+                padding: 1.5rem;
+            }
+
+            .access-detail-icon {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 1rem;
+            }
+
+            .access-detail-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .access-detail-title {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .access-detail-text {
+                font-size: 0.85rem;
+            }
+
             /* フッター */
             .footer_button {
                 padding: 1.5rem 0;
@@ -1889,13 +2033,17 @@
         /* 超小型デバイス */
         @media (max-width: 375px) {
             .hero-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+
+            .hero-description {
+                font-size: 0.8rem;
             }
 
             .hero-btn-wrap a {
-                max-width: 200px;
+                max-width: 180px;
                 padding: 10px 20px;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
 
             .reasons-card-left .section-title {
@@ -1945,15 +2093,12 @@
 
     <!-- ヒーローセクション -->
     <section class="hero">
-        <!-- 左側：濃紺背景 -->
         <div class="hero-left"></div>
         
-        <!-- 右側：画像 -->
         <div class="hero-right">
             <img src="css/images/0722-25-scaled.jpg" alt="代表弁護士 藤垣圭介">
         </div>
         
-        <!-- コンテンツ -->
         <div class="hero-content">
             <div class="hero-inner-content">
                 <h1 class="hero-title">
@@ -1969,7 +2114,6 @@
             </div>
         </div>
             
-        <!-- スクロールインジケーター -->
         <div class="hero-scroll">
             <p class="hero-scroll-text">Scroll</p>
             <div class="hero-scroll-bar"></div>
@@ -2255,6 +2399,66 @@
                 </div>
                 <div class="map-container">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.8!2d139.63!3d35.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDU0JzAwLjAiTiAxMznCsDM3JzQ4LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- アクセス詳細情報 -->
+            <div class="access-details">
+                <div class="access-details-grid">
+                    <!-- 電車でお越しの場合 -->
+                    <div class="access-detail-card">
+                        <div class="access-detail-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="3" width="16" height="16" rx="2"/>
+                                <path d="M4 11h16"/>
+                                <path d="M12 3v8"/>
+                                <circle cx="8" cy="15" r="1"/>
+                                <circle cx="16" cy="15" r="1"/>
+                                <path d="M6 19l-2 3"/>
+                                <path d="M18 19l2 3"/>
+                            </svg>
+                        </div>
+                        <h4 class="access-detail-title">電車でお越しの場合</h4>
+                        <p class="access-detail-text">
+                            <span class="access-detail-highlight">大宮駅西口から徒歩3分</span><br>
+                            JR各線・東武野田線・ニューシャトルをご利用いただけます。
+                        </p>
+                    </div>
+
+                    <!-- お車でお越しの場合 -->
+                    <div class="access-detail-card">
+                        <div class="access-detail-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+                                <path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+                                <path d="M5 17H3v-6l2-5h12l2 5v6h-2m-6 0H9"/>
+                                <path d="M3 11h18"/>
+                            </svg>
+                        </div>
+                        <h4 class="access-detail-title">お車でお越しの場合</h4>
+                        <p class="access-detail-text">
+                            付近に複数のコインパーキングがございます。<br>
+                            駐車場の割引サービス等はございませんので、予めご了承ください。
+                        </p>
+                    </div>
+
+                    <!-- ご来所時の流れ -->
+                    <div class="access-detail-card">
+                        <div class="access-detail-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 3v18"/>
+                                <path d="M13 8h5"/>
+                                <path d="M13 12h5"/>
+                                <path d="M13 16h5"/>
+                            </svg>
+                        </div>
+                        <h4 class="access-detail-title">ご相談来所の際の流れ</h4>
+                        <p class="access-detail-text">
+                            エキスパートオフィス大宮受付にて、弊所宛ての旨お申し付けください。<br>
+                            オフィス入口施錠時は、入口左手のタッチパネルで「藤垣法律事務所」をご選択いただければ内線でのご案内が可能です。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
