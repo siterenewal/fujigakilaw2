@@ -45,7 +45,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background-color:#ffffff;
+            background-color: #ffffff;
             transition: all 0.3s ease;
         }
 
@@ -121,6 +121,7 @@
             height: 2px;
             background: var(--primary-color);
             position: relative;
+            transition: all 0.3s ease;
         }
 
         .menu-icon::before,
@@ -130,10 +131,26 @@
             width: 25px;
             height: 2px;
             background: inherit;
+            transition: all 0.3s ease;
         }
 
         .menu-icon::before { top: -8px; }
         .menu-icon::after { bottom: -8px; }
+
+        /* メニュー開閉時のアイコン変形 */
+        .mobile-menu-btn.active .menu-icon {
+            background: transparent;
+        }
+
+        .mobile-menu-btn.active .menu-icon::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-btn.active .menu-icon::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
 
         /* ===== ヒーローセクション ===== */
         .hero {
@@ -173,18 +190,6 @@
             object-position: center;
         }
 
-        /* アクセントライン */
-        .hero-accent-line {
-            position: absolute;
-            top: 0;
-            left: 52%;
-            width: 8px;
-            height: 100%;
-            background: var(--accent-color);
-            transform: skewX(-15deg);
-            z-index: 3;
-        }
-
         /* コンテンツ */
         .hero-content {
             position: relative;
@@ -203,26 +208,6 @@
         .hero-title {
             margin-bottom: 2rem;
             font-size: 2.8rem;
-        }
-
-        .hero-title-en {
-            display: block;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 4rem;
-            font-weight: 400;
-            color: var(--white);
-            line-height: 1.2;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title-ja {
-            display: block;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
-            letter-spacing: 0.15em;
         }
 
         .hero-description {
@@ -758,7 +743,7 @@
             font-size: 1rem;
         }
 
-        /* ===== CTAセクション（背景画像付き） ===== */
+        /* ===== CTAセクション ===== */
         .cta-section {
             position: relative;
             overflow: hidden;
@@ -825,7 +810,6 @@
             align-items: stretch;
         }
 
-        /* 電話ボタン */
         .cta-card-tel {
             text-align: center;
             padding: 1.5rem;
@@ -875,7 +859,6 @@
             line-height: 1.6;
         }
 
-        /* お問い合わせフォームボタン */
         .cta-card-form {
             display: flex;
             flex-direction: column;
@@ -946,7 +929,6 @@
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
         }
 
-        /* メディアレイアウトの間隔調整 */
         .media-layout + .media-layout {
             margin-top: 3rem;
         }
@@ -983,7 +965,6 @@
             transform: scale(1.02);
         }
 
-        /* 弁護士ドットコム用 小さい画像 */
         .media-image-small {
             max-width: 50%;
             margin: 0 auto 2.5rem;
@@ -1308,14 +1289,6 @@
                 width: 55%;
             }
 
-            .hero-accent-line {
-                left: 56%;
-            }
-
-            .hero-title-en {
-                font-size: 3rem;
-            }
-
             .services-layout,
             .message-layout,
             .access-layout {
@@ -1340,6 +1313,14 @@
                 padding: 1rem 1.5rem;
             }
 
+            .logo-area img {
+                height: 40px;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
             nav {
                 display: none;
             }
@@ -1352,6 +1333,8 @@
                 right: 0;
                 background: white;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
             }
 
             nav.active ul {
@@ -1374,22 +1357,20 @@
             /* ヒーロー（モバイル） */
             .hero {
                 min-height: 100vh;
+                min-height: 100dvh;
             }
 
             .hero-left {
                 width: 100%;
-                clip-path: polygon(0 0, 100% 0, 100% 65%, 0 75%);
+                height: 60%;
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
             }
 
             .hero-right {
                 width: 100%;
-                height: 45%;
+                height: 50%;
                 top: auto;
                 bottom: 80px;
-            }
-
-            .hero-accent-line {
-                display: none;
             }
 
             .hero-content {
@@ -1403,24 +1384,34 @@
             }
 
             .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-title-en {
-                font-size: 2.2rem;
-            }
-
-            .hero-title-ja {
-                font-size: 0.95rem;
+                font-size: 1.8rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
             }
 
             .hero-description {
                 font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-description br {
+                display: none;
+            }
+
+            .hero-btn-wrap {
+                display: flex;
+                justify-content: center;
             }
 
             .hero-btn-wrap a {
-                justify-content: center;
-                margin: 0 auto;
+                max-width: 220px;
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+
+            .hero-btn-wrap a:before,
+            .hero-btn-wrap a:after {
+                display: none;
             }
 
             .hero-scroll {
@@ -1449,84 +1440,115 @@
                 gap: 0.3rem;
             }
 
+            .news-banner-text {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
             /* あなたの明日のために */
             .reasons-message-d {
-                padding: 60px 1.5rem;
+                padding: 60px 1rem;
                 min-height: auto;
             }
             
             .reasons-message-container-d {
                 min-height: auto;
+                padding: 0 0.5rem;
             }
             
             .reasons-card {
-                padding: 2rem;
+                padding: 1.5rem;
             }
             
             .reasons-card-left,
             .reasons-card-right {
                 align-self: center;
-                text-align: center;
+                text-align: left;
                 max-width: 100%;
             }
             
             .reasons-card-right {
-                margin-top: 2rem;
+                margin-top: 1.5rem;
+            }
+            
+            .reasons-card-left .section-label {
+                font-size: 0.75rem;
             }
             
             .reasons-card-left .section-title {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.8rem;
+            }
+
+            .reasons-card-left .reasons-lead {
+                font-size: 1rem;
+            }
+
+            .reasons-card-left .reasons-text {
+                font-size: 0.9rem;
+            }
+
+            .reasons-card-left .reasons-text br {
+                display: none;
             }
             
             .reasons-card-right .reasons-highlight {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+            }
+
+            .reasons-card-right .reasons-text {
+                font-size: 0.9rem;
+            }
+
+            .reasons-card-right .reasons-text br {
+                display: none;
             }
 
             /* 特徴セクション */
             .features-section {
-                padding: 60px 1.5rem;
+                padding: 60px 1rem;
             }
 
             .features-header {
-                padding: 1.2rem 1.5rem;
-                margin-bottom: 2rem;
+                padding: 1rem 1.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .features-header h2 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .features-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 3rem;
+                font-size: 0.85rem;
+                margin-bottom: 2.5rem;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 1.5rem;
             }
 
             .feature-card {
                 text-align: center;
-                padding: 2rem 1.5rem;
+                padding: 1.5rem 1rem;
                 background: #fefefe;
-                box-shadow: 0 4px 20px rgba(30, 58, 138, 0.06);
-                transition: all 0.3s ease;
             }
 
             .feature-icon {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 1.5rem;
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
             }
 
             .feature-icon svg {
-                width: 32px;
-                height: 32px;
+                width: 28px;
+                height: 28px;
             }
 
             .feature-card h3 {
-                font-size: 1.15rem;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
             }
 
             .feature-card p {
@@ -1534,25 +1556,99 @@
             }
 
             /* 取扱分野 */
-            .services-list {
+            .services {
+                padding: 60px 1rem !important;
+            }
+
+            .services-layout {
                 grid-template-columns: 1fr;
             }
 
-            .services-content {
-                padding: 2rem;
+            .services-image {
+                height: 200px;
             }
 
-            .services-image {
-                height: 250px;
+            .services-content {
+                padding: 2rem 1rem;
+            }
+
+            .services .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .services .section-label {
+                font-size: 0.75rem;
+            }
+
+            .services .section-title {
+                font-size: 1.5rem;
+            }
+
+            .services-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .service-item {
+                padding: 1.2rem;
+            }
+
+            .service-item h4 {
+                font-size: 1rem;
+            }
+
+            .service-item p {
+                font-size: 0.8rem;
+            }
+
+            .view-more-btn {
+                margin-top: 2rem;
+                padding: 0.8rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+                text-align: center;
             }
 
             /* 代表メッセージ */
+            .message {
+                padding: 60px 1rem !important;
+            }
+
+            .message .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .message .section-label {
+                font-size: 0.75rem;
+            }
+
+            .message .section-title {
+                font-size: 1.4rem;
+            }
+
             .message-layout {
+                grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
             .message-image {
-                height: 350px;
+                height: 280px;
+            }
+
+            .message-content h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .message-content p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .message-signature {
+                font-size: 0.9rem;
+                margin-top: 1.5rem;
             }
 
             /* CTA */
@@ -1561,17 +1657,17 @@
             }
 
             .cta-card {
-                padding: 2.5rem 1.5rem;
+                padding: 2rem 1.5rem;
                 margin: 0;
                 max-width: 100%;
             }
 
             .cta-card-title {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .cta-card-desc {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 margin-bottom: 2rem;
             }
 
@@ -1580,31 +1676,71 @@
                 gap: 1.5rem;
             }
 
+            .cta-card-tel {
+                padding: 1.2rem;
+            }
+
             .cta-card-tel-number {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+
+            .cta-card-tel-time {
+                font-size: 0.75rem;
+            }
+
+            .cta-card-form {
+                padding: 1.2rem;
+            }
+
+            .cta-card-form-text {
+                font-size: 1rem;
+            }
+
+            .cta-card-form-note {
+                font-size: 0.75rem;
             }
 
             /* メディア */
+            .media-section {
+                padding: 60px 1rem;
+            }
+
+            .media-section .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .media-section .section-label {
+                font-size: 0.75rem;
+            }
+
+            .media-section .section-title {
+                font-size: 1.5rem;
+            }
+
             .media-layout {
-                padding: 3rem 1.5rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .media-layout + .media-layout {
+                margin-top: 2rem;
             }
             
             .media-title {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
             }
             
             .media-image {
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
 
-            /* 弁護士ドットコム用 小さい画像（モバイル） */
             .media-image-small {
                 max-width: 70%;
             }
             
             .media-desc {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                text-align: center;
             }
             
             .media-desc br {
@@ -1614,29 +1750,78 @@
             .media-btn {
                 width: 100%;
                 justify-content: center;
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
             }
             
             .media-bottom {
                 flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            /* アクセス */
+            .access {
+                padding: 60px 1rem !important;
+            }
+
+            .access .section-header {
+                margin-bottom: 2rem;
+            }
+
+            .access .section-label {
+                font-size: 0.75rem;
+            }
+
+            .access .section-title {
+                font-size: 1.5rem;
+            }
+
+            .access-layout {
+                grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
-            .media-desc {
-                text-align: center;
+
+            .access-info h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .info-row {
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0.3rem;
+            }
+
+            .info-label {
+                font-size: 0.85rem;
+                min-width: auto;
+            }
+
+            .info-value {
+                font-size: 0.9rem;
+            }
+
+            .map-container {
+                height: 280px;
             }
 
             /* フッター */
+            .footer_button {
+                padding: 1.5rem 0;
+            }
+
             .footer_button .wrap {
                 padding: 0 1rem;
             }
 
             .footer_button p {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
             }
 
             .footer_button_icon {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
             }
 
             .footer_button_icon li {
@@ -1652,20 +1837,31 @@
             .footer_button_icon .line a {
                 width: 100%;
                 padding: 1rem 1.5rem;
+                min-height: 60px;
+            }
+
+            .footer_button_icon .tel b {
+                font-size: 1.2rem;
             }
 
             .footer_button_icon .line a span {
                 display: none;
             }
 
+            address.copy {
+                padding: 2rem 1rem;
+                font-size: 0.8rem;
+            }
+
             .floating-contact {
-                bottom: 80px;
-                right: 20px;
+                bottom: 70px;
+                right: 15px;
             }
 
             .floating-contact a {
-                padding: 1rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+                border-radius: 30px;
             }
 
             #line-banner-container {
@@ -1673,20 +1869,50 @@
                 left: 0;
                 width: 100%;
                 box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 0;
             }
             
             .line-banner-link {
-                padding: 15px 10px;
-                font-size: 16px;
+                padding: 12px 10px;
+                font-size: 14px;
             }
 
-            .sp { display: block; }
-            .pc { display: none; }
+            .sp { display: block !important; }
+            .pc { display: none !important; }
         }
 
         @media (min-width: 769px) {
-            .sp { display: none; }
+            .sp { display: none !important; }
             .pc { display: block; }
+        }
+
+        /* 超小型デバイス */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-btn-wrap a {
+                max-width: 200px;
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .reasons-card-left .section-title {
+                font-size: 1.2rem;
+            }
+
+            .reasons-card-right .reasons-highlight {
+                font-size: 1.1rem;
+            }
+
+            .cta-card-title {
+                font-size: 1.2rem;
+            }
+
+            .cta-card-tel-number {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -1711,7 +1937,7 @@
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="メニューを開く">
+            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="メニューを開く" aria-expanded="false">
                 <span class="menu-icon"></span>
             </button>
         </div>
@@ -1727,14 +1953,11 @@
             <img src="css/images/0722-25-scaled.jpg" alt="代表弁護士 藤垣圭介">
         </div>
         
-        <!-- アクセントライン -->
-        <div class="hero-accent-line"></div>
-        
         <!-- コンテンツ -->
         <div class="hero-content">
             <div class="hero-inner-content">
                 <h1 class="hero-title">
-                    <span class="hero-title-main">大宮にある法律事務所<br>法律の力で<br>あなたの明日を守る</span>
+                    大宮にある法律事務所<br>法律の力で<br>あなたの明日を守る
                 </h1>
                 <p class="hero-description">
                     大宮の藤垣法律事務所は、刑事事件・交通事故を中心に<br>
@@ -1814,7 +2037,6 @@
             <p class="features-subtitle">藤垣法律事務所は、こんな強みを持った事務所です。</p>
             
             <div class="features-grid">
-                <!-- 特徴1：柔軟な相談対応 -->
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1826,7 +2048,6 @@
                     <p>お問い合わせをいただければ、内容の緊急性や現在のご状況に応じた柔軟なご相談の実施が可能です。まずは一度、お気軽にご連絡ください。</p>
                 </div>
                 
-                <!-- 特徴2：大宮駅から徒歩3分 -->
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1841,7 +2062,6 @@
                     <p>大宮駅西口から徒歩3分。交通の便に優れ、各地からアクセスしやすい立地でご相談をお待ちしております。</p>
                 </div>
                 
-                <!-- 特徴3：経験と実績 -->
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1914,12 +2134,10 @@
 
     <!-- CTA セクション -->
     <section class="cta-section">
-        <!-- 背景画像 -->
         <div class="cta-background">
             <img src="css/images/after-effect.png" alt="相談風景">
         </div>
         
-        <!-- 白いカード -->
         <div class="cta-card">
             <h2 class="cta-card-title">無料相談のご案内</h2>
             <p class="cta-card-desc">
@@ -1927,7 +2145,6 @@
             </p>
             
             <div class="cta-card-buttons">
-                <!-- 電話 -->
                 <div class="cta-card-tel">
                     <div class="cta-card-tel-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1938,7 +2155,6 @@
                     <p class="cta-card-tel-time">受付時間：平日 9:00～18:00</p>
                 </div>
                 
-                <!-- お問い合わせフォーム -->
                 <a href="contact.html" class="cta-card-form">
                     <div class="cta-card-form-icon">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1961,7 +2177,6 @@
                 <h2 class="section-title">メディア掲載</h2>
             </div>
             
-            <!-- 経営者インタビュー -->
             <div class="media-layout">
                 <div class="media-content">
                     <h3 class="media-title">COMPANY TANK  経営者インタビュー</h3>
@@ -1983,7 +2198,6 @@
                 </div>
             </div>
             
-            <!-- 弁護士ドットコム -->
             <div class="media-layout">
                 <div class="media-content">
                     <h3 class="media-title">弁護士ドットコム 掲載中</h3>
@@ -2053,7 +2267,13 @@
                 <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
                 <p class="sp">平日 9:00～18:00（初回無料）</p>
                 <ul class="footer_button_icon">
-                    <li class="email sp">
+                    <li class="tel sp">
+                        <a href="tel:05088895335">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                    <li class="email">
                         <a href="contact.html">
                             メールで相談する
                             <b>24時間受付中</b>
@@ -2094,13 +2314,27 @@
     </div>
 
     <script>
-        // モバイルメニュー
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
+            const btn = document.getElementById('menuBtn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
             nav.classList.toggle('active');
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-expanded', !isExpanded);
         }
 
-        // スムーススクロール
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('mainNav');
+            const btn = document.getElementById('menuBtn');
+            
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
