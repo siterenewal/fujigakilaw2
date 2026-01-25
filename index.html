@@ -1052,6 +1052,11 @@
         }
 
         /* ===== アクセスセクション ===== */
+        .access .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .access-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1095,52 +1100,54 @@
             border: none;
         }
 
-        /* アクセス詳細 - 横長3列レイアウト */
+        /* ===== アクセス詳細 - 横長3列レイアウト ===== */
         .access-details-horizontal {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .access-detail-item-horizontal {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            background: #fff;
+            gap: 1.2rem;
+            background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         }
 
         .access-detail-check {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            background: #1a2744;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            background: var(--primary-color);
             color: #fff;
             border-radius: 50%;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             line-height: 1;
         }
 
         .access-detail-content h4 {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #1a2744;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
             margin: 0 0 0.5rem 0;
         }
 
         .access-detail-content p {
-            font-size: 0.9rem;
-            color: #444;
+            font-size: 0.95rem;
+            color: var(--text-gray);
             margin: 0;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
         /* フッター */
@@ -1926,14 +1933,19 @@
             }
 
             /* アクセス詳細（モバイル） */
+            .access-details-horizontal {
+                margin-top: 2rem;
+            }
+
             .access-detail-item-horizontal {
-                padding: 1rem;
+                padding: 1rem 1.2rem;
+                gap: 1rem;
             }
             
             .access-detail-check {
-                width: 28px;
-                height: 28px;
-                min-width: 28px;
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
                 font-size: 1rem;
             }
             
