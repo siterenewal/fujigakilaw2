@@ -1,9 +1,13 @@
+/* ===== 共通CSS: common.css ===== */
+
+/* リセット */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* CSS変数 */
 :root {
     --primary-color: #1e3a8a;
     --primary-dark: #1e40af;
@@ -15,9 +19,10 @@
     --white: #ffffff;
 }
 
+/* ベース */
 body {
     font-family: 'Noto Serif JP', serif;
-    color: #ffffff;
+    color: var(--text-dark);
     line-height: 1.8;
     background-color: var(--white);
     letter-spacing: 0.05em;
@@ -90,6 +95,10 @@ nav a:hover {
     opacity: 0.7;
 }
 
+nav a.active {
+    border-bottom: 2px solid var(--primary-color);
+}
+
 /* モバイルメニューボタン */
 .mobile-menu-btn {
     display: none;
@@ -113,7 +122,7 @@ nav a:hover {
     position: absolute;
     width: 25px;
     height: 2px;
-    background: inherit;
+    background: #1e3b91;
 }
 
 .menu-icon::before { top: -8px; }
@@ -281,7 +290,39 @@ address.copy p {
     transition: all 0.2s ease-in-out;
 }
 
-/* ===== レスポンシブ ===== */
+/* メインコンテンツ用（ヘッダー分の余白） */
+main {
+    padding-top: 100px;
+}
+
+/* セクション共通 */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    font-family: 'Georgia', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ===== PC用 ===== */
 @media (min-width: 769px) {
     #line-banner-container {
         top: 50%;
@@ -307,9 +348,18 @@ address.copy p {
     .pc { display: block; }
 }
 
+/* ===== モバイル用 ===== */
 @media (max-width: 768px) {
     .header-container {
         padding: 1rem 1.5rem;
+    }
+
+    .logo-area img {
+        height: 45px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
     }
 
     nav {
@@ -396,6 +446,10 @@ address.copy p {
     .line-banner-link {
         padding: 15px 10px;
         font-size: 16px;
+    }
+
+    main {
+        padding-top: 70px;
     }
 
     .sp { display: block; }
