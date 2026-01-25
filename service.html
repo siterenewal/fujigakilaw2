@@ -10,21 +10,169 @@
     <meta name="author" content="藤垣法律事務所">
     <meta name="robots" content="index, follow">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
-    <!-- 共通CSS -->
-    <link rel="stylesheet" href="/css/common.css">
-    <!-- このページ専用のCSS -->
+    
     <style>
-        /* KVビジュアル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            background-color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== スライドインアニメーション ===== */
+        .slide-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .slide-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ヘッダー ===== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-area img {
+            height: 60px;
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3b91;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e3b91;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+            padding: 0.5rem 0;
+            letter-spacing: 0.08em;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon::before { top: -8px; }
+        .menu-icon::after { bottom: -8px; }
+
+        .mobile-menu-btn.active .menu-icon {
+            background: transparent;
+        }
+
+        .mobile-menu-btn.active .menu-icon::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-btn.active .menu-icon::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+
+        /* ===== KVビジュアル ===== */
         .kv-visual {
-            margin-top: 80px;
-            height: 50vh;
-            min-height: 400px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(30, 64, 175, 0.9) 100%);
+            margin-top: 93px;
+            height: 45vh;
+            min-height: 350px;
+            background: linear-gradient(135deg, rgba(15, 26, 61, 0.95) 0%, rgba(30, 58, 138, 0.9) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -39,8 +187,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('images/service-bg.jpg') center/cover no-repeat;
-            opacity: 0.2;
+            background: url('css/images/services-bg.png') center/cover no-repeat;
+            opacity: 0.15;
         }
 
         .kv-content {
@@ -52,7 +200,7 @@
 
         .kv-content h1 {
             font-family: 'Georgia', serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 400;
             letter-spacing: 0.3em;
             margin-bottom: 1rem;
@@ -63,7 +211,7 @@
 
         .kv-content p {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             letter-spacing: 0.2em;
             opacity: 0;
             transform: translateY(20px);
@@ -77,7 +225,7 @@
             }
         }
 
-        /* パンくずリスト */
+        /* ===== パンくずリスト ===== */
         .breadcrumb {
             background-color: var(--bg-light);
             padding: 1rem 3rem;
@@ -101,13 +249,14 @@
         .breadcrumb-list a {
             color: var(--text-gray);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .breadcrumb-list a:hover {
             color: var(--primary-color);
         }
 
-        /* 業務セクション - 交互レイアウト */
+        /* ===== 業務セクション ===== */
         .service-area {
             padding: 100px 0;
             position: relative;
@@ -238,6 +387,7 @@
             line-height: 2.2;
             font-weight: 300;
             margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
         .service-area-list {
@@ -330,7 +480,350 @@
             font-size: 0.95rem;
         }
 
-        /* レスポンシブ */
+        /* ===== CTAセクション ===== */
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .cta-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: linear-gradient(135deg, #0f1a3d 0%, #1e3a8a 100%);
+        }
+
+        .cta-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('css/images/after-effect.png') center/cover no-repeat;
+            opacity: 0.1;
+        }
+
+        .cta-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.98);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            text-align: center;
+            line-height: 2;
+            margin-bottom: 3rem;
+        }
+
+        .cta-card-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .cta-card-tel {
+            text-align: center;
+            padding: 1.5rem;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .cta-card-tel:hover {
+            background: rgba(30, 58, 138, 0.03);
+        }
+
+        .cta-card-tel-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-card-tel-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--primary-color);
+            stroke-width: 2;
+        }
+
+        .cta-card-tel-number {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-card-tel-number:hover {
+            opacity: 0.7;
+        }
+
+        .cta-card-tel-time {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .cta-card-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-card-form:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .cta-card-form-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-card-form-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: var(--white);
+            stroke-width: 2;
+        }
+
+        .cta-card-form-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-card-form-note {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.8rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* ===== フッター ===== */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            position: relative;
+        }
+
+        .footer_button {
+            background: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer_button .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer_button p {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .footer_button_icon {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer_button_icon li {
+            flex: 1;
+            max-width: 300px;
+            min-width: 250px;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email,
+        .footer_button_icon .line a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.0rem 1.5rem;
+            height: 100%;
+            min-height: 70px;
+            width: 100%;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            gap: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .footer_button_icon .tel a,
+        .footer_button_icon .tel,
+        .footer_button_icon .email a,
+        .footer_button_icon .email {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer_button_icon .line a {
+            background: #00b900;
+            color: white;
+        }
+
+        .footer_button_icon .tel b {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer_button_icon .line a span {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .footer_button_icon li a:hover,
+        .footer_button_icon .tel:hover,
+        .footer_button_icon .email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        address.copy {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        address.copy p {
+            margin-bottom: 0.5rem;
+        }
+
+        .privacypolicy a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .bengoshikai {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ===== 固定ボタン ===== */
+        .floating-contact {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 999;
+        }
+
+        .floating-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.1em;
+        }
+
+        .floating-contact a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* ===== LINEバナー ===== */
+        #line-banner-container {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .line-banner-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00b900;
+            color: #ffffff !important;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none !important;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        @media (min-width: 769px) {
+            #line-banner-container {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border-radius: 8px 0 0 8px;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .line-banner-link {
+                padding: 20px 15px;
+                font-size: 16px;
+                line-height: 1.5;
+                writing-mode: vertical-rl;
+            }
+
+            #line-banner-container:hover {
+                box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.25);
+                transform: translateY(-50%) translateX(-2px);
+            }
+        }
+
+        /* ===== レスポンシブ ===== */
         @media (max-width: 1024px) {
             .service-area-content {
                 flex-direction: column !important;
@@ -346,26 +839,79 @@
             .service-area-text.visible {
                 transform: translateY(0) !important;
             }
+
+            .cta-card-buttons {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo-area img {
+                height: 40px;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            nav.active ul {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            nav.active a {
+                padding: 1rem;
+                border-bottom: 1px solid #e8e8e8;
+                display: block;
+                color: var(--text-dark);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .kv-visual {
                 margin-top: 70px;
-                height: 40vh;
-                min-height: 300px;
+                height: 35vh;
+                min-height: 280px;
             }
 
             .kv-content h1 {
-                font-size: 2.5rem;
-                letter-spacing: 0.2em;
+                font-size: 2rem;
+                letter-spacing: 0.15em;
             }
 
             .kv-content p {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .breadcrumb {
-                padding: 1rem 1.5rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .breadcrumb-list {
+                font-size: 0.8rem;
             }
 
             .service-area {
@@ -376,8 +922,23 @@
                 padding: 0 1.5rem;
             }
 
+            .service-area-label {
+                margin-bottom: 2rem;
+            }
+
+            .service-area-label .en {
+                font-size: 0.8rem;
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+
+            .service-area-label .jp {
+                margin-left: 0;
+                font-size: 1rem;
+            }
+
             .service-area-image img {
-                height: 280px;
+                height: 250px;
             }
 
             .service-area-image::after {
@@ -385,7 +946,28 @@
             }
 
             .service-area-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            .service-area-desc {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-area-list li {
+                font-size: 0.9rem;
+                padding: 0.7rem 0;
+                padding-left: 1.5rem;
+            }
+
+            .service-highlight-box {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .service-highlight-box p {
+                font-size: 0.9rem;
             }
 
             .service-area-buttons {
@@ -395,13 +977,183 @@
             .btn-service {
                 width: 100%;
                 justify-content: center;
+                padding: 0.9rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-section {
+                padding: 0;
+            }
+
+            .cta-card {
+                padding: 2rem 1.5rem;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .cta-card-title {
+                font-size: 1.3rem;
+            }
+
+            .cta-card-desc {
+                font-size: 0.85rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-card-buttons {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cta-card-tel {
+                padding: 1.2rem;
+            }
+
+            .cta-card-tel-number {
+                font-size: 1.4rem;
+            }
+
+            .cta-card-tel-time {
+                font-size: 0.75rem;
+            }
+
+            .cta-card-form {
+                padding: 1.2rem;
+            }
+
+            .cta-card-form-text {
+                font-size: 1rem;
+            }
+
+            .cta-card-form-note {
+                font-size: 0.75rem;
+            }
+
+            .footer_button {
+                padding: 1.5rem 0;
+            }
+
+            .footer_button .wrap {
+                padding: 0 1rem;
+            }
+
+            .footer_button p {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer_button_icon {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .footer_button_icon li {
+                width: 100%;
+                max-width: 100%;
+                min-width: auto;
+            }
+
+            .footer_button_icon .tel a,
+            .footer_button_icon .tel,
+            .footer_button_icon .email a,
+            .footer_button_icon .email,
+            .footer_button_icon .line a {
+                width: 100%;
+                padding: 1rem 1.5rem;
+                min-height: 60px;
+            }
+
+            .footer_button_icon .tel b {
+                font-size: 1.2rem;
+            }
+
+            .footer_button_icon .line a span {
+                display: none;
+            }
+
+            address.copy {
+                padding: 2rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .floating-contact {
+                bottom: 70px;
+                right: 15px;
+            }
+
+            .floating-contact a {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+                border-radius: 30px;
+            }
+
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 0;
+            }
+            
+            .line-banner-link {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+
+            .sp { display: block !important; }
+            .pc { display: none !important; }
+        }
+
+        @media (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc { display: block; }
+        }
+
+        @media (max-width: 375px) {
+            .kv-content h1 {
+                font-size: 1.7rem;
+            }
+
+            .service-area-title {
+                font-size: 1.3rem;
+            }
+
+            .cta-card-title {
+                font-size: 1.2rem;
+            }
+
+            .cta-card-tel-number {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- ヘッダー -->
-    <div id="header-placeholder"></div>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="css/images/S__18145305.jpg" alt="ロゴ">
+                <a href="index.html" class="logo">藤垣法律事務所</a>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="service.html" class="active">取扱分野</a></li>
+                    <li><a href="case.html">解決事例</a></li>
+                    <li><a href="pricing.html">料金案内</a></li>
+                    <li><a href="profile.html">代表弁護士の想い</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="company.html">事務所概要</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="メニューを開く" aria-expanded="false">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
 
     <!-- KVビジュアル -->
     <section class="kv-visual">
@@ -739,16 +1491,121 @@
                 </div>
             </div>
         </section>
+
+        <!-- CTA セクション -->
+        <section class="cta-section">
+            <div class="cta-background"></div>
+            
+            <div class="cta-card">
+                <h2 class="cta-card-title slide-in">無料相談のご案内</h2>
+                <p class="cta-card-desc">
+                    お困りごとがございましたら、まずはお気軽にご相談ください。<br>
+                    経験豊富な弁護士が、最善の解決策をご提案いたします。
+                </p>
+                
+                <div class="cta-card-buttons">
+                    <div class="cta-card-tel">
+                        <div class="cta-card-tel-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <a href="tel:050-8889-5335" class="cta-card-tel-number">050-8889-5335</a>
+                        <p class="cta-card-tel-time">受付時間：平日 9:00～18:00</p>
+                    </div>
+                    
+                    <a href="contact.html" class="cta-card-form">
+                        <div class="cta-card-form-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 6l-10 7L2 6"/>
+                            </svg>
+                            <span class="cta-card-form-text">ご相談受付フォーム</span>
+                        </div>
+                        <p class="cta-card-form-note">通常1〜2営業日以内に担当者から<br>ご連絡させていただきます</p>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- フッター -->
-    <div id="footer-placeholder"></div>
+    <footer>
+        <div class="footer_button">
+            <div class="wrap">
+                <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
+                <p class="sp">平日 9:00～18:00（初回無料）</p>
+                <ul class="footer_button_icon">
+                    <li class="tel sp">
+                        <a href="tel:05088895335">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                    <li class="email">
+                        <a href="contact.html">
+                            メールで相談する
+                            <b>24時間受付中</b>
+                        </a>
+                    </li>
+                    <li class="line">
+                        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="nofollow noopener">
+                            LINEで相談する<span class="pc">※QRコードが表示されます</span>
+                        </a>
+                    </li>
+                    <li class="tel pc">
+                        <a href="contact.html">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <address class="copy">
+            <p class="privacypolicy">[<a href="privacy.html">プライバシーポリシー</a>]</p>
+            <p class="bengoshikai">埼玉弁護士会所属 藤垣法律事務所 代表弁護士 藤垣圭介</p>
+            <p class="copyright">&copy; 2025 藤垣法律事務所.</p>
+        </address>
+    </footer>
 
-    <!-- 共通JavaScript -->
-    <script src="js/components.js"></script>
-    
-    <!-- このページ専用のJavaScript -->
+    <!-- 固定お問い合わせボタン -->
+    <div class="floating-contact">
+        <a href="contact.html">無料相談予約</a>
+    </div>
+
+    <!-- LINEバナー -->
+    <div id="line-banner-container">
+        <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
+            <span>LINE 無料相談</span>
+        </a>
+    </div>
+
     <script>
+        // モバイルメニュー
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            const btn = document.getElementById('menuBtn');
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+            btn.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('mainNav');
+            const btn = document.getElementById('menuBtn');
+            
+            if (!nav.contains(e.target) && !btn.contains(e.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
         // スクロールアニメーション
         document.addEventListener('DOMContentLoaded', function() {
             const observerOptions = {
@@ -761,16 +1618,34 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        entry.target.classList.add('active');
                     }
                 });
             }, observerOptions);
 
-            // 監視対象の要素を取得
-            const animateElements = document.querySelectorAll('.service-area-label, .service-area-image, .service-area-text');
+            // 監視対象の要素
+            const animateElements = document.querySelectorAll('.service-area-label, .service-area-image, .service-area-text, .slide-in');
             animateElements.forEach(el => observer.observe(el));
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
 </html>
-
-
