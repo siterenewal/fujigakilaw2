@@ -65,8 +65,9 @@
             gap: 1rem;
         }
 
-        .logo-image {
-            height: 45px;
+        .logo-area img {
+            height: 60px;
+            max-height: 100%;
             width: auto;
             object-fit: contain;
         }
@@ -232,8 +233,9 @@
             align-items: start;
         }
 
-        .profile-image-area {
-            position: relative;
+        .profile-left-column {
+            position: sticky;
+            top: 120px;
         }
 
         .profile-image-wrapper {
@@ -291,6 +293,54 @@
             margin-top: 0.5rem;
         }
 
+        /* 経歴セクション（左カラム内） */
+        .career-box {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+        }
+
+        .career-box-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-color);
+            letter-spacing: 0.1em;
+        }
+
+        .career-list {
+            list-style: none;
+        }
+
+        .career-list-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .career-list-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .career-list-year {
+            font-family: 'Georgia', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .career-list-detail {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
         /* メッセージコンテンツ */
         .message-content {
             padding-top: 0.5rem;
@@ -335,81 +385,6 @@
             background: linear-gradient(transparent 60%, rgba(30, 58, 138, 0.15) 60%);
             padding: 0 0.2rem;
             font-weight: 500;
-        }
-
-        /* 経歴セクション */
-        .career-section {
-            margin-top: 80px;
-            padding: 80px 2rem;
-            background: var(--bg-light);
-        }
-
-        .career-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .career-title {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 3rem;
-            letter-spacing: 0.1em;
-        }
-
-        .career-timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .career-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-        }
-
-        .career-item {
-            position: relative;
-            padding-bottom: 2rem;
-            padding-left: 2rem;
-        }
-
-        .career-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .career-item::before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            border: 3px solid var(--white);
-        }
-
-        .career-year {
-            font-family: 'Georgia', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.3rem;
-            letter-spacing: 0.05em;
-        }
-
-        .career-detail {
-            font-size: 1rem;
-            color: var(--text-dark);
-            line-height: 1.8;
-            font-weight: 300;
         }
 
         /* CTAセクション */
@@ -578,14 +553,13 @@
             line-height: 1.6;
         }
 
-         /* フッター */
+        /* フッター */
         footer {
             background-color: #0f172a;
             color: white;
             position: relative;
         }
 
-        /* フッターボタンエリア */
         .footer_button {
             background: var(--white);
             padding: 2rem 0;
@@ -674,85 +648,25 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .footer_button_icon .email a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem 2.5rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-            gap: 0.5rem;
-        }
-
-        .footer_button_icon .email a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* コピーライト */
         address.copy {
-            text-align: center !important;
-            padding: 3rem 2rem !important;
-            color: rgba(255, 255, 255, 0.6) !important;
-            font-size: 0.9rem !important;
-            font-style: normal !important;
-            display: block !important;
-            width: 100% !important;
-            margin: 0 !important;
+            text-align: center;
+            padding: 3rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-style: normal;
         }
 
         address.copy p {
-            text-align: center !important;
-            margin: 0 auto 0.5rem auto !important;
-        }
-
-        address.copy .privacypolicy {
-            margin-bottom: 1rem !important;
-        }
-
-        address.copy .privacypolicy a {
-            color: var(--accent-color) !important;
-            text-decoration: none !important;
-        }
-
-        address.copy .bengoshikai {
-            color: rgba(255, 255, 255, 0.7) !important;
-        }
-
-        .privacypolicy {
-            margin-bottom: 1rem !important;
-            text-align: center !important;
-            width: 100% !important;
+            margin-bottom: 0.5rem;
         }
 
         .privacypolicy a {
-            color: var(--accent-color) !important;
-            text-decoration: none !important;
-            transition: opacity 0.3s ease !important;
-        }
-
-        .privacypolicy a:hover {
-            opacity: 0.7 !important;
+            color: var(--accent-color);
+            text-decoration: none;
         }
 
         .bengoshikai {
-            margin-bottom: 0.5rem !important;
-            color: rgba(255, 255, 255, 0.7) !important;
-            text-align: center !important;
-            width: 100% !important;
-        }
-
-        .copyright {
-            margin: 0 !important;
-            text-align: center !important;
-            color: rgba(255, 255, 255, 0.6) !important;
-            width: 100% !important;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* LINEバナー */
@@ -796,21 +710,6 @@
             }
         }
 
-        @media (max-width: 768px) {
-            #line-banner-container {
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-            }
-            
-            .line-banner-link {
-                padding: 15px 10px;
-                font-size: 16px;
-            }
-        }
-
-
         /* 固定ボタン */
         .floating-contact {
             position: fixed;
@@ -839,6 +738,17 @@
         }
 
         /* レスポンシブ */
+        @media (max-width: 1024px) {
+            .profile-section {
+                grid-template-columns: 320px 1fr;
+                gap: 3rem;
+            }
+
+            .profile-left-column {
+                position: static;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-container {
                 padding: 1rem 1.5rem;
@@ -866,7 +776,7 @@
 
             nav.active a {
                 padding: 1rem;
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: 1px solid #e8e8e8;
                 display: block;
             }
 
@@ -874,66 +784,85 @@
                 display: block;
             }
 
-            .page-hero {
-                padding: 60px 1.5rem;
+            .kv-visual {
+                margin-top: 70px;
+                height: 40vh;
+                min-height: 300px;
             }
 
-            .page-hero h1 {
-                font-size: 2rem;
+            .kv-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.2em;
+            }
+
+            .kv-content p {
+                font-size: 1.1rem;
             }
 
             .breadcrumb {
-                padding: 1rem 1.5rem;
+                padding: 0.8rem 1.5rem;
             }
 
             .main-content {
                 padding: 50px 1.5rem;
             }
 
-            .section {
-                margin-bottom: 60px;
-            }
-
-            .info-table th,
-            .info-table td {
-                display: block;
-                width: 100%;
-            }
-
-            .info-table th {
-                padding: 1rem 1.5rem 0.5rem;
-                border-bottom: none;
-            }
-
-            .info-table td {
-                padding: 0.5rem 1.5rem 1.5rem;
-            }
-
-            .profile-card {
+            .profile-section {
                 grid-template-columns: 1fr;
-                padding: 2rem;
-                text-align: center;
+                gap: 2.5rem;
             }
 
-            .profile-content {
-                text-align: left;
+            .profile-left-column {
+                max-width: 320px;
+                margin: 0 auto;
             }
 
-            .career-item {
-                flex-direction: column;
-                gap: 0.5rem;
+            .profile-image-wrapper::before {
+                top: 15px;
+                left: 15px;
             }
 
-            .career-year {
-                min-width: auto;
+            .profile-name-card {
+                padding: 1.5rem;
             }
 
-            .access-content {
+            .profile-name {
+                font-size: 1.5rem;
+            }
+
+            .career-box {
+                padding: 1.5rem;
+            }
+
+            .career-box-title {
+                font-size: 1.1rem;
+            }
+
+            .message-title {
+                font-size: 1.2rem;
+            }
+
+            .message-text {
+                font-size: 0.95rem;
+            }
+
+            .cta-section {
+                padding: 60px 1.5rem;
+            }
+
+            .cta-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-card-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-card-buttons {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
-            
-            /* フッターレスポンシブ */
             .footer_button .wrap {
                 padding: 0 1rem;
             }
@@ -959,8 +888,7 @@
             .footer_button_icon .email,
             .footer_button_icon .line a {
                 width: 100%;
-                padding: 1.2rem 1.5rem;
-                min-height: 70px;
+                padding: 1rem 1.5rem;
             }
 
             .footer_button_icon .line a span {
@@ -968,16 +896,50 @@
             }
 
             .floating-contact {
-                display: none;
+                bottom: 70px;
+                right: 15px;
             }
 
-            .sp { display: block; }
-            .pc { display: none; }
+            .floating-contact a {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+                border-radius: 30px;
+            }
+
+            #line-banner-container {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 0;
+            }
+            
+            .line-banner-link {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+
+            .sp { display: block !important; }
+            .pc { display: none !important; }
         }
 
         @media (min-width: 769px) {
-            .sp { display: none; }
+            .sp { display: none !important; }
             .pc { display: block; }
+        }
+
+        @media (max-width: 375px) {
+            .kv-content h1 {
+                font-size: 2rem;
+            }
+
+            .profile-name {
+                font-size: 1.3rem;
+            }
+
+            .message-title {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -986,13 +948,14 @@
     <header>
         <div class="header-container">
             <div class="logo-area">
-                <img src="images/logo.png" alt="ロゴ" class="logo-image">
+                <img src="css/images/S__18145305.jpg" alt="ロゴ">
                 <a href="index.html" class="logo">藤垣法律事務所</a>
             </div>
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html">ホーム</a></li>
-                    <li><a href="service.html">取扱業務</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="service.html">取扱分野</a></li>
                     <li><a href="case.html">解決事例</a></li>
                     <li><a href="pricing.html">料金案内</a></li>
                     <li><a href="profile.html" class="active">代表弁護士の想い</a></li>
@@ -1029,7 +992,8 @@
     <!-- メインコンテンツ -->
     <main class="main-content">
         <div class="profile-section">
-            <div class="profile-image-area">
+            <!-- 左カラム：画像・名前・経歴 -->
+            <div class="profile-left-column">
                 <div class="profile-image-wrapper">
                     <img src="css/images/message.jpg" alt="代表弁護士 藤垣圭介" class="profile-image">
                 </div>
@@ -1038,17 +1002,49 @@
                     <h2 class="profile-name">藤垣 圭介</h2>
                     <p class="profile-name-en">Keisuke Fujigaki</p>
                 </div>
+                
+                <!-- 経歴（左カラム内） -->
+                <div class="career-box">
+                    <h3 class="career-box-title">経歴</h3>
+                    <ul class="career-list">
+                        <li class="career-list-item">
+                            <p class="career-list-year">2010</p>
+                            <p class="career-list-detail">東京大学法学部卒業</p>
+                        </li>
+                        <li class="career-list-item">
+                            <p class="career-list-year">2012</p>
+                            <p class="career-list-detail">東京大学法科大学院修了</p>
+                        </li>
+                        <li class="career-list-item">
+                            <p class="career-list-year">2013</p>
+                            <p class="career-list-detail">司法試験合格・司法修習修了（67期）</p>
+                        </li>
+                        <li class="career-list-item">
+                            <p class="career-list-year">2014</p>
+                            <p class="career-list-detail">大阪弁護士会にて弁護士登録<br>全国に支店を持つ弁護士法人の大阪事務所にて勤務</p>
+                        </li>
+                        <li class="career-list-item">
+                            <p class="career-list-year">2016</p>
+                            <p class="career-list-detail">埼玉弁護士会に登録変更<br>上記弁護士法人の埼玉支部長として多様な事件を担当</p>
+                        </li>
+                        <li class="career-list-item">
+                            <p class="career-list-year">2020</p>
+                            <p class="career-list-detail">藤垣法律事務所 開業</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
+            <!-- 右カラム：メッセージ -->
             <div class="message-content">
                 <div class="message-block">
                     <h3 class="message-title">弁護士を目指すまでの背景</h3>
-<div class="message-text">
-    <p>岐阜県で育ち、中学・高校時代は勉強に打ち込みました。特に高校時代は「将来のために頑張ろう」と必死に机に向かった結果、東京大学法学部に進学することができました。</p>
-    <p>大学に進んだ頃、漠然と「弁護士になりたい」という想いがありましたが、学びを深め、仲間と議論を重ねる中でその想いは次第に強いものへと変わっていきました。</p>
-    <p>公務員や銀行員などさまざまな選択肢がある中で、私は<span class="message-highlight">「法律を通じて困っている人に直接手を差し伸べられる仕事」</span>に大きな魅力を感じたのです。</p>
-    <p>その想いを胸にロースクールへ進学し、2年間勉強に励み、司法試験に合格。希望していた刑事事件に特化した法律事務所に入所しました。</p>
-</div>
+                    <div class="message-text">
+                        <p>岐阜県で育ち、中学・高校時代は勉強に打ち込みました。特に高校時代は「将来のために頑張ろう」と必死に机に向かった結果、東京大学法学部に進学することができました。</p>
+                        <p>大学に進んだ頃、漠然と「弁護士になりたい」という想いがありましたが、学びを深め、仲間と議論を重ねる中でその想いは次第に強いものへと変わっていきました。</p>
+                        <p>公務員や銀行員などさまざまな選択肢がある中で、私は<span class="message-highlight">「法律を通じて困っている人に直接手を差し伸べられる仕事」</span>に大きな魅力を感じたのです。</p>
+                        <p>その想いを胸にロースクールへ進学し、2年間勉強に励み、司法試験に合格。希望していた刑事事件に特化した法律事務所に入所しました。</p>
+                    </div>
                 </div>
 
                 <div class="message-block">
@@ -1070,39 +1066,6 @@
             </div>
         </div>
     </main>
-
-    <!-- 経歴セクション -->
-    <section class="career-section">
-        <div class="career-container">
-            <h2 class="career-title">経歴</h2>
-            <div class="career-timeline">
-                <div class="career-item">
-                    <p class="career-year">2010</p>
-                    <p class="career-detail">東京大学法学部卒業</p>
-                </div>
-                <div class="career-item">
-                    <p class="career-year">2012</p>
-                    <p class="career-detail">東京大学法科大学院修了</p>
-                </div>
-                <div class="career-item">
-                    <p class="career-year">2013</p>
-                    <p class="career-detail">司法試験合格・司法修習修了（67期）</p>
-                </div>
-                <div class="career-item">
-                    <p class="career-year">2014</p>
-                    <p class="career-detail">大阪弁護士会にて弁護士登録<br>全国に支店を持つ弁護士法人の大阪事務所にて勤務</p>
-                </div>
-                <div class="career-item">
-                    <p class="career-year">2016</p>
-                    <p class="career-detail">埼玉弁護士会に登録変更<br>上記弁護士法人の埼玉支部長として多様な事件を担当</p>
-                </div>
-                <div class="career-item">
-                    <p class="career-year">2020</p>
-                    <p class="career-detail">藤垣法律事務所 開業</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CTAセクション -->
     <section class="cta-section">
@@ -1148,7 +1111,13 @@
                 <p class="pc">平日 9:00～18:00 受付<br>弁護士無料相談</p>
                 <p class="sp">平日 9:00～18:00（初回無料）</p>
                 <ul class="footer_button_icon">
-                    <li class="email sp">
+                    <li class="tel sp">
+                        <a href="tel:05088895335">
+                            電話で相談する
+                            <b>050-8889-5335</b>
+                        </a>
+                    </li>
+                    <li class="email">
                         <a href="contact.html">
                             メールで相談する
                             <b>24時間受付中</b>
@@ -1160,10 +1129,8 @@
                         </a>
                     </li>
                     <li class="tel pc">
-                        <a href="contact.html">
-                            電話で相談する
-                            <b>050-8889-5335</b>
-                        </a>
+                        電話で相談する
+                        <b>050-8889-5335</b>
                     </li>
                 </ul>
             </div>
@@ -1200,12 +1167,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
