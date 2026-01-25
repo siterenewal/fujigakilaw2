@@ -1,5 +1,13 @@
+// ===== 共通JavaScript: components.js =====
+
 // ヘッダーを挿入
 function loadHeader() {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (!headerPlaceholder) {
+        console.error('header-placeholder が見つかりません');
+        return;
+    }
+    
     const headerHTML = `
     <header id="header">
         <div class="header-container">
@@ -26,7 +34,7 @@ function loadHeader() {
         </div>
     </header>
     `;
-    document.getElementById('header-placeholder').innerHTML = headerHTML;
+    headerPlaceholder.innerHTML = headerHTML;
     
     // 現在のページをアクティブに
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -36,10 +44,18 @@ function loadHeader() {
             link.classList.add('active');
         }
     });
+    
+    console.log('ヘッダーを読み込みました');
 }
 
 // フッターを挿入
 function loadFooter() {
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (!footerPlaceholder) {
+        console.error('footer-placeholder が見つかりません');
+        return;
+    }
+    
     const footerHTML = `
     <footer>
         <div class="footer_button">
@@ -77,23 +93,29 @@ function loadFooter() {
     <div class="floating-contact">
         <a href="contact.html">無料相談予約</a>
     </div>
+    
     <div id="line-banner-container">
         <a href="https://page.line.me/209ivkpx?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer" class="line-banner-link">
             <span>LINE 無料相談</span>
         </a>
     </div>
     `;
-    document.getElementById('footer-placeholder').innerHTML = footerHTML;
+    footerPlaceholder.innerHTML = footerHTML;
+    
+    console.log('フッターを読み込みました');
 }
 
 // モバイルメニュー
 function toggleMenu() {
     const nav = document.getElementById('mainNav');
-    nav.classList.toggle('active');
+    if (nav) {
+        nav.classList.toggle('active');
+    }
 }
 
 // ページ読み込み時に実行
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded 発火');
     loadHeader();
     loadFooter();
 });
