@@ -1944,36 +1944,74 @@
             .map-container {
                 height: 280px;
             }
+            /* アクセス詳細 - 横長3列レイアウト */
+.access-details-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
 
-            /* アクセス詳細 */
-            .access-details {
-                margin-top: 2.5rem;
-            }
+.access-detail-item-horizontal {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-            .access-details-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+.access-detail-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: #1a2744;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
+}
 
-            .access-detail-card {
-                padding: 1.5rem;
-            }
+.access-detail-content h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a2744;
+    margin: 0 0 0.5rem 0;
+}
 
-            .access-detail-number {
-                width: 36px;
-                height: 36px;
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
+.access-detail-content p {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0;
+    line-height: 1.7;
+}
 
-            .access-detail-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .access-detail-text {
-                font-size: 0.85rem;
-            }
+@media (max-width: 768px) {
+    .access-detail-item-horizontal {
+        padding: 1rem;
+    }
+    
+    .access-detail-check {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 1rem;
+    }
+    
+    .access-detail-content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .access-detail-content p {
+        font-size: 0.85rem;
+    }
+}
 
             /* フッター */
             .footer_button {
@@ -2426,40 +2464,31 @@
                 <div class="map-container">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.8!2d139.63!3d35.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDU0JzAwLjAiTiAxMznCsDM3JzQ4LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
                 </div>
+                <!-- アクセス詳細 -->
+<div class="access-details-horizontal">
+    <div class="access-detail-item-horizontal">
+        <span class="access-detail-check">✓</span>
+        <div class="access-detail-content">
+            <h4>電車でお越しの場合</h4>
+            <p>大宮駅西口から徒歩3分<br>各路線の大宮駅をご利用いただけます。</p>
+        </div>
+    </div>
+    <div class="access-detail-item-horizontal">
+        <span class="access-detail-check">✓</span>
+        <div class="access-detail-content">
+            <h4>お車でお越しの場合</h4>
+            <p>付近に複数のコインパーキングがございます。<br>お車でのご来所も便利です。</p>
+        </div>
+    </div>
+    <div class="access-detail-item-horizontal">
+        <span class="access-detail-check">✓</span>
+        <div class="access-detail-content">
+            <h4>ご相談来所の際の流れ</h4>
+            <p>エキスパートオフィス大宮受付にて、弊所宛ての旨お申し付けください。<br>オフィス入口施錠時は、入口左手のタッチパネルで「藤垣法律事務所」をご選択いただければ内線でのご案内が可能です。</p>
+        </div>
+    </div>
+</div>
             </div>
-
-            <!-- アクセス詳細情報 -->
-            <div class="access-details">
-                <div class="access-details-grid">
-                    <!-- 電車でお越しの場合 -->
-                    <div class="access-detail-card">
-                        <div class="access-detail-number">1</div>
-                        <h4 class="access-detail-title">電車でお越しの場合</h4>
-                        <p class="access-detail-text">
-                            <span class="access-detail-highlight">大宮駅西口から徒歩3分</span><br>
-                            各路線の大宮駅をご利用いただけます。西口を出て徒歩3分の好立地です。
-                        </p>
-                    </div>
-
-                    <!-- お車でお越しの場合 -->
-                    <div class="access-detail-card">
-                        <div class="access-detail-number">2</div>
-                        <h4 class="access-detail-title">お車でお越しの場合</h4>
-                        <p class="access-detail-text">
-                            付近に複数のコインパーキングがございます。お車でのご来所も便利です。
-                        </p>
-                    </div>
-
-                    <!-- ご来所時の流れ -->
-                    <div class="access-detail-card">
-                        <div class="access-detail-number">3</div>
-                        <h4 class="access-detail-title">ご相談来所の際の流れ</h4>
-                        <p class="access-detail-text">
-                            エキスパートオフィス大宮受付にて、弊所宛ての旨お申し付けください。<br>
-                            オフィス入口施錠時は、入口左手のタッチパネルで「藤垣法律事務所」をご選択いただければ内線でのご案内が可能です。
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -2576,3 +2605,4 @@
     </script>
 </body>
 </html>
+
